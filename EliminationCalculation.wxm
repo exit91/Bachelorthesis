@@ -1,0 +1,54 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+g(x,y,z,t,u,v,w,s)
+:= g11*x*u+g12*x*v+g13*x*w+g14*x*s
++g21*y*u+g22*y*v+g23*y*w+g24*y*s
++g31*z*u+g32*z*v+2*z*w+g34*z*s
++g41*t*u+g42*t*v+g43*t*w+g44*t*s;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+B_ : expandwrt(-3*a*y^2 + g(1,a,a^3,0,0,y,3*a^2*y-(a^6+R)*t,t)*t,y,t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b2 : expand((−a*g23*t^2*R−g13*t^2*R+a^3*g34*t^2+a*g24*t^2−a^7*g23*t^2+g14*t^2−a^6*g13*t^2−2*a^9*t^2)/t^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b1 : expand((a^3*g32*t*y+3*a^3*g23*t*y+a*g22*t*y+3*a^2*g13*t*y+g12*t*y+6*a^5*t*y)/(t*y));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b0 : −3*a;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+G(x,y,z,t) := 1/2*g(x,y,z,t,x,y,z,t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+C_ : expandwrt(-y^3 + G(0,y,3*a^2*y-(a^6+R)*t,t)*t,y,t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c0 : -1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c2 : expandwrt(1/(y*t^2) * (−(g32*t^2*y*(R+a^6))/2−(g23*t^2*y*(R+a^6))/2
+−6*a^2*t^2*y*(R+a^6)),a);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c1 : expandwrt(1/(y^2*t) * ((3*a^2*g32*t*y^2)/2+(3*a^2*g23*t*y^2)/2+(g22*t*y^2)/2+9*a^4*t*y^2),a);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c3 : expandwrt(ratsimp(1/t^3*(t^3*(R+a^6)^2+(g44*t^3)/2)),a);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

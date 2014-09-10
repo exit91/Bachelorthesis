@@ -1,0 +1,12 @@
+
+Ich habe gezeigt, dass eine isolierte Nullstelle von $f : \reals^2 \to \reals$ ein lokales Minimum oder ein lokales Maximum ist.
+
+Das Argument geht wie folgt: In einer Epsilon-Umgebung $U$ um die Nullstelle $P$ nimmt $f$ nicht den Wert 0 an. Nun betrachte erstmal Kreisränder $R_\delta := \delta B_\delta(P)$ ($\delta < \varepsilon$), für die wegen Nullstellenfreiheit von $f$ in $U$ nur $f(R_\delta) \subset \reals_+$ oder $f(R_\delta) \subset \reals_-$ gelten kann (z.B. via Zwischenwertsatz).
+Nun betrachte die Strecke gegeben durch eine Kurve $\gamma : [0,\varepsilon)  \to U, d \mapsto P + (0,d)$. Für diese nimmt $f$ ebenfalls nur positive oder negative Werte an (gleiches Argument wie eben). Da $\gamma$ alle $R_\delta$ schneidet, schließe ich: $f(U - \{ P \}) > 0$ oder $f(U- \{P \}) < 0$.
+
+Ich habe immer noch ein Problem damit zu verstehen, inwiefern ALGEBRAISCH der Schnitt einer 3-Form mit einer Ebene genau einer 3-Form in der 2-Ebene entspricht. Im konkreten Beispiel habe ich folgendes berechnet. Ich schneide die Hyperbel $V(XY-Z^2)$ mit der Ebene $V(Z)$. Nun stellt sich heraus, dass ich (in diesem Fall) eine Vereinigung von 2 Geraden habe, was der Intuition im niederdimensionalen entsprechen würde (die besagt, dass ich entweder 2 Geraden oder eine Doppelgerade oder eine nicht-degenerierte Quadrik erhalte).
+Es gilt klar $V(XY-Z^2) \cap V(Z) = V(XY-Z^2,Z) = V(XY,Z)$. Weiters haben wir für das Ideal $\sqrt{(XY,Z)} \subset \sqrt{(X,Z)*(Y,Z)}$ sowie die umgekehrte Inklusion $(X,Z)\cap (Y,Z) = (XY,Z)$. (Ein mögliches Argument: Betrachte ein Element $aX+bZ = cY+dZ$ im Schnitt und oBdA teile $Z$ weder $a$ noch $b$. Dann gilt $aX-cY = (d-b)Z$ aber da $Z$ nicht Teiler von $aX-cY$ sein kann, muss $d-b = 0$ gelten, insgesamt also $aX = cY$. Nun teilt $Y$ gerade $a$, sodass wir $a = a'Y$ erhalten und für das allgemeine Element im Schnitt erhalten wir die Darstellung $aX+bZ = a'XY+bZ \in (XY,Z)$.)
+Die etwas müßige und definitiv nicht allzu aufschlussreiche Rechnung gibt uns $V(XY-Z^2) \cap V(Z) = V(XY,Z) = V(X,Z) \cap V(Y,Z)$, d.h. die Hyperbel $XY = 1$ schneidet die Gerade im Unendlichen in zwei Punkten.
+
+
+
