@@ -1,0 +1,49 @@
+\section{Change of coordinates}
+
+\subsection{Notes to myself}
+
+In this section I introduce definitions and hands-on examples to work with geometric objects in the language of scheme theory, or maybe I'll just drop the generalities and work with elementary algebra.
+Particular goals are
+\begin{itemize}
+\item the definition of what a change of coordinates means precisely and work out the details to use it without regret in the proof of the main result.
+\item the definition of what it means for a variety to contain a doubled line. In scheme theoretic language it is as simple as saying, that this variety has a subscheme isomorphic to a doubled line! Again, I might drop the notion of schemes, or work with it.
+\end{itemize}
+So this text also aims to be educational and close the gap between the intuitive and the technical.
+
+It might be interesting to
+\begin{itemize}
+\item introduce the category of varieties and rational functions. \textbf{If needed}.
+\end{itemize}
+
+\subsection{Affine linear transformations of affine space}
+
+An important notion which will appear again and again is the change of coordinates.
+In affine space one thinks of a linear transformation $T:\affine^n_k \to \affine^n_k$.
+Now observe the effect of such a transformation on a hypersurface $V(I)$, $I = (f)$:
+$ T(V(I)) = \{ Tx \in k^n: f(x) = 0 \} = \{y \in k^n : f(T^{-1}y) = 0\}$
+So one may define a linear transformation on a variety by precomposing the inverse to the polynomial functions.
+But let me suggest a different definition of linear transformation which does not necessarily require $T$ to be invertible and which is compatible with the scheme theoretic notion of a morphism.
+
+\begin{definition} Let $A = (a_{ij}) \in M(n,k)$ be a $n\times n$-matrix. Then we can define a homomorphism of polynomial rings
+\begin{align}
+T^\#_A : k[X_1,.. X_n] &\to k[X_1,.. X_n], \\
+X_i &\to \sum_{j=1}^n a_{ij}X_j.
+\end{align}
+\end{definition}
+
+This induces a morphism $T_A : \affine^n_k \to \affine^n_k$ of affine schemes. Indeed, this definition does what we expect.
+
+\begin{proposition} By Hilbert's Nullstellensatz a point $(x_1,..x_n) \in k^n$ corresponds to a maximal ideal $(X_1-x_1,.. X_n-x_n) \subset k[X_1,..X_n]$.
+$T_A$ maps the subscheme $V(X_1-x_1,..X_n-x_n)$ to $V(X_1-y_1,..X_n-y_n)$ where $(y_1,..y_n) = A(x_1,..x_n)$.
+\end{proposition}
+
+\begin{proof} If $A$ is invertible, we basically apply the Gauß-Jordan algorithm....
+\end{proof}
+
+Don't forget the translations: $X_i \mapsto X_i + t_i$.
+Together we get affine linear transformations.
+
+
+\subsection{Rational maps}
+
+Fancy category language here...
