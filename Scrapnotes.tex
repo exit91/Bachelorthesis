@@ -10,3 +10,36 @@ Die etwas müßige und definitiv nicht allzu aufschlussreiche Rechnung gibt uns 
 
 
 
+%%%%%%%%% partial derivates scrap note
+
+From the theory of derivations we know that the module of Kähler differentials of the polynomial ring $R = k[x_0,..x_n]$ over $k$ is $\Omega_{R/k} = \bigoplus_{i=0}^n R\var{d}x_i$.
+
+The universal property of the module of Kähler differentials says that there exists a canonical bijection between the set of derivations $\var{Der}_k(R,R)$ and the set of homomorphisms $\var{Hom}_R(\Omega_{R/k},R)$.
+In our case we can write down this bijection in terms of the partial derivatives:
+
+\begin{align}
+\var{Hom}_R(\bigoplus_{i=0}^n R\var{d}x_i, R) & \to & \var{Der}_k(R,R)
+\\
+f & \mapsto & f . d
+\end{align}
+
+where $d : R \to \Omega_{R/k}$ is the universal derivation defined via $d(f) = \sum_{i=0}^n \del_{x_i}f \cdot\var{d}x_i$.
+
+% TODO reference
+
+This bijection induces another bijection
+
+\begin{equation}
+\mkset{f \in \var{Hom}_R(\bigoplus_{i=0}^n R\var{d}x_i, R)}{ f(\var(d)x_i) \in k \,\forall i }
+\simeq
+\mkset{D \in \var{Der}_k(R,R)}{ D(h) \in k \,\forall h \text{ linear form}}
+\end{equation}
+
+the argument being that $f(\var{d}x_i) \in k$ iff $f.d(x_i) \in k$.
+
+% TODO: establish k-isomorphism of dual space and partial derivatives
+% TODO: deduce that partial derivatives are spanned by the \del_i as k-vector space.
+% TODO: define base change
+
+
+

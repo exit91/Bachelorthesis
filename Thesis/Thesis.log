@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.8.7)  10 SEP 2014 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.8.7)  20 SEP 2014 00:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,110 +6,27 @@ entering extended mode
 (./Thesis.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 7 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2013/12/19 v3.12 KOMA-Script document class (article)
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-dependent b
-asics and keyval usage)
-
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-independent 
-basics and keyval usage)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2013/12/19 v3.12 KOMA-Script package (loading files)
-
-Package scrlfile, 2013/12/19 v3.12 KOMA-Script package (loading files)
-                  Copyright (C) Markus Kohm
-
-))) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2013/12/19 v3.12 KOMA-Script package (handling toc-files)
-)
-Package tocbasic Info: omitting babel extension for `toc'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 115.
-Package tocbasic Info: omitting babel extension for `lof'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 116.
-Package tocbasic Info: omitting babel extension for `lot'
-(tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 117.
-Package scrartcl Info: You've used standard option `12pt'.
-(scrartcl)             This is correct!
-(scrartcl)             Internally I'm using `fontsize=12pt'.
-(scrartcl)             If you'd like to set the option with \KOMAoptions,
-(scrartcl)             you'd have to use `fontsize=12pt' there
-(scrartcl)             instead of `12pt', too.
-Package scrbase Info: Unknown processing state.
-(scrbase)             Processing option `twoside'
-(scrbase)             of member `.scrartcl.cls' of family
-(scrbase)             `KOMA' doesn't set
-(scrbase)             a valid state. This will be interpreted
-(scrbase)             as \FamilyKeyStateProcessed on input line 1150.
-Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 1531.
-
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2013/12/19 v3.12 KOMA-Script font size class option (12pt
-)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2013/12/19 v3.12 KOMA-Script package (type area)
-
-Package typearea, 2013/12/19 v3.12 KOMA-Script package (type area)
-                  Copyright (C) Frank Neukam, 1992-1994
-                  Copyright (C) Markus Kohm, 1994-
-
-\ta@bcor=\skip41
-\ta@div=\count79
-Package typearea Info: You've used standard option `a4paper'.
-(typearea)             This is correct!
-(typearea)             Internally I'm using `paper=a4'.
-(typearea)             If you'd like to set the option with \KOMAoptions,
-(typearea)             you'd have to use `paper=a4' there
-(typearea)             instead of `a4paper', too.
-\ta@hblk=\skip42
-\ta@vblk=\skip43
-\ta@temp=\skip44
-\footheight=\skip45
-Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 12
-(typearea)             BCOR = 0.0pt
-(typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 448.13095pt
-(typearea)              DIV departure   = -6%
-(typearea)              \evensidemargin = 27.31467pt
-(typearea)              \oddsidemargin  = -22.47766pt
-(typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 635.5pt
-(typearea)              \topmargin      = -41.72441pt
-(typearea)              \headheight     = 18.125pt
-(typearea)              \headsep        = 21.75pt
-(typearea)              \topskip        = 12.0pt
-(typearea)              \footskip       = 50.75pt
-(typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1330.
-)
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\abovecaptionskip=\skip46
-\belowcaptionskip=\skip47
-\c@pti@nb@sid@b@x=\box26
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -332,7 +249,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip48
+\@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -340,7 +257,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks17
+\@emptytoks=\toks16
 \ex@=\dimen103
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -350,41 +267,41 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count88
+\inf@bad=\count87
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count89
-\leftroot@=\count90
+\uproot@=\count88
+\leftroot@=\count89
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count91
-\DOTSCASE@=\count92
+\classnum@=\count90
+\DOTSCASE@=\count91
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
+\Mathstrutbox@=\box26
+\strutbox@=\box27
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
-\tag@help=\toks18
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
-\andhelp@=\toks19
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks17
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks18
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
 \tagshift@=\dimen108
 \tagwidth@=\dimen109
 \totwidth@=\dimen110
 \lineht@=\dimen111
-\@envbody=\toks20
-\multlinegap=\skip49
-\multlinetaggap=\skip50
-\mathdisplay@stack=\toks21
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -400,15 +317,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks22
-\thm@bodyfont=\toks23
-\thm@headfont=\toks24
-\thm@notefont=\toks25
-\thm@headpunct=\toks26
-\thm@preskip=\skip51
-\thm@postskip=\skip52
-\thm@headsep=\skip53
-\dth@everypar=\toks27
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/libertine.sty
 Package: libertine 2014/02/19 (Bob Tennent) Supports Libertine and Biolinum fon
@@ -426,10 +343,11 @@ Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks28
-\XKV@tempa@toks=\toks29
-)
-\XKV@depth=\count100
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count99
 File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
@@ -778,81 +696,88 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count101
+\Gread@gobject=\count100
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(./__tum.tex) (./__commands.tex) (./__environments.tex
-\c@definition=\count102
-\c@proposition=\count103
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip49
+\fb@frw=\dimen114
+\fb@frh=\dimen115
+\FrameRule=\dimen116
+\FrameSep=\dimen117
+) (./__tum.tex)
+(./__commands.tex) (./__environments.tex
+\c@dummy=\count101
 ) (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 19.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 19.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 15.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 15.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 19.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 15.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 19.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 15.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 19.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-\c@mv@tabular=\count104
-\c@mv@boldtabular=\count105
+\c@mv@tabular=\count102
+\c@mv@boldtabular=\count103
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen114
-\scratchbox=\box29
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen115
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count104
+\scratchdimen=\dimen118
+\scratchbox=\box28
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen119
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -901,245 +826,133 @@ e
 File: TUMlschwarz.png Graphic file (type png)
 
 <use TUMlschwarz.png>
-Package pdftex.def Info: TUMlschwarz.png used on input line 4.
+Package pdftex.def Info: TUMlschwarz.png used on input line 3.
 (pdftex.def)             Requested size: 53.72057pt x 28.4261pt.
-
-
-Class scrartcl Warning: Usage of deprecated font command `\sf'!
-(scrartcl)              You should note, that in 1994 font command `\sf' has
-(scrartcl)              been defined for compatiblitiy to Script 2.0 only.
-(scrartcl)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrartcl)              shouldn't use such commands any longer and within
-(scrartcl)              KOMA-Script usage of `\sf' is definitely deprecated.
-(scrartcl)              See `fntguide.pdf' for more information about
-(scrartcl)              recommended font commands.
-(scrartcl)              Note also, that KOMA-Script will remove the definition
-(scrartcl)              of `\sf' anytime until release of about version 3.20.
-(scrartcl)              But for now, KOMA-Script will replace deprecated `\sf'
-(scrartcl)              by `\normalfont \sffamily ' on input line 5.
-
 LaTeX Font Info:    Try loading font information for T1+LinuxBiolinumT-TLF on i
-nput line 5.
+nput line 4.
+
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/T1LinuxBiolinumT-TLF.fd
 File: T1LinuxBiolinumT-TLF.fd 2012/11/26 (autoinst) Font definitions for T1/Lin
 uxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 5.
+(Font)              scaled to size 12.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 6.
+(Font)              scaled to size 17.28pt on input line 5.
 
 <TUMlMschwarz.png, id=2, 36.135pt x 36.135pt>
 File: TUMlMschwarz.png Graphic file (type png)
  <use TUMlMschwarz.png>
-Package pdftex.def Info: TUMlMschwarz.png used on input line 11.
+Package pdftex.def Info: TUMlMschwarz.png used on input line 10.
 (pdftex.def)             Requested size: 36.13489pt x 36.13489pt.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 15.
+(Font)              scaled to size 24.88pt on input line 14.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./TUMlschwarz.png (PNG cop
 y)> <./TUMlMschwarz.png (PNG copy)>] [2])
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <12> not av
-ailable
-(Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 23.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 23.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/bx/n' in size <17.28> not
- available
-(Font)              Font shape `T1/LinuxBiolinumT-TLF/b/n' tried instead on inp
-ut line 23.
-LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 23.
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 27
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 24
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 27.
+(Font)              scaled to size 11.03998pt on input line 24.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 27.
+(Font)              scaled to size 8.27998pt on input line 24.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 27.
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+(Font)              scaled to size 6.43999pt on input line 24.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 27.
+(Font)              scaled to size 11.03998pt on input line 24.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 27.
+(Font)              scaled to size 8.27998pt on input line 24.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 27.
- [3] (./Thesis.toc)
-\tf@toc=\write3
-\openout3 = `Thesis.toc'.
-
-
-[4] (./Beweis.tex
-! Extra \else.
-\@sect ...sname }{\scr@ds@tocentry }\fi \fi \else 
-                                                  \def \@svsechd {#6{\hskip ...
-l.1 \section{(7.1) bis Step 2}
-                              
-? 
-! Extra \fi.
-\@sect ...csname }{\scr@ds@tocentry }\fi \fi }\fi 
-                                                  \@xsect {#5}
-l.1 \section{(7.1) bis Step 2}
-                              
-? 
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 19.08076pt on input line 5.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 5.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 5.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 19.08076pt on input line 5.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 5.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 5.
-
-Overfull \hbox (3.44687pt too wide) in paragraph at lines 15--20
-[]\T1/futs/m/n/20.74 Behauptung: Sei $[](\FML/futmi/m/it/20.74 H\T1/futs/m/n/20
-.74 ) \FMS/futm/m/n/20.74 ^^Z [][]$ \T1/futs/m/n/20.74 eine Ebene. (Diese Ebene
-
- []
-
-
-Overfull \hbox (87.33308pt too wide) in paragraph at lines 44--47
-\T1/futs/m/n/12 phis-mus $\FML/futmi/m/it/12 k\T1/futs/m/n/12 [\FML/futmi/m/it/
-12 x; y; z; t\T1/futs/m/n/12 ] \FMS/futm/m/n/12 ! \FML/futmi/m/it/12 k\T1/futs/
-m/n/12 [\FML/futmi/m/it/12 x; y; z\T1/futs/m/n/12 ] \FML/futmi/m/it/12 ,[]\FMS/
-futm/m/n/12 ! \FML/futmi/m/it/12 k\T1/futs/m/n/12 [\FML/futmi/m/it/12 x; y; z; 
-t\T1/futs/m/n/12 ]$ mit Kern $\FML/futmi/m/it/12 H$\T1/futs/m/n/12 . Weit-ers g
-ilt $[]([]\FML/futmi/m/it/12 ; ^^R\T1/futs/m/n/12 )(\FML/futmi/m/it/12 f\T1/fut
-s/m/n/12 ) \FMS/futm/m/n/12 Å []\T1/futs/m/n/12 ([]\FML/futmi/m/it/12 ; ^^R\T1/
-futs/m/n/12 )\FML/futmi/m/it/12 :\T1/futs/m/n/12 ([]([]\FML/futmi/m/it/12 ; ^^R
-\T1/futs/m/n/12 ))(\FML/futmi/m/it/12 f\T1/futs/m/n/12 )$,
- []
-
-
-Overfull \vbox (10.14995pt too high) has occurred while \output is active []
-
-
-[1]
-Overfull \hbox (48.07439pt too wide) in paragraph at lines 65--68
-\T1/futs/m/n/20.74 durch $\FML/futmi/m/it/20.74 S[] \FMS/futm/m/n/20.74 Å []\T1
-/futs/m/n/20.74 (\FML/futmi/m/it/20.74 f[]; ::f[]\T1/futs/m/n/20.74 )$. Hier be
-ze-ich-net $\FML/futmi/m/it/20.74 f[]$ \T1/futs/m/n/20.74 die Ableitung
- []
-
-
-Overfull \hbox (9.08716pt too wide) in paragraph at lines 100--102
-[]\T1/futs/m/n/20.74 Behauptung: Sei $\FML/futmi/m/it/20.74 C$ \T1/futs/m/n/20.
-74 der Schnitt von $\FML/futmi/m/it/20.74 P \FMS/futm/m/n/20.74 2 \FML/futmi/m/
-it/20.74 S$ \T1/futs/m/n/20.74 nicht-singul‰r
- []
-
-
-Overfull \vbox (10.14995pt too high) has occurred while \output is active []
-
-
-[2]
-Overfull \hbox (41.68pt too wide) in paragraph at lines 103--106
-\T1/futs/m/n/12 0$ ($\FML/futmi/m/it/12 P$ \T1/futs/m/n/12 war als nicht-singul
-‰r angenom-men). Wir re-stringieren $\FML/futmi/m/it/12 H$ \T1/futs/m/n/12 via 
-$[]([]) :\FMS/futm/m/n/12 Å []\T1/futs/m/n/12 ([]\FML/futmi/m/it/12 ; \T1/futs/
-m/n/12 (\FML/futmi/m/it/12 x; y; z; \FMS/futm/m/n/12 ^^@[]\FML/futmi/m/it/12 x 
-\FMS/futm/m/n/12 ^^@
- []
-
-! Extra \else.
-\@sect ...sname }{\scr@ds@tocentry }\fi \fi \else 
-                                                  \def \@svsechd {#6{\hskip ...
-l.110 \section{(7.1) bis (7.2) Step 2}
-                                       .
-? 
-! Extra \fi.
-\@sect ...csname }{\scr@ds@tocentry }\fi \fi }\fi 
-                                                  \@xsect {#5}
-l.110 \section{(7.1) bis (7.2) Step 2}
-                                       .
-? 
-! Extra \else.
-\@sect ...sname }{\scr@ds@tocentry }\fi \fi \else 
-                                                  \def \@svsechd {#6{\hskip ...
-l.111 \section{(7.2) Step 3}
-                             .
-? 
-! Extra \fi.
-\@sect ...csname }{\scr@ds@tocentry }\fi \fi }\fi 
-                                                  \@xsect {#5}
-l.111 \section{(7.2) Step 3}
-                             .
-? 
-! Extra \else.
-\@sect ...sname }{\scr@ds@tocentry }\fi \fi \else 
-                                                  \def \@svsechd {#6{\hskip ...
-l.112 \section{(7.2) Step 4}
-                            
-? 
-! Extra \fi.
-\@sect ...csname }{\scr@ds@tocentry }\fi \fi }\fi 
-                                                  \@xsect {#5}
-l.112 \section{(7.2) Step 4}
-                            
-? 
-
-Overfull \hbox (2.62245pt too wide) in paragraph at lines 115--118
-\T1/futs/m/n/20.74 Behauptung: Sei $\FML/futmi/m/it/20.74 M \FMS/futm/m/n/20.74
- 2 \FML/futmi/m/it/20.74 R[]$ \T1/futs/m/n/20.74 eine Ma-trix ¸ber dem Poly-
- []
-
-
-Overfull \hbox (55.66447pt too wide) in paragraph at lines 115--118
-\T1/futs/m/n/20.74 nom-ring $\FML/futmi/m/it/20.74 R$\T1/futs/m/n/20.74 . Es gi
-lt $[]([](\FML/futmi/m/it/20.74 M\T1/futs/m/n/20.74 )) \FMS/futm/m/n/20.74 Å []
-\T1/futs/m/n/20.74 ([](\FML/futmi/m/it/20.74 M\T1/futs/m/n/20.74 ))$ g.d.w. $[]
-([](\FML/futmi/m/it/20.74 M\T1/futs/m/n/20.74 )) \FMS/futm/m/n/20.74 Å
+(Font)              scaled to size 6.43999pt on input line 24.
+ [3] (./Thesis.toc
+Overfull \hbox (1.59544pt too wide) in paragraph at lines 5--5
+ [][] []\T1/futs/m/n/12 Invariance of sin-gu-lar-i-ties un-der a change of the 
+sys-tem of par-tial deriva- 
  []
 
 )
-Overfull \vbox (10.14995pt too high) has occurred while \output is active []
+\tf@toc=\write3
+\openout3 = `Thesis.toc'.
+
+ [4] (./Preparation.tex
+Overfull \hbox (2.81567pt too wide) in paragraph at lines 17--22
+\T1/futs/m/n/12 for ho-mo-ge-neous ide-als $\FML/futmi/m/it/12 I$ \T1/futs/m/n/
+12 of the poly-no-mial ring $\FML/futmi/m/it/12 k\T1/futs/m/n/12 [\FML/futmi/m/
+it/12 x[]; ::x[]\T1/futs/m/n/12 ]$. The topol-ogy is known as Zariski's
+ []
 
 
-[3] (./Thesis.aux) ) 
+Overfull \vbox (7.392pt too high) has occurred while \output is active []
+
+ [1]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 100.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <9> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 100.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <7> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 100.
+
+Overfull \vbox (7.812pt too high) has occurred while \output is active []
+
+ [2]
+Overfull \vbox (8.232pt too high) has occurred while \output is active []
+
+ [3]
+Overfull \vbox (7.812pt too high) has occurred while \output is active []
+
+ [4]
+Overfull \vbox (8.232pt too high) has occurred while \output is active []
+
+ [5]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 339
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+))
+Overfull \vbox (7.812pt too high) has occurred while \output is active []
+
+ [6]
+(./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 6247 strings out of 494969
- 95850 string characters out of 6178985
- 183289 words of memory out of 5000000
- 9275 multiletter control sequences out of 15000+600000
- 91336 words of font info for 114 fonts, out of 8000000 for 9000
+ 4931 strings out of 494969
+ 72084 string characters out of 6178985
+ 120776 words of memory out of 5000000
+ 7976 multiletter control sequences out of 15000+600000
+ 96476 words of font info for 89 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 46i,11n,51p,429b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/
-share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe
-/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr
-i8a.pfb>
-Output written on Thesis.pdf (7 pages, 186691 bytes).
+ 37i,24n,35p,434b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/us
+r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/shar
+e/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/fourier/fourier-mcl.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/fourier/fourier-ml.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/fourier/fourier-mlit.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/fourier/fourier-ms.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
+dobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/
+putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on Thesis.pdf (10 pages, 180958 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

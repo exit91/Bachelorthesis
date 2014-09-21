@@ -1,10 +1,9 @@
-\contentsline {section}{\numberline {1}(7.1) bis Step 2}{1}
-\contentsline {paragraph}{\nonumberline (1) $\Vp (H)$ ist isomorph zu $\proj ^2$.}{1}
-\contentsline {paragraph}{\nonumberline (2) var{Der} Schnitt $\Vp (H) \cap S$ wird via $\pi $ auf eine Variet\IeC {\"a}t $\Vp (h) \subset \proj ^2$ transportiert, wobei $h$ eine 3-Form ist.}{1}
-\contentsline {paragraph}{\nonumberline (1)}{2}
-\contentsline {paragraph}{\nonumberline (1b)}{2}
-\contentsline {paragraph}{\nonumberline (2)}{2}
-\contentsline {paragraph}{\nonumberline Weiter im Beweis}{2}
-\contentsline {section}{\numberline {2}(7.1) bis (7.2) Step 2}{3}
-\contentsline {section}{\numberline {3}(7.2) Step 3}{3}
-\contentsline {section}{\numberline {4}(7.2) Step 4}{3}
+\contentsline {section}{\numberline {1}General facts}{1}
+\contentsline {subsection}{\numberline {1.1}projective space}{1}
+\contentsline {subsection}{\numberline {1.2}partial derivatives}{1}
+\contentsline {subsection}{\numberline {1.3}singularities and the tangent plane}{3}
+\contentsline {subsubsection}{\numberline {1.3.1}Invariance of singularities under a change of the system of partial derivatives}{3}
+\contentsline {subsection}{\numberline {1.4}plane conics -- the question of degeneracy}{3}
+\contentsline {subsection}{\numberline {1.5}the restriction of equations}{5}
+\contentsline {subsubsection}{\numberline {1.5.1}the coordinate ring view}{6}
+\contentsline {subsection}{\numberline {1.6}lines on surfaces}{6}

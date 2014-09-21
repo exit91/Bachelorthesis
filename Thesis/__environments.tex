@@ -1,2 +1,17 @@
-\newtheorem{definition}{Definition}[section]
-\newtheorem{proposition}{Proposition}[section]
+\newtheorem{dummy}{dummy}[section]
+\newtheorem{definition}[dummy]{Definition}
+\newtheorem{proposition}[dummy]{Proposition}
+\newtheorem{corollary}[dummy]{Corollary}
+\newtheorem{example}[dummy]{Example}
+\newtheorem{theorem}[dummy]{Theorem}
+\newtheorem{lemma}[dummy]{Lemma}
+
+
+\newenvironment{todo}{
+  \begin{framed}
+  \textbf{TODO}
+  \begin{itemize}
+}{
+  \end{itemize}
+  \end{framed}
+}
