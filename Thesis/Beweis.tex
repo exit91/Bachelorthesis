@@ -1,7 +1,8 @@
-\section{(7.1) bis Step 2}
+\section{proof of the main theorem}
+\subsection{(7.1) bis Step 2}
 $S = \Vp(f) \subset \proj^3$ sei eine nicht-singuläre Kubik mit $f \in k[x,y,z,t]$.
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: $l =  T_P(l) \subset T_P(S)$
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -11,7 +12,7 @@ Dann erhalten wir $l = \Vp(H_1) \cap \Vp(H_2) = \cap_{\alpha, \beta} \Vp(\alpha 
 Die zweite Gleichung folgt aus der Tatsache, dass $\Ip(l) \supset \Ip(S)$, der Schnitt also über eine größere Menge stattfindet.
 
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: Sei $\Vp(H) \subset \proj^3$ eine Ebene.
 % TODO:
 (Diese Ebene soll nicht in der Kubik enthalten sein).
@@ -36,7 +37,7 @@ $[x_0:x_1:x_2] \in \pi(\Vp(H)\cap S)
 \Leftrightarrow f(\pi^{-1}([x_0:x_1:x_2])) = 0
 \Leftrightarrow f(x_0,x_1,x_2,\alpha x_0 + \beta x_1 + \gamma x_3) = 0$, d.h. $\pi(\Vp(H)\cap S) = \Vp(g)$ mit $g=f(x, y, z, \alpha x + \beta y + \gamma z) = \var{eval}(\var{---},(x, y, z, \alpha x + \beta y + \gamma z))(f)$ eine 3-Form.
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: Es gibt eine Darstellung von $f = h + HB$ mit $h$ die obige "Restriktion" von $f$ auf $\Vp(H)$ sowie $B$ eine 2-Form.
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -45,7 +46,7 @@ Wir können die Auswertung an $\theta := (x,y,z,\alpha x + \beta y + \gamma z)$ 
 Es gibt also eine Darstellung $p = HB$ für ein Polynom $B$.
 Nun nutzen wir aus, dass $f$ eine $3-Form$ ist und erhalten $f = g+HB$ wobei $B$ eine quadratische Form ist.
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: Für $f = h + HB$ wie oben hat $h$ nicht die Form $g^2A$ mit $g,A$ 1-Formen.
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,7 +57,7 @@ Wir brauchen eine verallgemeinerte Aussage.
 
 
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{LEMMA 1, LEMMA 1b, LEMMA 2}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 LEMMA 1: Sei $R$ eine $k$-Algebra erzeugt durch $y_0,..y_n$ algebraisch unabhängig.
 Dann gibt es var{Der}ivationen $D_i : R \to k$ sodass $D_i(y_i) = 1$ und $D_i(y_j) = 0$ für $j\neq i$. Bezeichne diese var{Der}ivationen als "partielle Ableitungen".
 
@@ -64,7 +65,7 @@ LEMMA 1b: Angenommen $V = \var{span}(y_i) = \var{span}(y'_i)$ als $k$-Vektorräu
 
 LEMMA 2:
 Sei $f$ eine $d$-Form und $S = \Vp(f)$ eine Hyperfläche. Die singulären Punkte von $S$ sind gegeben durch $S^{sing} = \Vp(f_{y_0},..f_{y_n})$. Hier bezeichnet $f_{y_i}$ die Ableitung von $f$ nach $y_i$, also $f_{y_i} := D_i(f)$.
-} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{(1)}
 Siehe (Matsumura, 26.F).
@@ -96,7 +97,7 @@ Wir schränken die Ebene $\Vp(H)$ weiter ein auf die Gerade $\Vp(H,g)$, sodass d
 Da $B$ aber entweder auf der geraden verschwindet oder eine 2-Form auf ihr ist, hat sie für $k$ algebraisch abgeschlossen Nullstellen und es existieren somit singuläre Punkte, konträr zur Behauptung.
 
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: Sei $C$ der Schnitt von $P \in S$ nicht-singulär mit der Tangentialebene $T_P(S)$, $S = \Vp(f)$ irreduzibel und nicht die Ebene $C$ selbst, dann ist $C$ singulär bei $P$.
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -107,11 +108,11 @@ $f' = \var{eval}(f)$. Demonstrativ leite ich nach $x$ ab, aber dieselbe Rechnung
 f'_x = f_x D_xx + f_y D_x y + f_z D_x z + f_t D_x (-\frac{f_x(P)}{f_t(P)}x-\frac{f_y(P)}{f_t(P)}y-\frac{f_z(P)}{f_t(P)}z) = f_x - \frac{f_x(P)}{f_t(P)} f_t
 \end{equation}
 Offensichtlich verschwindet $f'_x$ in $P$: $f'_x(P) = f_x(P) - \frac{f_x(P)}{f_t(P)} f_t(P) = 0$.
-\section{(7.1) bis (7.2) Step 2} .
-\section{(7.2) Step 3} .
-\section{(7.2) Step 4}
+\subsection{(7.1) bis (7.2) Step 2} .
+\subsection{(7.2) Step 3} .
+\subsection{(7.2) Step 4}
 
-{\LARGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Behauptung: Sei $M \in R^{n\times n}$ eine Matrix über dem Polynomring $R$.
 Es gilt $\det(\var{lt}(M)) = \var{lt}(\det(M))$ g.d.w. $\det(\var{lt}(M)) = \var{lt}(\det(\var{lt}(M)))$.
 } %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
