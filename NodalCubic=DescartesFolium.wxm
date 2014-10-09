@@ -1,0 +1,54 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+f(x,y,z) := x^3 + y^3 - x*y*z;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(f(x,y,z-3*x-3*y));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(f(x+y,-y,z-3*(x+y)+3*y));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(f(x+y,x-y,z));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x,y,z) := y^2*z−x^2*z+6*x*y^2+2*x^3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(g(-x,y,z+6*x));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(x,y,z) := y^2*z−x^2*z−8*x^3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(h(x/2,y/2,4*z));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+k(x,y,z) := y^2*z - x^2*z - x^3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(k(y-x, -x-y,12*x+z/4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(f(y-x,-x-y,6*x+8*z));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(k(-4*(x+y),4*(x-y),3*x+3*y+z));
+/* [wxMaxima: input   end   ] */
+
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
