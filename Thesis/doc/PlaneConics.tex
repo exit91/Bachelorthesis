@@ -1,0 +1,146 @@
+\subsection{plane conics}
+
+\subsubsection{the question of degeneracy}
+
+A plane conic is a algebraic variety $\V(g)$ given by a quadratic form $g \in k[x_0,x_1,x_2]$. One might ask the question whether the conic is a union of two lines (in which case the conic is called \emph{degenerate}), or in algebraic terms, whether $g$ factors into two linear forms or whether it is irreducible.
+Let's turn our attention the an easier question: When is a conic singular?
+
+Assume that the characteristic of our base field $k$ is not 2, then the conic can be written, for appropriate coefficients $a,b,c,d,e,f \in k$ as:
+\begin{equation}
+g = ax_0^2 + bx_0x_1 + cx_1^2 + dx_0x_2 + ex_1x_2 + fx_2^2
+\end{equation}
+The singular points are given by the system of equations
+\begin{equation}
+\del_{x_0} g = \del_{x_1} g = \del_{x_2} g = 0
+\end{equation}
+which written out in matrix notation, amounts to
+\begin{align}
+\underset{=:M}{\underbrace{
+\begin{pmatrix}
+2a & b & e \\
+b & 2c & d \\
+e & d & 2f
+\end{pmatrix}
+}}
+\begin{pmatrix}
+x_0 \\ x_1 \\ x_2
+\end{pmatrix}
+=
+0
+\end{align}
+We call the matrix $M$.
+A singular point $[s_0:s_1:s_2] \in \proj^2_k$ would of course be a non-zero solution of above equation and as such can only exist precisely if the determinant of $M$ vanishes.
+So far we have obtained
+
+\begin{corollary}
+Let $k$ be a field of characteristic not 2 and $g =  ax_0^2 + bx_0x_1 + cx_1^2 + dx_0x_2 + ex_1x_2 + fx_2^2
+\in k[x_0,x_1,x_2]$ be a quadratic form. The conic $\V(g) \subset \proj^2_k$ is singular if and only if
+\begin{equation}
+\frac 12
+\det
+\begin{pmatrix}
+2a & b & e \\
+b & 2c & d \\
+e & d & 2f
+\end{pmatrix}
+= 4acf + bde - ce^2 - ad^2 - b^2f = 0
+\end{equation}
+\end{corollary}
+
+Incidentally this statement holds true for characteristic 2 as well, even though we need to approach the proof a little differently.
+At this point I remind the reader that addition and subtraction are the same in characteristic 2, in the sense that negation operation is just the identity, which will simplify the calculations a little.
+The corollary then translates to $g$ having a singular point if and only if $bde + ce^2 +ad^2 + b^2f = 0$.
+The set of singular points is by definition the intersection of $V = \V(\del_{x_0}g,\del_{x_1}g,\del_{x_2}g)$ and $\V(g)$, so let's calculate the points in the first variety: Assuming that not all coefficients $b,f,e$ vanish, the only point on $V$ is $[e:d:b]$, as can be seen by Gaussian elimination where we distinguish the cases of $0,1$ or $2$ of the coefficients $b,d,e$ vanishing.
+This point $[e:d:b]$ lies on $\V(g)$ iff $0 = g(e,d,b) = ae^2 + bde + cd^2 + dbe + ebd + fb^2 = bde + ae^2 + cd^2 + fb^2$ as desired.
+If all of $b,d,e$ vanish, then $V$ is the whole space and every point of $\V(g)$ is singular ($\V(g) = \V((\sqrt{a}x_0 + \sqrt{c}x_1 + \sqrt{f}x_2)^2)$ being a doubled line) and also $bde + ce^2 + ad^2 + b^2f = 0$. We have proven:
+
+\begin{corollary}
+Let $k$ be a field of any characteristic and $g = ax_0^2 + bx_0x_1 + cx_1^2 + dx_0x_2 + ex_1x_2 + fx_2^2
+ \in k[x_0,x_1,x_2]$ be a quadratic form. The conic $\V(g) \subset \proj^2_k$ is singular if and only if $4acf + bde - ce^2 - ad^2 - b^2f = 0$.
+\end{corollary}
+
+
+Returning to our initial question we want to establish the fact that the conic given by the quadratic form $g$ is irreducible if and only if it is non-singular.
+For that assume reducibility, that is $g = h_1h_2$ for 1-forms $h_1$ and $h_2$.
+Then $\del_{x_i}g = h_1\alpha + \beta h_2$ for $\alpha := \del_{x_i}h_2 \in k$ and $\beta := \del_{x_i}h_2 \in k$.
+Assume now that a point $P$ lies in the intersection of $\V(h_1)$ and $V(h_2)$, then $\del_{x_i}g(P) = h_1(P)\alpha + \beta h_2(P) = 0$, so the intersection is a singularity.
+Of course, in the projective plane there always exists an intersection for any two lines.
+(This is just a consequence of linear algebra: Say $h_1 = a_0x_0 + a_1x_1 + a_2x_2, h_2 = b_0x_0 + b_1x_1 + b_2x_2$, then the kernel of the matrix $\begin{pmatrix} a_0 & a_1 & a_2 \\ b_0 & b_1 & b_2 \end{pmatrix}$ is nontrivial and if $(s_0,s_1,s_2) \neq 0 \in k^3$ lies in the kernel, then $P := [s_0:s_1:s_2]$ lies in the intersection.)
+
+The converse can be seen as follows. Let $P=[p_0:p_1:p_2]$ be a singularity and $P'=[p'_0:p'_1:p'_2]$ is any other point on the conic (for instance any intersection point of $\V(g) \cap \V(x_i)$).
+For $g$ to contain the line through $P$ and $P'$ means that $g(\lambda P + \mu P') = 0 \in k[\lambda,\mu]$.
+
+Again, Euler's equality shows itself to be quite useful in the calculation
+\begin{align}
+0
+= 2f(\lambda P')
+=& \sum_{i=0}^2 \lambda p'_i \del_{x_i}g(\lambda P') 
++ \sum_{i=0}^2 \lambda p'_i \underset{=0}{\underbrace{\del_{x_i}g(\mu P)}}
+\\
+\overset{\del_{x_i}g\text{ is linear }}=& \sum_{i=0}^2 \lambda p'_i \del_{x_i} g(\lambda P'+\mu P) 
+\\
+=& 2g(\lambda P' + \mu P) - \sum_{i=0}^2 \mu p_i \del_{x_i}g(\lambda P' + \mu P)
+\end{align}
+
+Finally I claim that the last sum disappears due to the equality
+\begin{equation}
+\sum_{i=0}^2 p_i \del_{x_i}g = 0 \in k[x_0,x_1,x_2]
+\end{equation}
+
+The calculation is straight-forward:
+\begin{align}
+\sum_{i=0}^2 p_i \del_{x_i} g
+=& \sum_{i=0}^2 p_i \sum_{j=0}^2 (\del_{x_j}\del_{x_i}g)x_j
+\\
+\overset{\text{rearrange}}=& \sum_{j=0}^2 x_j \sum_{i=0}^2 (\del_{x_i}\del_{x_j}g)p_i = \sum_{j=0}^2 x_j \del_{x_j}g(P) = 0
+\end{align}
+
+Now that we have shown the sum to disappear, we obtain $0 = 2g(\lambda P' + \mu P)$ (in characteristic not 2), hence the conic contains a line.
+
+For characteristic 2 I give a separate proof, as Euler's formula does not lead anywhere:
+For $g$ to be singular at $P$ means that the following relations hold:
+\begin{align}
+bp_1 + dp_2 =& 0\\
+bp_0 + ep_2 =& 0\\
+dp_0 + ep_1 =& 0
+\end{align}
+With this we may write out $g(\lambda P + \mu P')$:
+\begin{align}
+a(\lambda p_0 + \mu p'_0)^2
++c(\lambda p_1 + \mu p'_1)^2
++f(\lambda p_2 + \mu p'_2)^2 \\
++b (\lambda p_0 + \mu p'_0)(\lambda p_1 + \mu p'_1)
++d (\lambda p_0 + \mu p'_0)(\lambda p_2 + \mu p'_2)
++e (\lambda p_1 + \mu p'_1)(\lambda p_2 + \mu p'_2)
+\end{align}
+
+Upon expanding we may collect the $\mu\lambda$ terms and see that they vanish after applying the previous three relations.
+Furthermore the quadratic terms we have the equality (by means of the Frobenius homomorphism)
+$a(\lambda p_0 + \mu p'_0)^2 = a\lambda^2p_0^2 + a \mu^2 {p'}_0^2$ etc.
+It turns out, that after having done these transformations we get the equality $P(\lambda P + \mu P') = P(\lambda P) + P(\mu P') = 0$ as desired.
+All in all we have shown:
+
+\begin{theorem}
+Let $k$ be a field and $\V(g) \subset \proj^2_k$ a conic given by a quadratic form $g = ax_0^2 + bx_0x_1 + cx_1^2 + dx_0x_2 + ex_1x_2 + fx_2^2$.
+Then the following are equivalent:
+\begin{enumerate}
+\item The conic is degenerate.
+\item The quadratic form $g$ factors into two linear forms, $g=h_1h_2$.
+\item $\V(g)$ is a union of two lines.
+\item $\V(g)$ is singular.
+\item $4acf + bde - ce^2 - ad^2 - b^2f = 0$
+\end{enumerate}
+\end{theorem}
+
+
+\begin{remark}
+Otto Hesse has shown that over $k=\complex$ a curve $\V(g)$ decomposes into lines iff the Hessian curve $\V(\det(\del_{x_i}\del_{x_j}h))$ lies in $\V(g)$ (\cite[p.289]{brieskorn2012plane}), however we've seen that this result does not hold over arbitrary fields.
+The equation of the Hessian curve in case of the conic considered in this section is precisely $2(4acf + bde - ce^2 - ad^2 - b^2f) = 0$.
+\end{remark}
+
+
+\subsubsection{the two rulings of a nonsingular plane conic}
+
+% TODO
+
+
