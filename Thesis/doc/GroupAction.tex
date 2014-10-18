@@ -1,0 +1,94 @@
+\subsection{the group action of $PGL_n$ on $\proj^n_k$}
+
+The projective space $\proj^n_k$ is naturally endowed with a group action, the group being the group of automorphisms on $\proj^n_k$.
+We can give this group explicitly as the automorphisms $f$ given by linear forms $f_i \in k[x_0,..x_n]$.
+\begin{equation}
+f(x_0,..x_n) = (f_0(x_0,..x_n),..f_n(x_0,..x_n))
+\end{equation}
+(A proof of this fact is given in \cite[example 7.1.1]{hartshorne1977algebraic} and involves the functoriality of the Picard group, which we will not cover in this thesis.)
+Such automorphisms correspond precisely to invertible $(n+1)\times(n+1)$-matrices modulo non-zero scalar multiples, consisting of the coefficients of the $f_i$.
+We call an element of the automorphism group a \emph{projective transformation}.
+
+We will study geometric objects, i.e. projective subsets of some $\proj^n_k$, up to projective automorphism.
+That means that we have to establish some properties which are invariant under projective transformation, but also we need to have `enough' projective transformations to work with in a meaningful way.
+The following theorem makes this precise.
+
+\begin{theorem}
+$PGL_n$ operates transitively on the set $C \subset (\proj^n_k)^{n+2}$ of $(n+2)$-tuples of points, for which no $n+1$ lie on a hyperplane.
+\end{theorem}
+\begin{proof}
+Let's fix some notation first. Let $\{ e_i \}_0^n$ be standard basis of $k^{n+1}$, $e_0 = (1,0,..)^T, e_1 = (0,1,0,..)^T$ etc.
+Additionally define $e_{n+1} := \sum_{i=0}^n e_i$.
+We can consider such vectors as points of $\proj^n_k$ and write them in brackets, e.g. $[e_0] = [1:0:..0]$.
+It suffices to show the following claim: The $(n+2)$-tuple $([e_0],..[e_n],[e_{n+1}])$ lies in every orbit.
+
+Let $([P_0],..[P_{n+1}]) \in C$ be $(n+2)$ points, represented by the vectors $P_i \in k^{n+1}$.
+Because there is no canonical choice for the $P_i$, we can also choose $\lambda_i P_i$ as representative of $[P_i]$ for some $\lambda_i \in k^\times$ to be determined later.
+We write $\underline \lambda  := (\lambda_0,..\lambda_n)$ for any choice of the $\lambda_i,\,(i\leq n)$ and $\underline 1 := (1,1,..1)$.
+The condition that no $(n+1)$ of the points lie on a plane implies that the matrix
+\begin{equation}
+N_{\underline\lambda}
+=
+\begin{pmatrix}
+\textemdash & \lambda_0 P_0^T & \textemdash \\
+& \vdots &  \\
+\textemdash & \lambda_n P_n^T & \textemdash \\
+\end{pmatrix}
+\end{equation}
+has full rank and is hence invertible with some inverse $M_{\underline\lambda}$
+Note that for any choice of $\underline\lambda$ the matrix $M_{\underline\lambda}^T$ maps $\lambda_iP_i$ to $e_i$ for $i \leq  n$.
+We wish to find a choice of $\underline\lambda$, such that $P_{n+1}$ is mapped to $e_{n+1}$:
+\begin{align}
+& M_{\underline\lambda}^TP_{n+1} = e_{n+1} \\
+\Leftrightarrow & P_{n+1} = N_{\underline\lambda}^T e_{n+1} \\
+\Leftrightarrow & P_{n+1} = N_{\underline 1}^T \diag(\lambda_0,..\lambda_n) e_{n+1}
+                          = N_{\underline 1}^T (\lambda_0,..\lambda_n)^T \\
+\Leftrightarrow & M_{\underline 1}^T P_{n+1} = (\lambda_0,..\lambda_n)^T
+\end{align}
+Clearly, for this choice of $\underline\lambda$, $M_{\underline \lambda}^T$ defines a projective transformation mapping each $[P_i]$ to $[e_i]$, which shows our claim.
+
+\end{proof}
+
+
+\begin{todo}
+\item define projective equivalence
+\item theory of lines need to be discussed before this
+\end{todo}
+\begin{corollary}
+In the projective plane $\proj^2_k$, consider 3 pairwise distinct points $L_0,L_1,L_2$.
+The line $L_2$ intersects the union $L_0 \cup L_1$ in either 1 or 2 points.
+Depending on this distinction, the lines can be projectively transformed to $V(x_0),V(x_1),V(x_0-x_1)$ or $V(x_0),V(x_1),V(x_2)$.
+\end{corollary}
+\begin{proof}
+% TODO
+\end{proof}
+
+\begin{corollary}
+Let $H$ be a plane in $\proj^3_k$ and $P$ be a point on it.
+Then there exists a projective transformation sending the plane to $V(x_3)$ and the point to $[0:0:0:1]$.
+\end{corollary}
+\begin{proof}
+% TODO, brauche ich das?
+\end{proof}
+
+\subsubsection{lifting projective transformations}
+
+\begin{todo}
+\item can we lift projective transformations on the plane to the space, say, given an inclusion of the plane to the space etc..
+\end{todo}
+
+\subsubsection{properties stable under projective transformation}
+\begin{todo}
+\item degree
+\item irreducibility
+\item Krull dimension
+\item X contained in Y relation
+\item X intersects Y relation
+\item A is union of B and C relation
+\item topology
+\item singularities
+\item inflexion points
+\item generators (x,y,z) -> (fx,fy,fz)
+\item tangent planes?
+\end{todo}
+

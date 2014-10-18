@@ -1,18 +1,41 @@
 \section{proof of the main theorem}
 
+After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem.
+\begin{theorem}
+Let $k$ be an algebraically closed field, $\var{char} k \neq 2$ and let $S = \V(f) \subset \proj^3_k$ be a non-singular cubic surface, $f\in k[x,y,z,t]$.
+Then $S$ contains precisely 27 lines.
+\end{theorem}
+We will follow the proof given by Miles Reid (\cite[§7]{reid1988undergraduate}).
+\begin{todo}
+\item outline the proof
+\item Let me outline first, how we will go about it:
+After showing the existence of a line on $S$ we 
+\end{todo}
+
+
+\subsection{existence of a line}
+
+\begin{todo}
+\item point out the meaning of $k=\bar k$ (sufficiently many points, etc. pp.)
+\item when does a variety have finitely many points / points at all
+\item when does it have infinitely many points
+\end{todo}
+We take an arbitrary point $P \in S$ and consider its tangent plane $T_P(S) = \V(h)$.
+Of course, no plane lies in $S$ completely, as this would 
+
+By restricting the equation of $S$ to the tangent plane we obtain a 3-form $f' = f - hg$, $g$ being some quadratic form.
+If we're lucky $f'$ is reducible and hence a product of a linear and a quadratic form meaning that the intersection $T_P(S) \cap \V(h) \simeq \V(f') \subset \proj^2_k$ is a union of a line and a conic (possibly a degenerate one).
+So in this case $S$ contains a line.
+We proceed assuming that we are unlucky and say $f'$ is irreducible.
+\begin{todo}
+\item prove that intersecting with a tangent plane gives a singularity
+\end{todo}
+
+\subsection{finding the other lines}
+\subsection{the configuration of the lines}
 
 
 \subsection{(7.1) bis Step 2}
-$S = \Vp(f) \subset \proj^3$ sei eine nicht-singuläre Kubik mit $f \in k[x,y,z,t]$.
-
-\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Behauptung: $l =  T_P(l) \subset T_P(S)$
-} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Wir erinnern uns an die Definition des Tangentialraumes $T_P(\Vp(I)) = \cap_{f\in I} \Vp(f_P)$.
-Weiters sei $l = \Vp(H_1, H_2) \subset S := \Vp(f)$ die Gerade auf der Kubik.
-Dann erhalten wir $l = \Vp(H_1) \cap \Vp(H_2) = \cap_{\alpha, \beta} \Vp(\alpha H_1 + \beta H_2) \defeq  T_P(l)$.
-Die zweite Gleichung folgt aus der Tatsache, dass $\Ip(l) \supset \Ip(S)$, der Schnitt also über eine größere Menge stattfindet.
 
 
 \subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,3 +156,5 @@ Die Leibnitzformel liefert nun:
 &= &\var{lt}\left(\sum_\sigma (-1)^\sigma \prod_i \var{lt}(M_{i,\sigma(i)})\right)
 &= &\var{lt}\left(\det(\var{lt}(M))\right)
 \end{align*}
+
+

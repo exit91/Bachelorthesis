@@ -2,11 +2,50 @@
 
 We will study the kinds of singularities which can occur for singular cubic curves.
 Let $\V(F)$ be a singular cubic curve.
-The first observation is that there exist only one singular point $P$ on the curve.
+The first observation is that there exist only one singular point $P = [s_0:s_1:s_2]$ on the curve.
 Assume for the contrary that $P \neq P'$ are singular points, then the restriction of $F$ to the line $L = \overline{P,P'}$ has 2 zeroes of multiplicity 2, but $F$ had degree 3 -- a contradiction.
+\begin{todo} \item intersection multiplicity not defined yet! \end{todo}
+We may assume that this one singular point is $[0:0:1]$ by an appropritate transformation:
+By permuting the coordinates we may assume $s_2 \neq 0$ and then the projective transformation $F(x+s_0z,y+s_1z,s_2z)$ has it's singularity at $[0:0:1]$.
+
+One way to examinate the singularity is to consider lines through it. Consider the polynomial $f(ut, vt) \in k[u,v,t]$
+where $f := F(x,y,1)$ is the dehomogenisation.
+Informally we think of $u,v$ as point $[u:v] \in \proj^1_k$ parametrising all the lines through $[0:0:1]$.
+It is apparent that $f$ vanishes on $(0,0)$ and also the partial derivatives vanish as they did for $F$.
+We conclude that $f$ has no terms of degree 0 or 1, so $f(ut,vt) = t^2g + t^3h$ where we consider $g,h$ as 2-form and 3-form respectively in $k[u,v]$.
+Especially the polynomial $g$ gives us some geometric insight on the `shape' of the singularity.
+Before elaborating on that let me state the fundamental theorem of algebra for homogeneous forms:
+
+\begin{lemma}[homogeneous fundamental theorem of algebra] \label{lemmaFundamentalTheorem}
+Let $k$ be an algebraically closed field and $g \in k[u,v]$ a $d$-form ($d \in \posnats$).
+Then $g$ is a product of $d$ 1-forms.
+\end{lemma}
+\begin{proof}
+Assume that $v$ does not divide $g$ (otherwise we can already factor out $v$).
+We can consider $g$ as an element of $k(v)[u]$ and dehomogenize to $g(u/v,1) \in k[u/v]$.
+Applying the fundamental theorem of algebra $g(u/v,1) = \alpha\prod_{i=1}^d(u/v - \alpha_i), \quad (\alpha,\alpha_1,..\alpha_d \in k)$ and homogenizing again we get
+$g = v^d g(u/v,1) = \alpha\prod_{i=1}^d(u - \alpha_iv)$.
+\end{proof}
+
+Let's do a case analysis on $g$.
+\paragraph{Case 0: $g=0$.}
+In this case we deduce $F \in k[x,y]$ and by lemma \ref{lemmaFundamentalTheorem} the equation $F=0$ defines the union of 3 (not necessarily distinct) lines.
+\paragraph{Case 1: $g=h_1h_2$ and $h_1,h_2$ not $k$-linearly dependent.}
+We call the singularity a \emph{node}.
+\paragraph{Case 2: $g=h^2$}
+We call the singularity a \emph{cusp}.
 
 \begin{todo}
-\item relate singular points with lines through them
+\item PIC or didn't happen
 \end{todo}
 
-\cite[Satz 4.9, p.102]{hulek2000elementare}
+
+\subsubsection{normal forms of singular cubic curves}
+
+The following discussion on normal forms will follow the argument in \cite[Satz 4.9, p.102]{hulek2000elementare}.
+We will obtain in characteristic $\neq 2$ a normal form for cubic curves with nodes and in characteristic $\neq 3$ a normal form for cubic curves with cusps.
+
+
+\begin{todo}
+\item 
+\end{todo}
