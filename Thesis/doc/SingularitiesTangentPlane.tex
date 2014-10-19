@@ -1,13 +1,21 @@
-\subsection{singularities and the tangent plane}
+\subsection{singularities and the tangent space}
+
+
 
 In this section we want to study the local properties of a projective variety.
-A particularly simple tool is the tangent plane.
+A particularly simple tool is the tangent space.
 The analytical idea behind it is to approximate, say, a surface near a point by a plane as close as possible.
 That's what a Frechét differential does for, say,  the graph of some differentialble function $\reals^2 \to \reals$.
 In the analytical world such a plane is defined via partial derivatives, which can be emulated for polynomials in a purely algebraic way.
 
 \subsubsection{partial derivatives}
 
+\begin{todo}
+\item this section needs an update
+\end{todo}
+Oftentimes it is more convenient to perform base changes to simplify equations and sometimes one can do without, bnut in exchange one needs to introduce more flexible tools.
+
+Remember, in order to study singularities we introduced partial derivatives $\del_{x_i} : k[x_0,..x_n] \to k[x_0,..x_n]$ which satisfied $\del_{x_i}(x_j) = \delta_{i,j}$.
  % TODO
 
 \begin{definition}[partial derivative]
@@ -94,7 +102,7 @@ We will see in a second that the choice of generators does not matter.
 Let's consider some trivial examples first.
 The tangent space of a hyperplane $\V(h)$ at any point $P$ is the hyperplane itself, by Euler's formula:
 \begin{equation}
-h = \sum_{i=0}^n \underset{\in k}{\underbrace{(\del_{x_i}h)}}x_i = \sum_{i=0}^n (\del_{x_i}h)(P) x_i
+h = \sum_{i=0}^n \underset{\in k}{\underbrace{(\del_{x_i}h)}}x_i = \sum_{i=0}^n (\del_{x_i}h)(P) x_i = h^{(1)}(P)
 \end{equation}
 The same holds for \emph{linear subspaces}, which are just intersections of hyperplanes (for instance lines or points).
 \end{example}
@@ -113,7 +121,7 @@ This shows that $\V(J) \subset \V(I)$ implies $T_P(\V(J)) \subset T_P(\V(I))$ an
 \begin{example}
 Consider the family of cubic curves in $\proj^2_k$ given by $y^2z - x^3 - axz^2 \in k[x,y,z]$, $a \in k$ and let $P = [0:0:1] \in \V(y^2z - x^3 - axz^2)$.
 The equation of the tangent space is $ax$, hence the tangent space is the line $x = 0$ unless $a = 0$ in which case the tangent space is the whole $\proj^2_k$.
-Points for which the equation of the tangent plane vanish are rather special and hence deserve a name.
+Points for which the tangent space `degenerates' are rather special and hence deserve a name.
 \end{example}
 
 
@@ -122,23 +130,71 @@ A \emph{singular} point of a hypersurface $\V(f) \subset \proj^n_k$ is a point i
 In other words, a point $P$ is singular iff $T_P(\V(f)) = \proj^n_k$.
 \end{definition}
 
+Singular points are worth studying because they behave well under automorphisms of projective space.
 
-\subsubsection{invariance of singularities under a change of the system of partial derivatives}
+\begin{proposition} \label{propositionTangentTransform}
+Let $\phi : \proj^n_k \to \proj^n_k$ be a projective transformation.
+Then $\phi(T_P(\V(f))) = T_{\phi(P)}(\phi(\V(f)))$.
+\end{proposition}
+\begin{proof}
+Morphisms of projective spaces are defined via polynomials, so write  $\phi = (\phi_0,..\phi_n)$ and $\phi^{-1} = (\phi^{-1}_0,..\phi^{-1}_n)$.
+We have the equalities $\phi(T_P(\V(f))) = \phi(\V(f^{(1)}(P))) = \V(f^{(1)}(P).\phi^{-1})$ and $T_{\phi(P)}(\phi(\V(f))) = T_{\phi(P)}(\V(f.\phi^{-1})) = \V((f.\phi^{-1})^{(1)}(\phi(P)))$, therefore it's enough to show
+\begin{equation}
+f^{(1)}(P).\phi^{-1} = (f.\phi^{-1})^{(1)}(\phi(P))
+\end{equation}
 
-Oftentimes it is more convenient to perform base changes to simplify equations and sometimes one can do without, bnut in exchange one needs to introduce more flexible tools.
+The calculation goes as follows
+\begin{align}
+(f.\phi^{-1})^{(1)}(\phi(P))
+  \defeq& \sum_{i=0}^n \del_{x_i}(f.\phi^{-1})(\phi(P))x_i
+\\\overset{\text{derivation rule}}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f).\phi^{-1} \cdot \underset{\in k}{\underbrace{\del_{x_i}(\phi_j^{-1})}}\right)(\phi(P))x_i
+\\\overset{\text{evaluate at }\phi(P)}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f)(P) \cdot \del_{x_i}(\phi_j^{-1}))\right)x_i
+\\\overset{\text{interchange summation}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \sum_{i=0}^n \del_{x_i}(\phi_j^{-1}))x_i
+\\\overset{\text{Euler's formula}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \phi_j^{-1}
+\\\defeq& f^{(1)}(P).\phi^{-1}
+\end{align}
+\end{proof}
 
-Remember, in order to study singularities we introduced partial derivatives $\del_{x_i} : k[x_0,..x_n] \to k[x_0,..x_n]$ which satisfied $\del_{x_i}(x_j) = \delta_{i,j}$.
+\begin{corollary}
+Let $\phi : \proj^n_k \to \proj^n_k$ be a projective transformation and $S = \V(f)$ a hypersurface.
+Then a point $P \in S$ is singular iff $\phi(P) \in \phi(S)$ is.
+\end{corollary}
+\begin{proof}
+The hypersurface $S$ is singular at $P$ iff $T_P(S) = \proj^n_k$ iff $T_{\phi(P)}(\phi(S)) = \phi(T_P(S)) = \proj^n_k$ iff $\phi(S)$ is singular at $\phi(P)$.
+\end{proof}
 
-%TODO
+We may pretty much use the same proof for proposition \ref{propositionTangentTransform} in order to prove the following, more general relation between tangent planes
+\begin{corollary} \label{corollaryTangentPullback}
+Let $V\subset \proj^N_k$ be a subvariety, $\proj^n_k$ a subvariety of $\proj^N_k$ via $\iota$ and $\iota^{-1}(V) \subset \proj^n_k$. This situation is best described by a commutative diagram:
+\begin{equation}
+\begin{xy}
+(0,20)*+{\proj^n_k}="pn";
+(30,20)*+{\proj^N_k}="pN";
+(0,0)*+{\iota^{-1}(V)}="iv";
+(30,0)*+{V}="v";
+{\ar@{^{(}->} "pn";"pN"}?*!/_2mm/{\iota};
+{\ar@{^{(}->} "iv";"v"}?*!/_2mm/{\iota|_{\iota^{-1}(V)}};
+{\ar@{_{(}->} "iv";"pn"};
+{\ar@{_{(}->} "v";"pN"};
+\end{xy}
+\end{equation}
+Then $T_{\iota^{-1}(P)}(\iota^{-1}(V)) = \iota^{-1}(T_P(V)) $ holds for $P$ in the image of $\iota$.
+\end{corollary}
+
+With this observation at hand, we can easily make sense of the following lemma:
+
+\begin{lemma} \label{lemmaIntersectionWithTangent}
+Let $S = \V(I) \subset \proj^N_k$ be a projective variety, $P\in S$.
+Clearly, as intersection of hyperplanes the tangent space at $P$ is a linear subspace of $\proj^N_k$ and hence the image of some inclusion $\iota : \proj^n_k \hookr \proj^N_k$.
+$\iota^{-1}(S)$ has a singularity at $\iota^{-1}(P)$.
+\end{lemma}
+\begin{proof}
+By corollary \ref{corollaryTangentPullback} the tangent space of $\iota^{-1}(S)$ at $\iota^{-1}(P)$ is $\iota^{-1}(T_P(S)) = \iota^{-1}(\var{im}(\iota)) = \proj^n_k$, thus $P$ is a singular point.
+\end{proof}
+
 
 \subsubsection{intersection multiplicities}
 
-% TODO
-
-\subsubsection{the intersection with a tangent plane}
-
-% TODO
 \begin{todo}
-\item show that we obtain a singularity
+\item do I really need this? (for cubics?)
 \end{todo}
-

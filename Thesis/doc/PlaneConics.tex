@@ -25,8 +25,7 @@ e & d & 2f
 \begin{pmatrix}
 x_0 \\ x_1 \\ x_2
 \end{pmatrix}
-=
-0
+= 0
 \end{align}
 We call the matrix $M$.
 A singular point $[s_0:s_1:s_2] \in \proj^2_k$ would of course be a non-zero solution of above equation and as such can only exist precisely if the determinant of $M$ vanishes.
@@ -62,14 +61,17 @@ Let $k$ be a field of any characteristic and $g = ax_0^2 + bx_0x_1 + cx_1^2 + dx
 
 Returning to our initial question we want to establish the fact that the conic given by the quadratic form $g$ is irreducible if and only if it is non-singular.
 For that assume reducibility, that is $g = h_1h_2$ for 1-forms $h_1$ and $h_2$.
-Then $\del_{x_i}g = h_1\alpha + \beta h_2$ for $\alpha := \del_{x_i}h_2 \in k$ and $\beta := \del_{x_i}h_2 \in k$.
-Assume now that a point $P$ lies in the intersection of $\V(h_1)$ and $V(h_2)$, then $\del_{x_i}g(P) = h_1(P)\alpha + \beta h_2(P) = 0$, so the intersection is a singularity.
-Of course, in the projective plane there always exists an intersection for any two lines.
-(This is just a consequence of linear algebra: Say $h_1 = a_0x_0 + a_1x_1 + a_2x_2, h_2 = b_0x_0 + b_1x_1 + b_2x_2$, then the kernel of the matrix $\begin{pmatrix} a_0 & a_1 & a_2 \\ b_0 & b_1 & b_2 \end{pmatrix}$ is nontrivial and if $(s_0,s_1,s_2) \neq 0 \in k^3$ lies in the kernel, then $P := [s_0:s_1:s_2]$ lies in the intersection.)
+We can apply the following lemma
+\begin{lemma} \label{lemmaSingularIntersect}
+Let $\V(I),\V(J)$ be two varieties. Then the union of $\V(IJ)$ is singular at their intersection $\V(I,J)$.
+\end{lemma}
+\begin{proof}
+Let $f\in I, g\in J$, $P\in \V(I,J)$. We get $(fg)^{(1)}(P) = f(P)g^{(1)}(P) + g(P)f^{(1)}(P) = 0$, hence the tangent space at $P$ is the whole space.
+\end{proof}
+It says that the intersection of the two lines $\V(h_1)$ and $\V(h_2)$ (and we've seen that lines in $\proj^2_k$ do indeed intersect) is a singular point of our conic.
 
 The converse can be seen as follows. Let $P=[p_0:p_1:p_2]$ be a singularity and $P'=[p'_0:p'_1:p'_2]$ is any other point on the conic (for instance any intersection point of $\V(g) \cap \V(x_i)$).
 For $g$ to contain the line through $P$ and $P'$ means that $g(\lambda P + \mu P') = 0 \in k[\lambda,\mu]$.
-
 Again, Euler's equality shows itself to be quite useful in the calculation
 \begin{align}
 0
@@ -141,6 +143,12 @@ The equation of the Hessian curve in case of the conic considered in this sectio
 
 \subsubsection{the two rulings of a nonsingular plane conic}
 
-% TODO
 
-
+It is now time to profit from the previous meditations about singularities.
+Let $Q \subset \proj^3_k$ be a non-singular quadric surface.
+We will see that it does not make sense to count the lines on this surface, but let's find some first.
+Surely $Q$ will not contain any plane, as this would mean (appealing to the Nullstellensatz) that $Q$ is the union of two planes.
+Furthermore these planes intersect at least in a line, so by lemma \ref{lemmaSingularIntersect} the quadratic surface would be singular.
+As a first step, choose a point $P \in Q$.
+Because $Q$ does not contain planes, the tangent space intersects $Q$ in a conic curve.
+This curve is singular at $P$ by lemma \ref{lemmaIntersectionWithTangent}, therefore it is the union of two lines $L_1,L_2$.
