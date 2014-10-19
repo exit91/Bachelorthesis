@@ -152,3 +152,15 @@ Furthermore these planes intersect at least in a line, so by lemma \ref{lemmaSin
 As a first step, choose a point $P \in Q$.
 Because $Q$ does not contain planes, the tangent space intersects $Q$ in a conic curve.
 This curve is singular at $P$ by lemma \ref{lemmaIntersectionWithTangent}, therefore it is the union of two lines $L_1,L_2$.
+
+Each $L_i$ gives a family of lines as follows: For a point $P'$ on $L_i$, we may intersect again $Q$ with $T_{P'}Q$. Here too we obtain the union of two lines, one of which being $L_i$, the other line we call $L_i(P')$.
+By this definition $L_1(P) = L_2$ and $L_2(P) = L_1$.
+In fact, these are all the lines on $Q$, which is obvious from the following consideration.
+Let $Z$ be any line on $Q$ which is neither $L_1$ nor $L_2$, then it intersects the plane $T_P(Q)$ in one point ($T_P(Q) \cap Z$ is the intersection of 3 hyperplanes).
+This point lies precisely on one of the two $L_i$ (suppose that was not the case, then $Z \subset Q \implies Z = T_P(Z) \subset T_P(Q) \implies Z=L_1 \text{ or } Z=L_2$) so $Z = L_i(T_P(Q)\cap Z)$.
+Conversely note, that we have chosen $P$ arbitrarily, so any point of $Q$ is the intersection of two lines $M_1,M_2$ on $Q$ and each of the two lines belong to the family $\{L_1(P')\}_{P'}$ or $\{L_2(P')\}_{P'}$.
+It, however, cannot occur that both lines belong to the same family, say parametrised by $L_1$. In that case, $M_1,M_2,L_1$ would lie on the same tangent plane, but $Q$ intersects a tangent plane in just two lines!
+We can conclude therefore:
+\begin{proposition}
+There are two families $\{ L_1(P') \}_{P'},\{ L_2(P') \}_{P'}$ of lines on $Q$ and each line on $Q$ belongs to one family. The lines in each family are disjoint and as set the union of any one family covers all of $Q$.
+\end{proposition}

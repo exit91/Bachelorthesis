@@ -147,7 +147,7 @@ The calculation goes as follows
 \begin{align}
 (f.\phi^{-1})^{(1)}(\phi(P))
   \defeq& \sum_{i=0}^n \del_{x_i}(f.\phi^{-1})(\phi(P))x_i
-\\\overset{\text{derivation rule}}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f).\phi^{-1} \cdot \underset{\in k}{\underbrace{\del_{x_i}(\phi_j^{-1})}}\right)(\phi(P))x_i
+\\\overset{\text{chain rule}}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f).\phi^{-1} \cdot \underset{\in k}{\underbrace{\del_{x_i}(\phi_j^{-1})}}\right)(\phi(P))x_i
 \\\overset{\text{evaluate at }\phi(P)}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f)(P) \cdot \del_{x_i}(\phi_j^{-1}))\right)x_i
 \\\overset{\text{interchange summation}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \sum_{i=0}^n \del_{x_i}(\phi_j^{-1}))x_i
 \\\overset{\text{Euler's formula}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \phi_j^{-1}
