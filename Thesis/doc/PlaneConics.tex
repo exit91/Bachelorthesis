@@ -1,4 +1,4 @@
-\subsection{plane conics}
+\subsection{plane conics and conic surfaces}
 
 \subsubsection{the question of degeneracy}
 
@@ -141,7 +141,7 @@ The equation of the Hessian curve in case of the conic considered in this sectio
 \end{remark}
 
 
-\subsubsection{the two rulings of a nonsingular plane conic}
+\subsubsection{the two rulings of a nonsingular quadric surface}
 
 
 It is now time to profit from the previous meditations about singularities.
@@ -164,3 +164,19 @@ We can conclude therefore:
 \begin{proposition}
 There are two families $\{ L_1(P') \}_{P'},\{ L_2(P') \}_{P'}$ of lines on $Q$ and each line on $Q$ belongs to one family. The lines in each family are disjoint and as set the union of any one family covers all of $Q$.
 \end{proposition}
+
+\begin{figure}
+\center
+\includegraphics[width=.4\textwidth]{img/ruledsurface-hilbert.png}
+\caption{An illustration of the rulings on the quadric surface `Anschauliche Geometrie' by Hilbert and Cohn-Vossen \cite[figure 17]{cohn1990geometry}}
+\end{figure}
+
+\begin{remark}
+Over an algebraically closed field, a line has infinitely many points, so one cannot hope for the number of lines on a quadric to be finite.
+\end{remark}
+
+\begin{remark}
+The reader, who is familiar with the Segre map $\sigma : \proj^1_k \times \proj^1_k \to \proj^3_k, ([x:y],[z:t]) \mapsto [xz:xt:yz:yt]$ (\cite[example 2.11]{harris1992algebraic}) may ask how the `rulings' on the non-singular quadric relates to the (so called) `ruled surface' which is the image of $\sigma$.
+In fact we can give a Segre-like map for parametrisations $\phi$ of $L_1$ and $\psi$ of $L_2$.
+Every point of $P' \in Q$ is then the some intersection $L_1(\phi([x:y])) \cap L_2(\psi([y:z]))$, giving a bijective map $Q \to \proj^1_k \times \proj^1_k, P' \mapsto ([x:y],[z:t])$.
+\end{remark}

@@ -1,8 +1,8 @@
 \section{proof of the main theorem}
 
-After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem.
+After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem (for $\var{char}(k) \neq 2$).
 \begin{theorem}
-Let $k$ be an algebraically closed field, $\var{char} k \neq 2$ and let $S = \V(f) \subset \proj^3_k$ be a non-singular cubic surface, $f\in k[x,y,z,t]$.
+Let $k$ be an algebraically closed field with characteristic not 2, $\var{char} k \neq 2$ and let $S = \V(f) \subset \proj^3_k$ be a non-singular cubic surface, $f\in k[x,y,z,t]$.
 Then $S$ contains precisely 27 lines.
 \end{theorem}
 We will follow the proof given by Miles Reid (\cite[§7]{reid1988undergraduate}).
@@ -20,15 +20,29 @@ After showing the existence of a line on $S$ we
 \item when does a variety have finitely many points / points at all
 \item when does it have infinitely many points
 \end{todo}
-We take an arbitrary point $P \in S$ and consider its tangent plane $T_P(S) = \V(h)$.
-Of course, no plane lies in $S$ completely, as this would 
-
-By restricting the equation of $S$ to the tangent plane we obtain a 3-form $f' = f - hg$, $g$ being some quadratic form.
-If we're lucky $f'$ is reducible and hence a product of a linear and a quadratic form meaning that the intersection $T_P(S) \cap \V(h) \simeq \V(f') \subset \proj^2_k$ is a union of a line and a conic (possibly a degenerate one).
+We take an arbitrary point $P \in S$ and consider its tangent plane $T_P(S) = \V(f^{(1)}(P))$.
+Of course, no plane lies in $S$ completely, as this would
+\begin{todo} \item would what? \end{todo}
+By restricting the equation of $S$ to the tangent plane we obtain a 3-form $f' = f - f^{(1)}(P)g$, $g$ being some quadratic form.
+If we're lucky $f'$ is reducible and hence a product of a linear and a quadratic form meaning that the intersection $T_P(S) \cap \V(f^{(1)}(P)) \simeq \V(f') \subset \proj^2_k$ is a union of a line and a conic (possibly a degenerate one).
 So in this case $S$ contains a line.
-We proceed assuming that we are unlucky and say $f'$ is irreducible.
+Let's proceed assuming that we are unlucky and say $\V(f') \subset \proj^2_k$ is an irreducible cubic curve.
+To simplify things, move tangent plane of $P$ to the plane $\V(t)$ and simultaneously move the point $P$ to $[0:0:1:0]$ by corollary \ref{corollaryTransformPlaneWithPointOnIt}.
+That this transforms the surface in a compatible manner with the tangent plane has been proven in proposition \ref{propositionTangentTransform}.
+Eliminating the variable $t = 0$, $f(x,y,z,0)$ defines a cubic curve.
+By lemma \ref{lemmaIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^3 - y^2z)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
+We can lift this automorphism of the hyperplane $\V(t)$ belonging to the projective equivalence to the whole space via proposition \label{propositionLiftingAutomorphisms}.
+
+Let's focus on the case where our cubic curve is cuspidal. By previous transformations $f = x^3 - y^2z + tg$, $g$ being a quadratic form.
+One easily checks that $f$ being singular implies that $g$ has a $z^2$ term with some coefficient $\tau := g(0,0,1,0) \in k^\times$.
+
+
+
+
+
 \begin{todo}
-\item prove that intersecting with a tangent plane gives a singularity
+\item continue
+\item \cite{sagemath2014}
 \end{todo}
 
 \subsection{finding the other lines}

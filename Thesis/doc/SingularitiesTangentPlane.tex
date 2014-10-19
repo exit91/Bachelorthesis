@@ -9,17 +9,8 @@ That's what a Frechét differential does for, say,  the graph of some differenti
 In the analytical world such a plane is defined via partial derivatives, which can be emulated for polynomials in a purely algebraic way.
 
 \subsubsection{partial derivatives}
-
-\begin{todo}
-\item this section needs an update
-\end{todo}
-Oftentimes it is more convenient to perform base changes to simplify equations and sometimes one can do without, bnut in exchange one needs to introduce more flexible tools.
-
-Remember, in order to study singularities we introduced partial derivatives $\del_{x_i} : k[x_0,..x_n] \to k[x_0,..x_n]$ which satisfied $\del_{x_i}(x_j) = \delta_{i,j}$.
- % TODO
-
-\begin{definition}[partial derivative]
-Let $D : k[x_0,..x_n] \to k[x_0,..x_n]$ be a derivation over $k$, i.e. a homomorphism of $k$-modules which satisfies the Leibniz rule $D(xy) = xDy+yDx$ for $x,y \in k[x_0,..x_n]$. Furthermore let $D(h) \in k$ for every linear form $h$. We call such a derivation a \emph{partial derivative}.
+\begin{definition}
+Let $D : k[x_0,..x_n] \to k[x_0,..x_n]$ be a \emph{derivation} over $k$, i.e. a homomorphism of $k$-modules which satisfies the Leibniz rule $D(xy) = xDy+yDx$ for $x,y \in k[x_0,..x_n]$. Furthermore let $D(h) \in k$ for every linear form $h$. We call such a derivation a \emph{partial derivative}.
 \end{definition}
 
 \begin{example}
@@ -80,6 +71,10 @@ Now suppose $f = x_if'$ and $\del_1(\del_2(f')) = \del_2(\del_1(f'))$.
 The last term is symmetric in $\del_1,\del_2$ (by assumption).
 \end{proof}
 
+\begin{todo}
+\item prove taylors formula
+\item prove the symmetric version of taylors formula
+\end{todo}
 \begin{corollary}[Taylor's formula]
 Let $f \in k[x_0,..x_n]$ be a polynomial and $f = \sum_{i=0}^d f_i$ its decomposition into homogeneous parts.
 Then $f_i = \frac{1}{i!} \sum_{|\bf{\alpha}|=i} \del^{\bf{\alpha}}(f)(0)x^{\bf{\alpha}}$ in multi-index notation.
@@ -191,10 +186,3 @@ $\iota^{-1}(S)$ has a singularity at $\iota^{-1}(P)$.
 \begin{proof}
 By corollary \ref{corollaryTangentPullback} the tangent space of $\iota^{-1}(S)$ at $\iota^{-1}(P)$ is $\iota^{-1}(T_P(S)) = \iota^{-1}(\var{im}(\iota)) = \proj^n_k$, thus $P$ is a singular point.
 \end{proof}
-
-
-\subsubsection{intersection multiplicities}
-
-\begin{todo}
-\item do I really need this? (for cubics?)
-\end{todo}
