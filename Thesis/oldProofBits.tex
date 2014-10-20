@@ -1,0 +1,124 @@
+
+\subsection{(7.1) bis Step 2}
+
+
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Behauptung: Sei $\Vp(H) \subset \proj^3$ eine Ebene.
+% TODO:
+(Diese Ebene soll nicht in der Kubik enthalten sein).
+Es gibt eine 3-Form $h \in k[x,y,z]$ und eine Inklusion $\iota : \proj^2 \hookr \proj^3$ sodass $\Vp(H) = \proj^2$ und $S\cap \proj^2 = \Vp(h) \subset \proj^2$.
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+oBdA sei $H = t - \alpha x -  \beta y - \gamma z$ mit $\beta, \gamma \in k$.
+
+Mit homogenen Koordinaten:
+\paragraph{(1) $\Vp(H)$ ist isomorph zu $\proj^2$.}
+Ein Punkt $[x_0:x_1:x_2:x_3]$ liegt auf $\Vp(H)$ genau dann, wenn $x_3 = \alpha x_0 + \beta x_1 + \gamma x_2$.
+Hier kann man auch anmerken, dass $x_0,x_1,x_2$ nie gleichzeitig verschwinden können, da sonst auch $x_3 = 0$ folgen würde.
+Damit ist die Projektion $\pi : [x_0:x_1:x_2:x_3] \mapsto [x_0:x_1:x_2]$ wohldefiniert.
+Es liegt nahe, eine Inverse $\proj^2 \to \Vp(H)$ wie folgt zu definieren:
+$\pi^{-1} : [x_0:x_1:x_2] \mapsto [x_0 : x_1 : x_2 : \alpha x_0 + \beta x_1 + \gamma x_2]$.
+Die Abbildung ist wohldefiniert, denn $x_1,x_2$ verschwinden nicht simultan und $H(\pi^{-1}([x_0:x_1:x_2])) = 0$.
+
+\paragraph{(2) var{Der} Schnitt $\Vp(H) \cap S$ wird via $\pi$ auf eine Varietät $\Vp(h) \subset \proj^2$ transportiert, wobei $h$ eine 3-Form ist.}
+
+Sei $[x_0:x_1:x_2] \in \proj^2$ ein Punkt.
+$[x_0:x_1:x_2] \in \pi(\Vp(H)\cap S)
+\Leftrightarrow f(\pi^{-1}([x_0:x_1:x_2])) = 0
+\Leftrightarrow f(x_0,x_1,x_2,\alpha x_0 + \beta x_1 + \gamma x_3) = 0$, d.h. $\pi(\Vp(H)\cap S) = \Vp(g)$ mit $g=f(x, y, z, \alpha x + \beta y + \gamma z) = \var{eval}(\var{---},(x, y, z, \alpha x + \beta y + \gamma z))(f)$ eine 3-Form.
+
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Behauptung: Es gibt eine Darstellung von $f = h + HB$ mit $h$ die obige "Restriktion" von $f$ auf $\Vp(H)$ sowie $B$ eine 2-Form.
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Wir können die Auswertung an $\theta := (x,y,z,\alpha x + \beta y + \gamma z)$ ergänzen zu einem var{Hom}omorphismus $k[x,y,z,t] \to k[x,y,z] \hookr k[x,y,z,t]$ mit Kern $H$. Weiters gilt $\var{eval}(\var{---},\theta)(f) = \var{eval}(\var{---},\theta).(\var{eval}(\var{---},\theta))(f)$, also $f = \var{eval}(f,\theta) + p = g+p$ wobei $p \in \ker(\var{eval}(\var{---},\theta)) = (H)$.
+Es gibt also eine Darstellung $p = HB$ für ein Polynom $B$.
+Nun nutzen wir aus, dass $f$ eine $3-Form$ ist und erhalten $f = g+HB$ wobei $B$ eine quadratische Form ist.
+
+\subsubsection{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Behauptung: Für $f = h + HB$ wie oben hat $h$ nicht die Form $g^2A$ mit $g,A$ 1-Formen.
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Angenommen dies wäre der Fall, also $f = g^2A+HB$.
+Wir wollen zeigen, dass dann ein singulärer Punkt auf $S$ existiert.
+Dieser erfüllt genau $f_x = f_y = f_z = f_t = 0$ (vgl. Shafarevich, BAG1).
+Wir brauchen eine verallgemeinerte Aussage.
+
+
+
+\subsubsection{LEMMA 1, LEMMA 1b, LEMMA 2}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LEMMA 1: Sei $R$ eine $k$-Algebra erzeugt durch $y_0,..y_n$ algebraisch unabhängig.
+Dann gibt es var{Der}ivationen $D_i : R \to k$ sodass $D_i(y_i) = 1$ und $D_i(y_j) = 0$ für $j\neq i$. Bezeichne diese var{Der}ivationen als "partielle Ableitungen".
+
+LEMMA 1b: Angenommen $V = \var{span}(y_i) = \var{span}(y'_i)$ als $k$-Vektorräume, dann gibt es eine Basiswechselmatrix $M$ mit $(\vec y') = M(\vec y)$ und $\vec Df = M \vec Df'$.
+
+LEMMA 2:
+Sei $f$ eine $d$-Form und $S = \Vp(f)$ eine Hyperfläche. Die singulären Punkte von $S$ sind gegeben durch $S^{sing} = \Vp(f_{y_0},..f_{y_n})$. Hier bezeichnet $f_{y_i}$ die Ableitung von $f$ nach $y_i$, also $f_{y_i} := D_i(f)$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{(1)}
+Siehe (Matsumura, 26.F).
+
+\paragraph{(1b)}
+Ich behaupte es gibt einen Iso von $k$-Vektorräumen $\var{Hom}_k(V,k) \overset\sim\to \var{Der}_k(R,k)$.
+Weiters induziert $M$ als lineare Abbildung $V \to V$ einen Basiswechsel der Dualbasen: $\vec y'^* = M(\vec y^*)$.
+
+\paragraph{(2)} 
+Sei $R = k[x_0,..x_n]$ ein Polynomring über einem Körper $k$ und $d$ eine natürliche Zahl mit $char(k)$ teilt nicht $d$.
+Seien weiters $y_0,..y_n \in R$ eine Basis der 1-Formen (notwendigerweise sind die $y_i$ linear).
+Seien weiters $y'_0,..y'_n \in R$ eine Basis der 1-Formen (notwendigerweise sind die $y'_i$ linear).
+Anwendung von LEMMA 1 gibt und partielle Ableitungen $D_i, D'_i$.
+Ich behaupte, dass ein Punkt ist singulär bzgl der $D_i$, genau dann, wenn er singulär bzgl der $D'_i$ ist.
+Dies folgt direkt aus LEMMA 1b.
+LEMMA 2 folgt dann aus (Shafarevich, BAG1) mit $y'_i = x_i$.
+
+
+\paragraph{Weiter im Beweis}
+Da $f$ nicht komplett auf der Ebene $\Vp(H)$ verschwindet, sind $g$ und $H$ teilerfremd, bzw. $k$-linear unabhängig. Wir ergänzen zu einer Basis von $\var{span}_k(x,y,z,t) = \var{span}(H,g,r_1,r_2)$.
+Dann gelten
+\begin{align*}
+D_{r_i}(f) =& g^2 D_{r_i}(A)  + H D_{r_i}(B) \\
+D_H(f)     =& g^2 D_H(A)      + H D_H(B) + B \\
+D_g(f)     =& 2gA + g^2D_g(A) + H D_g(B)
+\end{align*}
+
+Wir schränken die Ebene $\Vp(H)$ weiter ein auf die Gerade $\Vp(H,g)$, sodass die singulären Punkte von $S$ auf der Geraden definiert sind durch $B = 0$.
+Da $B$ aber entweder auf der geraden verschwindet oder eine 2-Form auf ihr ist, hat sie für $k$ algebraisch abgeschlossen Nullstellen und es existieren somit singuläre Punkte, konträr zur Behauptung.
+
+
+\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Behauptung: Sei $C$ der Schnitt von $P \in S$ nicht-singulär mit der Tangentialebene $T_P(S)$, $S = \Vp(f)$ irreduzibel und nicht die Ebene $C$ selbst, dann ist $C$ singulär bei $P$.
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Sei $H = f_x(P)x + f_y(P)y + f_z(P)z + f_t(P)t$ die Gleichung der Tangentialebene und oBdA $f_t(P) \neq 0$ ($P$ war als nicht-singulär angenommen).
+Wir restringieren $H$ via $\var{eval}(\var{---}) := \var{eval}(\var{---},(x,y,z,-\frac{f_x(P)}{f_t(P)}x-\frac{f_y(P)}{f_t(P)}y-\frac{f_z(P)}{f_t(P)}z))$ und erhalten
+$f' = \var{eval}(f)$. Demonstrativ leite ich nach $x$ ab, aber dieselbe Rechnung funktioniert aus Symmetriegründen natürlich auch mit $y,z$:
+\begin{equation}
+f'_x = f_x D_xx + f_y D_x y + f_z D_x z + f_t D_x (-\frac{f_x(P)}{f_t(P)}x-\frac{f_y(P)}{f_t(P)}y-\frac{f_z(P)}{f_t(P)}z) = f_x - \frac{f_x(P)}{f_t(P)} f_t
+\end{equation}
+Offensichtlich verschwindet $f'_x$ in $P$: $f'_x(P) = f_x(P) - \frac{f_x(P)}{f_t(P)} f_t(P) = 0$.
+\subsection{(7.1) bis (7.2) Step 2} .
+\subsection{(7.2) Step 3} .
+\subsection{(7.2) Step 4}
+
+\subsubsection{ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Behauptung: Sei $M \in R^{n\times n}$ eine Matrix über dem Polynomring $R$.
+Es gilt $\det(\var{lt}(M)) = \var{lt}(\det(M))$ g.d.w. $\det(\var{lt}(M)) = \var{lt}(\det(\var{lt}(M)))$.
+} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Das bedeutet natürlich, dass wir nur $\var{lt}(\det(\var{lt}(M))) = \var{lt}(\det(M))$ zeigen brauchen.
+Lüge: Summen $x+y$ und Produkte $xy$ in $R$ vertauschen im Folgenden Sinne mit der $\var{lt}$-Operation: $\var{lt}(x+y) = \var{lt}(\var{lt}(x) + \var{lt}(y))$ und $\var{lt}(xy) = \var{lt}(\var{lt}(x)\var{lt}(y))$.
+Die Leibnitzformel liefert nun:
+\begin{align*}
+  \var{lt}(\det(M))
+&= &\var{lt}\left(\sum_\sigma (-1)^\sigma \prod_i M_{i,\sigma(i)}\right)
+&= &\var{lt}\left(\sum_\sigma \var{lt}\left((-1)^\sigma \prod_i M_{i,\sigma(i)}\right)\right)
+& &
+\\
+&= &\var{lt}\left(\sum_\sigma \var{lt}\left((-1)^\sigma \prod_i \var{lt}(M_{i,\sigma(i)})\right)\right)
+&= &\var{lt}\left(\sum_\sigma (-1)^\sigma \prod_i \var{lt}(M_{i,\sigma(i)})\right)
+&= &\var{lt}\left(\det(\var{lt}(M))\right)
+\end{align*}
+
+
