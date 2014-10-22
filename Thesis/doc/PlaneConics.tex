@@ -94,7 +94,7 @@ The calculation is straight-forward:
 \sum_{i=0}^2 p_i \del_{x_i} g
 =& \sum_{i=0}^2 p_i \sum_{j=0}^2 (\del_{x_j}\del_{x_i}g)x_j
 \\
-\overset{\text{rearrange}}=& \sum_{j=0}^2 x_j \sum_{i=0}^2 (\del_{x_i}\del_{x_j}g)p_i = \sum_{j=0}^2 x_j \del_{x_j}g(P) = 0
+\overset{\text{lemma \ref{lemmaPartialDerivativesCommute}}}=& \sum_{j=0}^2 x_j \sum_{i=0}^2 (\del_{x_i}\del_{x_j}g)p_i = \sum_{j=0}^2 x_j \del_{x_j}g(P) = 0
 \end{align}
 
 Now that we have shown the sum to disappear, we obtain $0 = 2g(\lambda P' + \mu P)$ (in characteristic not 2), hence the conic contains a line.
@@ -178,5 +178,20 @@ Over an algebraically closed field, a line has infinitely many points, so one ca
 \begin{remark}
 The reader, who is familiar with the Segre map $\sigma : \proj^1_k \times \proj^1_k \to \proj^3_k, ([x:y],[z:t]) \mapsto [xz:xt:yz:yt]$ (\cite[example 2.11]{harris1992algebraic}) may ask how the `rulings' on the non-singular quadric relates to the (so called) `ruled surface' which is the image of $\sigma$.
 In fact we can give a Segre-like map for parametrisations $\phi$ of $L_1$ and $\psi$ of $L_2$.
-Every point of $P' \in Q$ is then the some intersection $L_1(\phi([x:y])) \cap L_2(\psi([y:z]))$, giving a bijective map $Q \to \proj^1_k \times \proj^1_k, P' \mapsto ([x:y],[z:t])$.
+Every point of $P' \in Q$ is then the some unique intersection $L_1(\phi([x:y])) \cap L_2(\psi([y:z]))$, giving a bijective map $Q \to \proj^1_k \times \proj^1_k, P' \mapsto ([x:y],[z:t])$.
 \end{remark}
+
+
+\begin{lemma} \label{lemmaThreeLines}
+Three disjoint lines in $\proj^3_k$ lie on a quadric surface.
+Such a quadric surface is necessarily irreducible.
+\end{lemma}
+\begin{proof}
+Let's show irreducibility first.
+If three disjoint lines lie on a quadric surface, then this surface cannot be the union of two planes, as two lines on a plane would intersect.
+On the existence of the quadric surface:
+We are given three disjoint lines with ideals $(h_1,h_2), (h_3,h_4), (h_5,h_6)$, the $h_i$ being linear forms, and want to find a quadratic form $q \in k[x_0,..x_3]$, such that $(h_1,h_2) \cap (h_3,h_4) \cap (h_5,h_6) \supset (q)$ (meaning that the union of the lines contains $\V(q)$).
+It suffices to find linear forms $\lambda,\lambda',\mu,\mu',\nu,\nu'$ such that
+$\lambda h_1 + \lambda' h_2 = \mu h_3 + \mu' h_4 = \nu h_5 + \nu' h_6 =: q$.
+Solving for the linear forms means solving a homogeneous system of linear equations in $6*4= 24$ variables and $3\binom{4}{2} = 18$ equations, which ensures the existence of $q \neq 0$.
+\end{proof}

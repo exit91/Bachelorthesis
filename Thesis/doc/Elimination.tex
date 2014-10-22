@@ -2,7 +2,7 @@
 
 
 One useful operation one may perform is to take the intersection of a hypersurface $S = \V(f) \subset \proj^n_k$ with a hyperplane $\Pi = \V(h)$. Now one expects from geometric intuition that the $d$-form $f$ `restricts' to a $d$-form on $\Pi$ where we think of $\Pi$ as $\proj^{n-1}_k$, unless $S$ contains $\Pi$ in which case one would expect the equation to `restrict' to the zero polynomial.
-The goal of this section is to make this intuition precise, by defining a homomorphism $\var{res} : k[x_0,..x_n] \to k[x_0,..x_{n-1}]$ and an isomorphism $\proj^{n-1} \overset\sim\to \Pi \hookrightarrow \proj^n$.
+The goal of this section is to make this intuition precise, by defining a homomorphism $\var{res} : k[x_0,..x_n] \to k[x_0,..x_{n-1}]$ and an isomorphism $\proj^{n-1} \overset\sim\to \Pi (\hookrightarrow \proj^n)$.
 
 First we may assume without loss of generality that
 $h = \alpha x_n + \widetilde h$ where $0 \neq \alpha \in k$ and $\widetilde h \in k[x_0,..x_{n-1}]$.
@@ -58,11 +58,13 @@ f = \widetilde{\var{res}}(f) +  h\widetilde f
 \end{equation}
 \end{proposition}
 
-% TODO
-\begin{todo}
-\item We can formulate the result in a slightly higher level of generality. So first we replace algebraic subsets of $\proj^n_k$ by ideals $J \subset k[x_0,..x_n]$.
-Furthermore, algebraic subsets of $J = \V(h)$ correspond to ideals $I \subset k[x_0,..x_n]/J$.
-\end{todo}
+\begin{remark}
+Viewing a variety as a system of polynomial equations, what we have done by restricting to a hyperplane is to `eliminate' the variable $x_n$ from the equations.
+Henceforth we will talk of eliminating a variable to specify which variable serves the role, which $x_n$ took in this section.
+\end{remark}
+
+%%We can formulate the result in a slightly higher level of generality. So first we replace algebraic subsets of $\proj^n_k$ by ideals $J \subset k[x_0,..x_n]$.
+%%Furthermore, algebraic subsets of $J = \V(h)$ correspond to ideals $I \subset k[x_0,..x_n]/J$.
 
 \begin{corollary} \label{corollaryRadical}
 Let $h_1,.. h_m \in k[x_0,..x_n]$ be $m$ $k$-linearly independent linear forms.
@@ -74,7 +76,7 @@ We prove the first assertion.
 The case $m=1$ has been covered already.
 The inductive step goes as follows:
 Let $I = (h_1,..h_{m-1}), I+(h_m) = (h_1,..h_m)$ be ideals of $k[x_0,..x_n]$ and assume without loss of generality that the $x_n$ coefficient of $h_m$ is non-zero.
-The restriction homomorphism for the hyperplane $\V(h_m)$ gives us a short exact sequence
+The restriction homomorphism for the hyperplane $\V(h_m)$ gives us a short exact sequence of $k[x_0,..x_n]$-modules
 \begin{equation}
 0 \to (h_m) \overset{\ker(\var{res})}\to k[x_0,..x_n] \overset{\var{res}}\to k[x_0,..x_{n-1}] \to 0
 \end{equation}
@@ -96,6 +98,3 @@ Hence we can apply the induction hypothesis on $\var{res}(I) = (\var{res}(h_0),.
 The second claim is an easy corollary, as $k[x_0,..x_n]/(h_0,..h_m) \simeq k[x_0,..x_{n-m}]$ is reduced which is equivalent to the ideal $(h_0,..h_m)$ being radical.
 
 \end{proof}
-
-
-

@@ -39,14 +39,14 @@ Z = a**(-3)*A + z
 B_ = B(z = Z)
 C_ = C(z = Z)
 
-b0 = (1/2) * B_.diff(y).diff(y).expand()
-b1 = B_.diff(y).diff(t).expand()
-b2 = (1/2) * B_.diff(t).diff(t).expand()
+b0 = (1/2) * B_.diff(y,y).expand()
+b1 = B_.diff(y,t).expand()
+b2 = (1/2) * B_.diff(t,t).expand()
 
-c0 = (1/6)*C_.diff(y).diff(y).diff(y)
-c1 = (1/2)*C_.diff(y).diff(y).diff(t).expand()
-c2 = (1/2)*C_.diff(y).diff(t).diff(t)
-c3 = (1/6)*C_.diff(t).diff(t).diff(t)
+c0 = (1/6)*C_.diff(y,y,y)
+c1 = (1/2)*C_.diff(y,y,t).expand()
+c2 = (1/2)*C_.diff(y,t,t)
+c3 = (1/6)*C_.diff(t,t,t)
 
 d = det(Matrix(
 [[b0,b1,b2,0,0], 

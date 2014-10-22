@@ -13,7 +13,7 @@ We will study geometric objects, i.e. projective subsets of some $\proj^n_k$, up
 That means that we have to establish some properties which are invariant under projective transformation, but also we need to have `enough' projective transformations to work with in a meaningful way.
 The following theorem makes this precise.
 
-\begin{theorem}
+\begin{theorem} \label{theoremGroupAction}
 $PGL_n$ operates transitively on the set $C \subset (\proj^n_k)^{n+2}$ of $(n+2)$-tuples of points, for which no $n+1$ lie on a hyperplane.
 \end{theorem}
 \begin{proof}
@@ -46,52 +46,83 @@ We wish to find a choice of $\underline\lambda$, such that $P_{n+1}$ is mapped t
 \Leftrightarrow & M_{\underline 1}^T P_{n+1} = (\lambda_0,..\lambda_n)^T
 \end{align}
 Clearly, for this choice of $\underline\lambda$, $M_{\underline \lambda}^T$ defines a projective transformation mapping each $[P_i]$ to $[e_i]$, which shows our claim.
+\end{proof}
 
+\begin{lemma} \label{lemmaTransformOfLinearSpaces}
+A projective transformation maps linear spaces to linear spaces.
+\end{lemma}
+\begin{proof}
+It suffices to show that hyperplanes are mapped to hyperplanes.
+Let $h \in k[x_0,..x_n]$ be a linear form and $\phi$ a projective transformation on $\proj^n_k$.
+\begin{equation}
+P \in \phi(\V(h)) \Leftrightarrow \phi^{-1}(P) \in \V(h) \Leftrightarrow (h.\phi^{-1})(P) = 0 \Leftrightarrow P \in \V(h.\phi^{-1})
+\end{equation}
+Clearly $h.\phi^{-1}$ is a linear form and non-zero, as $h.\phi^{-1}.\phi = h \neq 0$.
 \end{proof}
 
 
-\begin{todo}
-\item define projective equivalence
-\item theory of lines need to be discussed before this
-\end{todo}
 \begin{corollary}
 In the projective plane $\proj^2_k$, consider 3 pairwise distinct points $L_0,L_1,L_2$.
 The line $L_2$ intersects the union $L_0 \cup L_1$ in either 1 or 2 points.
-Depending on this distinction, the lines can be projectively transformed to $V(x_0),V(x_1),V(x_0-x_1)$ or $V(x_0),V(x_1),V(x_2)$.
+Depending on this distinction, the lines can be projectively transformed to $\V(x_0),\V(x_1),\V(x_0-x_1)$ or $\V(x_0),\V(x_1),\V(x_2)$.
 \end{corollary}
 \begin{proof}
-% TODO
+By the previous lemma, a lines are being mapped to lines (one can see this either by considering how the hyperplanes which intersect in the line transform or just by a dimension argument).
+Consider now the first case, $L_0,L_1,L_2$ intersecting all in one point $O$.
+Let $P_i$ each be a point on $L_i$ different from $O$.
+Using theorem \ref{theoremGroupAction} there is a projective transformation mapping $O, P_0,P_1,P_2$ to $[0:0:1],[1:0:1],[0:1:1],[1:1:1]$.
+This maps $L_0 = \overline{O,P_0}, L_1 = \overline{O,P_1}, L_2 = \overline{O,P_2}$ to $\V(x_1),\V(x_0),\V(x_0 - x_1)$.
+
+In the second case $L_0,L_1,L_2$ have no common intersection, and $L_0 \cap L_1 = A, L_0 \cap L_2 = B, L_1 \cap L_2 = C$ are distinct.
+Now map $A,B,C$ to $[0:0:1],[0:1:0],[1:0:0]$, which maps $L_0 = \overline{A,B}, L_1=\overline{A,C}, L_2=\overline{B,C}$ to $\V(x_0),\V(x_1),\V(x_2)$.
 \end{proof}
 
 \begin{corollary} \label{corollaryTransformPlaneWithPointOnIt}
 Let $H$ be a plane in $\proj^3_k$ and $P$ be a point on it.
-Then there exists a projective transformation sending the plane to $V(x_3)$ and the point to $[0:0:0:1]$.
+Then there exists a projective transformation sending the plane to $V(x_3)$ and the point to $[0:0:1:0]$.
 \end{corollary}
 \begin{proof}
-% TODO, brauche ich das?
+The plane is determined by three points, $P, P_1,P_2$.
+A projective transformation sends them to $[0:0:1:0], [0:1:0:0],[1:0:0:0]$ and along with it the plane $H$ to $\V(x_3)$.
 \end{proof}
 
-\subsubsection{lifting projective transformations}
-
-\begin{todo}
-\item can we lift projective transformations on the plane to the space, say, given an inclusion of the plane to the space etc..
-\end{todo}
-
 \begin{proposition} \label{propositionLiftingAutomorphisms}
-% TODO
+Suppose $\iota : \proj^n_k \hookr \proj^N_k$ ($n \leq N$) is an inclusion of projective varieties defined in terms of linear forms and suppose $\phi$ is a projective transformation on $\iota$.
+Then there exists a lift to a projective transformation $\overline\phi$ on $\proj^N_k$, such that the diagram
+\begin{equation}
+\begin{xy}
+(0,20)*+{\proj^n_k}="n";
+(30,20)*+{\proj^N_k}="N";
+(0,0)*+{\proj^n_k}="n1";
+(30,0)*+{\proj^N_k}="N1";
+{\ar@{^{(}->} "n";"N"}?*!/_2mm/{\iota};
+{\ar@{^{(}->} "n1";"N1"}?*!/_2mm/{\iota};
+{\ar@{->} "n";"n1"}?*!/_2mm/{\phi};
+{\ar@{->} "N";"N1"}?*!/_2mm/{\overline{\phi}};
+\end{xy}
+\end{equation}
+commutes.
 \end{proposition}
+\begin{proof}
+For $n=N$ define $\overline\phi = \iota.\phi.\iota^{-1}$.
+If $n < N$ it suffices to prove this result for $N = n+1$.
+Let's say $\iota$ is given by $\iota = (h_0,..h_n,0)$, the $h_i$ being linear forms, and because $\iota$ is injective, the $h_i$ span the vector space of all linear forms in $k[x_0,..x_n]$.
+It follows, that there exists $g_0,..g_n$ linear forms, defining a projective transformation $\iota'$ such that $\iota' = (g_0,..g_n,x_{n+1})$ (hence $(\iota')^{-1} = (h_0,..h_n,x_{n+1})$) and $\iota'.\iota = (x_0,..x_n,0)$.
+We now can define $\overline{\phi'} = (\phi,x_{n+1})$ and finally $\overline\phi = (\iota')^{-1}.\overline{\phi'}.\iota'$.
+By construction $\iota.\phi = \overline\phi . \iota$ holds.
+\end{proof}
 
-\subsubsection{properties stable under projective transformation}
-\begin{todo}
-\item degree
+
+Finishing this section I want to list some properties which are stable under projective transformation.
+Some of the assertions have been shown, some notions would need some explanation to be found in any down-to-earth textbook on algebraic geometry (\cite{shafarevich1994basic, harris1992algebraic, brieskorn2012plane}, etc.)
+\begin{itemize}
+\item degree of a hypersurface
+\item linear subspaces, see lemma \ref{lemmaTransformOfLinearSpaces}
 \item irreducibility
 \item Krull dimension
-\item X contained in Y relation
-\item X intersects Y relation
-\item A is union of B and C relation
-\item topology
-\item tangent planes and singularities are well-behaved under projective transformation \ref{propositionTangentTransform}
-\item inflexion points
-\item generators (x,y,z) -> (fx,fy,fz)
-\end{todo}
+\item incidence
+\item tangent planes and singularities are well-behaved under projective transformation, see proposition \ref{propositionTangentTransform}
+\item the hessian hypersurface is well-behaved, i.e. for $S$ a hypersurface and $H$ its hessian hypersurface one can show $\phi(S \cap H) = \phi(S) \cap \phi(H)$.
+\item any morphism projective varieties maps closed sets to closed sets
+\end{itemize}
 

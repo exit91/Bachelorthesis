@@ -1,13 +1,13 @@
 set terminal pdf
-set output 'cuspidal.pdf'
+set output 'nodal.pdf'
 
 set parametric
 set dummy t
-set trange [-1.32:1.32]
+set trange [-1:1]
 set xrange [-1:1]
 set samples 160
 unset border
 unset ytics
 unset xtics
 unset key
-plot t**2-1,t**3-t lt rgb "black" lw 2, t,-t  lt rgb "black", t,t lt rgb "black"
+plot t**2,t**3 lt rgb "black" lw 2, t,0 lt rgb "black"

@@ -5,17 +5,14 @@ let $\V(F)$ be an \emph{irreducible} singular cubic curve.
 The first observation is that there exist only one singular point $P = [s_0:s_1:s_2]$ on the curve.
 Assume for the contrary that $P \neq P'$ are singular points, then the restriction of $F$ to the line $L = \overline{P,P'}$ is non-zero (the reason being $L \not\subset \V(F)$) and has 2 zeroes of multiplicity at least 2 (to prove this invoke corollary \ref{corollaryTangentPullback}), but $F$ had degree 3 -- a contradiction.
 We may assume that $[0:0:1]$ is a singular point by an appropritate transformation:
-By permuting the coordinates we may assume $s_2 \neq 0$ and then the projective transformation $F(x+s_0z,y+s_1z,s_2z)$ has it's singularity at $[0:0:1]$.
-\begin{todo}
-\item i fucked something up with those singular points ... there can be 3 for union of lines
-\end{todo}
+By permuting the coordinates we may assume $s_2 \neq 0$ and then the projective transformation $F(x+s_0z,y+s_1z,s_2z)$ has its singularity at $[0:0:1]$.
 
 One way to examine the singularity is to consider lines through it\footnote{a rather analytical approach, isn't it?}.
 Consider the polynomial $f(ut, vt) \in k[u,v,t]$ where $f := F(x,y,1)$ is the dehomogenisation.
 Informally we think of $u,v$ as point $[u:v] \in \proj^1_k$ parametrising all the lines through $[0:0:1]$.
 It is apparent that $f$ vanishes on $(0,0)$ and also the partial derivatives vanish as they did for $F$.
 We conclude that $f$ has no terms of degree 0 or 1, so $f(ut,vt) = t^2g + t^3h$ where we consider $g,h$ as 2-form and 3-form respectively in $k[u,v]$.
-Especially the polynomial $g$ gives us some geometric insight on the `shape' of the singularity.
+Especially $g$ gives us some geometric insight on the `shape' of the singularity.
 Before elaborating on that let me state the fundamental theorem of algebra for homogeneous forms:
 
 \begin{lemma}[homogeneous fundamental theorem of algebra] \label{lemmaFundamentalTheorem}
@@ -32,23 +29,30 @@ $g = v^d g(u/v,1) = \alpha\prod_{i=1}^d(u - \alpha_iv)$.
 Let's do a case analysis on $g$.
 \paragraph{Case 0: $g=0$.}
 In this case we deduce $F \in k[x,y]$ and by lemma \ref{lemmaFundamentalTheorem} the equation $F=0$ defines the union of 3 (not necessarily distinct) lines.
-Hence $g \neq 0$.
+We excluded such a case, so $g \neq 0$.
+
 \paragraph{Case 1: $g=h_1h_2$ and $h_1,h_2$ not $k$-linearly dependent.}
 We call the singularity a \emph{node}.
-The image is as follows: There are two distinct lines approximating the curve really well (in a sense).
-\begin{figure}
-\center
-\includegraphics[width=.5\textwidth]{img/cuspidal.pdf}
-\caption{a node with some `approximating' lines}
-\end{figure}
-\paragraph{Case 2: $g=h^2$}
-We call the singularity a \emph{cusp}.
-Here the image is: The two distinct lines from before collapse to a single double line.
+The image is as follows: There are two distinct lines approximating the curve really well (figure \ref{figureNode}).
 \begin{figure}
 \center
 \includegraphics[width=.5\textwidth]{img/nodal.pdf}
 \caption{a node with some `approximating' lines}
+\label{figureNode}
 \end{figure}
+
+
+
+\paragraph{Case 2: $g=h^2$}
+We call the singularity a \emph{cusp}.
+Here the image is: The two distinct lines from before collapse to a single double line (figure \ref{figureCusp}).
+\begin{figure}
+\center
+\includegraphics[width=.5\textwidth]{img/cuspidal.pdf}
+\caption{a cusp with some collapsing `approximating' lines}
+\label{figureCusp}
+\end{figure}
+
 
 Let's summarize the result of this discussion.
 

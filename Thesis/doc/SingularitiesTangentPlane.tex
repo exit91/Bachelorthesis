@@ -1,9 +1,5 @@
 \subsection{singularities and the tangent space}
 
-\begin{todo}
-\item use semi-colon to separate variables for the polars
-\end{todo}
-
 In this section we want to study the local properties of a projective variety.
 A particularly simple tool is the tangent space.
 The analytical idea behind it is to approximate, say, a surface near a point by a plane as close as possible.
@@ -57,8 +53,7 @@ By linearity we only need to prove the monomial case $f = \prod_{i=0}^n x_i^{a_i
 $\V(\del_{x_0}(f),..\del_{x_n}(f), df) = \V(\del_{x_0}(f),..\del_{x_n}(f))$
 \end{corollary}
 
-
-\begin{lemma}
+\begin{lemma} \label{lemmaPartialDerivativesCommute}
 Let $\del_1,\del_2$ be partial derivatives, then $\del_1.\del_2 = \del_2.\del_1$.
 \end{lemma}
 \begin{proof}
@@ -67,11 +62,20 @@ If $f$ is a monomial of degree less than 2, then $\del_1(\del_2(f)) = 0 = \del_2
 Now suppose $f = x_if'$ and $\del_1(\del_2(f')) = \del_2(\del_1(f'))$.
 
 \begin{equation}
-\del_1.\del_2(x_if') = \del_1(x\del_2(f') + f'\del_2(x)) = 
-\del_1(x)\del_2(f') + \del_1(f')\del_2(x) + x\del_1(\del_2(f')) + \underset{=0}{\underbrace{f'\del_1(\del_2(x))}}
+\del_1.\del_2(x_if') = \del_1(x_i\del_2(f') + f'\del_2(x_i)) = 
+\del_1(x_i)\del_2(f') + \del_1(f')\del_2(x_i) + x_i\del_1(\del_2(f')) + \underset{=0}{\underbrace{f'\del_1(\del_2(x_i))}}
 \end{equation}
 The last term is symmetric in $\del_1,\del_2$ (by assumption).
 \end{proof}
+
+As a final fact about partial derivatives, I want to state the chain rule.
+\begin{lemma}[chain rule]
+Let $f \in k[x_0,..x_n]$ be a homogeneous polynomial and $F_0,..F_n \in k[x_0,..x_m]$ polynomials of same degree. They define a morphism $F : \proj^m_k \to \proj^n_k$. We define the composition $f.F := f(F_0,..F_n)$. The following equality holds for $0 \leq i \leq n$:
+\begin{equation}
+\del_{x_i} (f.F) = \sum_{j=0}^n ((\del_{x_j}f).F) \cdot \del_{x_i}(F_j)
+\end{equation}
+\end{lemma}
+One can easily verify this for $f$ being a power of one variable, then for $f$ being a monomial and finally for a general polynomial $f$.
 
 The following formula will come in handy for some calculations.
 It will allow us to understand terms of the form $f(P+Q)$ for a homogeneous polynomial $f$ and points $P,Q$ better.
@@ -117,10 +121,6 @@ g(X+X') =& g(X) + g^{(1)}(X;X') + g(X')
 \end{align}
 In particular, for $X=X'$: $4g(x) = g(X+X) = g(X) + g^{(1)}(X;X) + g(X)$ so $2g(X) = g^{(1)}(X;X)$ or conversely $g^{(1)}(X;X') = g(X+X') - g(X) - g(X')$, so we may view $g^{(1)}(X;X')$ as symmetric bilinear form.
 \end{corollary}
-
-\begin{todo}
-\item resultants? where do I put them?
-\end{todo}
 
 
 \subsubsection{the tangent space}
@@ -219,7 +219,7 @@ With this observation at hand, we can easily make sense of the following lemma:
 
 \begin{lemma} \label{lemmaIntersectionWithTangent}
 Let $S = \V(I) \subset \proj^N_k$ be a projective variety, $P\in S$.
-Clearly, as intersection of hyperplanes the tangent space at $P$ is a linear subspace of $\proj^N_k$ and hence the image of some inclusion $\iota : \proj^n_k \hookr \proj^N_k$.
+Clearly, as intersection of hyperplanes the tangent space at $P$ is a linear subspace of $\proj^N_k$ and hence the image of some inclusion $\iota : \proj^n_k \hookr \proj^N_k$ defined in terms of linear forms.
 $\iota^{-1}(S)$ has a singularity at $\iota^{-1}(P)$.
 \end{lemma}
 \begin{proof}
