@@ -1,4 +1,4 @@
-\section{proof of the main theorem}
+\section{Proof of the main theorem}
 
 After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem (for $\var{char}(k) \neq 2$).
 \begin{theorem}
@@ -7,22 +7,22 @@ Then $S$ contains precisely 27 lines.
 \end{theorem}
 We will follow the proof given by Miles Reid (\cite[§7]{reid1988undergraduate}).
 
-\subsection{existence of a line}
+\subsection{Existence of a line}
 
 We take an arbitrary point $P_0 \in S$ and consider its tangent plane $T_{P_0}(S) = \V(f^{(1)}(P_0))$.
-Of course, no plane lies in $S$ completely, as this would imply the existence of singular points by lemma \ref{lemmaSingularIntersect}.
+Of course, no plane lies in $S$ completely, as this would imply the existence of singular points by Lemma \ref{lemmaSingularIntersect}.
 By restricting the equation of $S$ to the tangent plane we obtain a 3-form $f' = f - f^{(1)}(P_0)g$, $g$ being some quadratic form.
 If we're lucky $f'$ is reducible and hence a product of a linear and a quadratic form meaning that the intersection $T_{P_0}(S) \cap \V(f^{(1)}(R)) \simeq \V(f') \subset \proj^2_k$ is a union of a line and a conic (possibly a degenerate one).
 So in this case $S$ contains a line.
 Let's proceed assuming that we are unlucky and say $\V(f') \subset \proj^2_k$ is an irreducible cubic curve.
-To simplify things, move tangent plane at $P_0$ to the plane $\V(t)$ and simultaneously move the point $P_0$ to $[0:0:1:0]$ by corollary \ref{corollaryTransformPlaneWithPointOnIt}.
+To simplify things, move tangent plane at $P_0$ to the plane $\V(t)$ and simultaneously move the point $P_0$ to $[0:0:1:0]$ by Corollary \ref{corollaryTransformPlaneWithPointOnIt}.
 That this transforms the surface in a compatible manner with the tangent plane has been proven in proposition \ref{propositionTangentTransform}.
 Eliminating the variable $t = 0$, $f(x,y,z,0)$ defines a cubic curve.
-By lemma \ref{lemmaIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^2z - y^3)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
+By Lemma \ref{lemmaIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^2z - y^3)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
 This however is only true if the characteristic of $k$ is not $3$, so we have to hope that the nodal case occurs somewhere.
 We can lift this automorphism of the hyperplane $\V(t)$ to an automorphism of the whole space via proposition \ref{propositionLiftingAutomorphisms}.
 
-\subsubsection{the cuspidal case}
+\subsubsection{The cuspidal case}
 Let's focus on the case where our cubic curve is cuspidal. By previous transformations $f = x^2z - y^3 + tg$, $g$ being a quadratic form.
 The partial derivatives of $f$ are
 \begin{align}
@@ -40,7 +40,7 @@ and let $Q = (0,y,z,t)$ represent a indeterminate point on the hyperplane $\V(x)
 Surely $P$ and $Q$ cannot coincide for any choice of $\alpha,y,z,t$.
 We wish to show that for some $\alpha,y,z,t$ the line $\overline{P,Q}$ is contained in the cubic surface.
 As we have seen in the section on linear subsets, it suffices to show $f(\lambda P + \mu Q) = 0 \in k[\lambda,\mu]$.
-Combining this with the poor student's Taylor expansion (corollary \ref{corollaryTaylorForQuadricAndCubic}) we obtain
+Combining this with the poor student's Taylor expansion (Corollary \ref{corollaryTaylorForQuadricAndCubic}) we obtain
 $f(\lambda P + \mu Q)
 = \underset{=\lambda^3 f(P) = 0}{\underbrace{f(\lambda P)}}
 + f^{(1)}(\lambda P;\mu Q)
@@ -84,7 +84,7 @@ You can find a proof in \cite[theorem 4.2.3]{brieskorn2012plane}, although it is
 The matrix represents a linear automorphism on the vector space of 4-forms mapping $x^4,x^3y,x^2y^2,xy^3,y^4$ to $x^2B',xyB',y^2B',xC',yC'$.
 Now if $B',C'$ have a common zero $(x_0,y_0) \neq (0,0)$ so do $x^2B',xyB',y^2B',xC',yC'$ but of course the monomials $x^4,x^3y,x^2y^2,xy^3,y^4$ don't vanish simultaneously on $(x_0,y_0)$. This shows that the matrix is not invertible.
 Conversely if the matrix is singular, then there exist some quadratic form $q$ and a cubic form $c$, not both 0, such that $cB' + qC' = 0 \Leftrightarrow cB' = -qC'$ (we can assume that $q,c$ are both non-zero, otherwise one of $B',C'$ is zero already).
-But $k[x,y]$ is a unique factorisation domain and lemma \ref{lemmaFundamentalTheorem} gives us for both sides of the equation the decomposition into \emph{linear factors}, so by the pigeon hole principle, $B'$ and $C'$ must have some factor in common.
+But $k[x,y]$ is a unique factorisation domain and Lemma \ref{lemmaFundamentalTheorem} gives us for both sides of the equation the decomposition into \emph{linear factors}, so by the pigeon hole principle, $B'$ and $C'$ must have some factor in common.
 \end{proof}
 
 We continue with inspecting the coefficients themselves.
@@ -114,7 +114,7 @@ Suppose $k$ has characteristic neither 2 nor 3.
 If $T_{P_0}(S) \cap S$ is a cuspidal cubic curve, then there exists a polynomial $R \in k[\alpha]$ of degree 27, such that there exists a line on $S$ through $P(\alpha_0) = (1,\alpha_0,\alpha_0^3,0)$ iff $\alpha_0 \in k$ is a root of $R$.
 \end{proposition}
 
-\subsubsection{the nodal case}
+\subsubsection{The nodal case}
 \begin{todo}
 \item need to set up everything again blabla
 \end{todo}
@@ -128,24 +128,19 @@ Suppose $k$ has characteristic not 2.
 If $T_{P_0}(S) \cap S$ is a nodal cubic curve, then there exists a polynomial $R \in k[\alpha]$ of degree 27 not vanishing in 0, such that there exists a line on $S$ through $P(\alpha_0) = (\alpha_0,\alpha_0^2,1+\alpha_0^3,0)$ iff $\alpha_0 \in k$ is a root of $R$.
 \end{proposition}
 
-\subsubsection{sufficiency of the nodal case}
+\subsection{Finding the other lines}
 
-\subsection{finding the other lines}
-\subsection{the configuration of the lines}
+So far we found one line $L$ on a nonsingular cubic surface $S = \V(f)$, and we put quite some computational work into it.
+Luckily we can use $L$ to find other lines.
 
-
-
-\begin{todo}
-\item condition for a plane to generate lines
-\end{todo}
-
-Planes through the line $L=\V(x,t)$ are parametrised by $\proj^1_k$. Namely, their equations are given by $\lambda x + \mu t = 0, [\lambda:\mu] \in \proj^1_k$.
+As a simplification, we can obtain $L=\V(x,t)$ by a change of coordinates, for example sending two points on $L$ to $[1:0:0:0],[0:1:0:0]$.
+Planes through the line $L$ are parametrised by $\proj^1_k$, as all varieties containing $L$ are generated by $x$ and $t$.
+Namely, their equations are given by $\lambda x + \mu t = 0, [\lambda:\mu] \in \proj^1_k$.
 We can give a condition for a plane to intersect the cubic surface in three lines.
 \begin{lemma}
 View $f$ as a polynomial over $k[z,t]$ to get a decomposition as sum $f = Ax^2 + Bxy + Cy^2 + Dx + Ey F$, where $A,B,C,D,E,F \in k[z,t]$.
 Let $[\lambda:\mu] \in \proj^1_k$.
 The plane $\V(\lambda x + \mu t)$ intersects the cubic surface in three lines iff
-% $4A(\lambda,\mu)C(\lambda,\mu)F(\lambda,\mu) + B(\lambda,\mu)D(\lambda,\mu)E(\lambda,\mu) - A(\lambda,\mu)E(\lambda,\mu)^2 - B(\lambda,\mu)^2F(\lambda,\mu) - C(\lambda,\mu)D(\lambda,\mu)^2 = 0$
 $\Delta(\lambda,\mu) = 0$ where $\Delta = 4ACF + BDE - AE^2 - CD^2 - B^2F$ is a quintic form.
 \end{lemma}
 
@@ -172,7 +167,7 @@ q =
 +\lambda^{-3} F(\lambda,\mu) z^2
 \end{equation}
 
-In corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
+In Corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
 By writing this condition out, one obtains $\lambda^{-5} \Delta(\lambda,\mu) = 0$ and multiplying by $\lambda^5$ we finally get as necessary and suffient condition for $q$ to factor into linear forms
 \begin{equation}
 \Delta(\lambda,\mu) = 0
@@ -183,9 +178,31 @@ as desired.
 Being a quintic form, $\Delta$ has at most five zeroes on $\proj^1_k$, so the number of planes through $L$ which intersect the surface $S$ in three lines is bounded by five.
 We will show that there are precisely five distinct such planes, but before that let's have a look on how the non-singularity of $S$ affects the possible configuration of lines.
 
+\begin{lemma}
+At most three distinct lines on $S$ go through one point $P$.
+All lines through $P$ lie on $T_P(S)$.
+\end{lemma}
+\begin{proof}
+Let $L$ be a line on $S$ going through $P$.
+As in example \label{exampleTangentPlaneOfLinearSubsets} we have $L = T_P(L) \subset T_P(S)$.
+Restricting $f$ to the tangent space $T_P(L)$ and knowing that $S$ does not contain the tangent plane, we obtain a cubic form $\widetilde f$ which cannot be a multiple of more than three linear forms.
+Hilbert's Nullstellensatz then shows the assertion.
+\end{proof}
 
-% TODO begin
+\begin{lemma}
+\begin{todo}\item introduce the doubled line \end{todo}
+Let $P \in S$. The intersection $T_P(S) \cap S$ does not contain doubled lines.
+\end{lemma}
+\begin{proof}
+Let's write $u := f^{(1)}(P)$, such that $T_P(S) = \V(u)$.
+This is due to non-singularity. Suppose $\widetilde f$ is the restriction of $f$ to $T_P(S)$ with $f = \widetilde f + f^{(1)}(P)q$, $q$ a cubic form.
+For the intersection to contain a doubled line means that $\widetilde f = h^2g$ where $h$ and $g$ are linear forms.
+% TODO
+This gives $f = h^2g + uq$, but then $f$ has a singularity at a point where $h,g$ and $q$ vanish.
+As in example \ref{exampleAlternativePartialDerivatives} we may check non-singularity by 
+\end{proof}
 
-% TODO end 
 
 
+
+\subsection{The configuration of the lines}

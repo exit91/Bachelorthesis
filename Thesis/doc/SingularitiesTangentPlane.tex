@@ -1,4 +1,4 @@
-\subsection{singularities and the tangent space}
+\subsection{Singularities and the tangent space}
 
 In this section we want to study the local properties of a projective variety.
 A particularly simple tool is the tangent space.
@@ -6,7 +6,7 @@ The analytical idea behind it is to approximate, say, a surface near a point by 
 That's what a Frechét differential does for, say,  the graph of some differentialble function $\reals^2 \to \reals$.
 In the analytical world such a plane is defined via partial derivatives, which can be emulated for polynomials in a purely algebraic way.
 
-\subsubsection{partial derivatives}
+\subsubsection{Partial derivatives}
 \begin{definition}
 Let $D : k[x_0,..x_n] \to k[x_0,..x_n]$ be a \emph{derivation} over $k$, i.e. a homomorphism of $k$-modules which satisfies the Leibniz rule $D(xy) = xDy+yDx$ for $x,y \in k[x_0,..x_n]$. Furthermore let $D(h) \in k$ for every linear form $h$. We call such a derivation a \emph{partial derivative}.
 \end{definition}
@@ -15,7 +15,7 @@ Let $D : k[x_0,..x_n] \to k[x_0,..x_n]$ be a \emph{derivation} over $k$, i.e. a 
 The standard example for partial derivatives are of course the partial derivates with respect to one of the variables $x_i$, defined as $\del_{x_i}(x_j) = \delta_{i,j} := \begin{cases} 1, & \text{ for } i = j \\ 0, & \text {otherwise.} \end{cases}$
 \end{example}
 
-\begin{example}
+\begin{example} \label{exampleAlternativePartialDerivatives}
 For any basis $\{ h_i\}_{i=0}^n$ of the vector space of linear forms $\bigoplus_{i=0}^n kx_i \subset k[x_0,..x_n]$ we obtain a family of partial derivatives $\{ \del_{h_i} \}_{i=0}^n$ for which $\del_{h_i}(h_j) = \delta_{i,j}$ holds. The construction goes as follows: Let $M = (a_{i,j})  \in k^{(n+1)\times(n+1)}$ be the base change matrix and $M^{-1} = (\widetilde a_{i,j})$ be its inverse.
 This just means $h_i = \sum_{j=0}^n a_{i,j} x_j$ and hence $\del_{x_k}(h_i) = a_{i,k}$.
 From $\delta_{i,j} = \sum_{k=0}^n a_{i,k}\widetilde a_{k,j}
@@ -135,7 +135,7 @@ f(x+d_x,y+d_y,z+d_z)
 \end{example}
 
 
-\subsubsection{the tangent space}
+\subsubsection{The tangent space}
 
 \begin{definition} \label{definitionTangentSpace}
 Let $\V(I)$ be a projective variety in $\proj^n_k$, $I \subset k[x_0,..x_n]$ a homogeneous ideal and $P\in \V(I)$ a point on that variety.
@@ -161,7 +161,7 @@ By definition $T_P(\V(J)) = \bigcap_{j=0}^s \V(g_j^{(1)})$.
 Consider now the set $K = \mkset{ f \in k[x_0,..x_n] }{f^{(1)}(P) \text{ vanishes on }T_P(\V(J))}$.
 By the identities $(f+g)^{(1)}(P) = f^{(1)}(P) + g^{(1)}(P)$ and $(fg)^{(1)}(P) = f(P)g^{(1)}(P) + g(P)f^{(1)}(P)$ it can be easily checked that $K$ is an ideal.
 We defined it to contain the $g_j$, so it also contains the $f_i$.
-This shows that $\V(J) \subset \V(I)$ implies $T_P(\V(J)) \subset T_P(\V(I))$ and hence by choosing $I=J$ it also shows that the choice of generators in definition \ref{definitionTangentSpace} did indeed not matter.
+This shows that $\V(J) \subset \V(I)$ implies $T_P(\V(J)) \subset T_P(\V(I))$ and hence by choosing $I=J$ it also shows that the choice of generators in Definition \ref{definitionTangentSpace} did indeed not matter.
 \end{example}
 
 \begin{example}
