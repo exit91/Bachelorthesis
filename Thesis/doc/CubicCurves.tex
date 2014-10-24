@@ -13,18 +13,6 @@ Informally we think of $u,v$ as point $[u:v] \in \proj^1_k$ parametrising all th
 It is apparent that $f$ vanishes on $(0,0)$ and also the partial derivatives vanish as they did for $F$.
 We conclude that $f$ has no terms of degree 0 or 1, so $f(ut,vt) = t^2g + t^3h$ where we consider $g,h$ as 2-form and 3-form respectively in $k[u,v]$.
 Especially $g$ gives us some geometric insight on the `shape' of the singularity.
-Before elaborating on that let me state the fundamental theorem of algebra for homogeneous forms:
-
-\begin{lemma}[homogeneous fundamental theorem of algebra] \label{lemmaFundamentalTheorem}
-Let $k$ be an algebraically closed field and $g \in k[u,v]$ a $d$-form ($d \in \posnats$).
-Then $g$ factors into a product of $d$ linear forms.
-\end{lemma}
-\begin{proof}
-Assume that $v$ does not divide $g$ (otherwise we can already factor out $v$).
-We can consider $g$ as an element of $k(v)[u]$ and dehomogenize to $g(u/v,1) \in k[u/v]$.
-Applying the fundamental theorem of algebra $g(u/v,1) = \alpha\prod_{i=1}^d(u/v - \alpha_i), \quad (\alpha,\alpha_1,..\alpha_d \in k)$ and homogenizing again we get
-$g = v^d g(u/v,1) = \alpha\prod_{i=1}^d(u - \alpha_iv)$.
-\end{proof}
 
 Let's do a case analysis on $g$.
 \paragraph{Case 0: $g=0$.}
@@ -93,7 +81,7 @@ A final touch: Set $x' := 2x, y':= 2y,z':=z/4$ to obtain
 \begin{proposition} \label{propositionNormalformNodal}
 If the characteristic of the ground field is not 2, then every nodal cubic is of the form
 \begin{equation}
-F = x^2z - y^2z +x^3
+F = y^2z - x^2z - x^3
 \end{equation}
 after an appropriate change of coordinates.
 \end{proposition}
@@ -119,9 +107,10 @@ There is an alternative normal form for the nodal cubic.
 \begin{proposition} \label{propositionNormalformNodal2}
 If the characteristic of the ground field is not 2, then every nodal cubic is of the form
 \begin{equation}
-F = x^3 + y^3 + xyz
+F = x^3 + y^3 - xyz
 \end{equation}
 after an appropritate change of coordinates.
+This particular curve is also known as `Descarte's folium'.
 \end{proposition}
 
 \begin{proof}

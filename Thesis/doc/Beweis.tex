@@ -96,7 +96,7 @@ b_0 =& -3\alpha \\
 b_1 = g^{(1)}(1,\alpha,\alpha^3,0;0,1,3\alpha^2,0) =& 6\tau\alpha^5 + ... \\
 b_2 = g^{(1)}(1,\alpha,\alpha^3,0;0,0,-\tau a^{(6)},1) =& -2\tau^2\alpha^9 + ...
 \end{align}
-And similarly for the $c_i$, we have $g(0,y,3\alpha^2y-\tau a^{(6)}t,t) = g(y(0,1,3\alpha^2,0)+t(0,0,-\tau a^{(6)},1))$ for which we can perform the poor student's taylor expansion. This yields
+And similarly for the $c_i$, we have $g(0,y,3\alpha^2y-\tau a^{(6)}t,t) = g(y(0,1,3\alpha^2,0)+t(0,0,-\tau a^{(6)},1))$ for which we can perform the poor student's Taylor expansion. This yields
 \begin{align}
 c_0 =& -1\\
 c_1 = g(0,1,3\alpha^2,0) =& 9\tau\alpha^4 + ... \\
@@ -132,5 +132,60 @@ If $T_{P_0}(S) \cap S$ is a nodal cubic curve, then there exists a polynomial $R
 
 \subsection{finding the other lines}
 \subsection{the configuration of the lines}
+
+
+
+\begin{todo}
+\item condition for a plane to generate lines
+\end{todo}
+
+Planes through the line $L=\V(x,t)$ are parametrised by $\proj^1_k$. Namely, their equations are given by $\lambda x + \mu t = 0, [\lambda:\mu] \in \proj^1_k$.
+We can give a condition for a plane to intersect the cubic surface in three lines.
+\begin{lemma}
+View $f$ as a polynomial over $k[z,t]$ to get a decomposition as sum $f = Ax^2 + Bxy + Cy^2 + Dx + Ey F$, where $A,B,C,D,E,F \in k[z,t]$.
+Let $[\lambda:\mu] \in \proj^1_k$.
+The plane $\V(\lambda x + \mu t)$ intersects the cubic surface in three lines iff
+% $4A(\lambda,\mu)C(\lambda,\mu)F(\lambda,\mu) + B(\lambda,\mu)D(\lambda,\mu)E(\lambda,\mu) - A(\lambda,\mu)E(\lambda,\mu)^2 - B(\lambda,\mu)^2F(\lambda,\mu) - C(\lambda,\mu)D(\lambda,\mu)^2 = 0$
+$\Delta(\lambda,\mu) = 0$ where $\Delta = 4ACF + BDE - AE^2 - CD^2 - B^2F$ is a quintic form.
+\end{lemma}
+
+\begin{proof}
+That $\Delta$ is a quintic form goes without saying.
+We assume $\lambda \neq 0$ (the other case goes analogously).
+In that case we can restrict $f$ to the plane $\V(\lambda z + \mu t)$ by eliminating $t = \frac\mu\lambda z$:
+Notice that $A,B,C$ are linear forms, $D,E$ are quadratic forms and $F$ is a cubic form.
+We eliminate $t$ from these forms and get
+\begin{align}
+A(z,t) =& A(z,\frac\mu\lambda z) = z\lambda^{-1} A(\lambda,\mu) \qquad \text{(and similarly for $B,C$)} \\
+D(z,t) =& D(z,\frac\mu\lambda z) = z^2\lambda^{-2} D(\lambda,\mu) \qquad \text{(and similarly for $E$)} \\
+F(z,t) =& F(z,\frac\mu\lambda z) = z^3\lambda^{-3} F(\lambda,\mu)
+\end{align}
+
+Hence $f$ restricts to $zq$ where $q \in k[x,y,z]$ is a quadratic form
+\begin{equation}
+q =
+\lambda^{-1} A(\lambda,\mu) x^2
++\lambda^{-1} B(\lambda,\mu) xy
++\lambda^{-1} C(\lambda,\mu) y^2
++\lambda^{-2} D(\lambda,\mu) xz
++\lambda^{-2} E(\lambda,\mu) yz
++\lambda^{-3} F(\lambda,\mu) z^2
+\end{equation}
+
+In corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
+By writing this condition out, one obtains $\lambda^{-5} \Delta(\lambda,\mu) = 0$ and multiplying by $\lambda^5$ we finally get as necessary and suffient condition for $q$ to factor into linear forms
+\begin{equation}
+\Delta(\lambda,\mu) = 0
+\end{equation}
+as desired.
+\end{proof}
+
+Being a quintic form, $\Delta$ has at most five zeroes on $\proj^1_k$, so the number of planes through $L$ which intersect the surface $S$ in three lines is bounded by five.
+We will show that there are precisely five distinct such planes, but before that let's have a look on how the non-singularity of $S$ affects the possible configuration of lines.
+
+
+% TODO begin
+
+% TODO end 
 
 

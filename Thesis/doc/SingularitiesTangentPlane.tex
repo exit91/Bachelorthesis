@@ -16,7 +16,7 @@ The standard example for partial derivatives are of course the partial derivates
 \end{example}
 
 \begin{example}
-For any monomial $\{ h_i\}_{i=0}^n$ basis of $\bigoplus_{i=0}^n kx_i \subset k[x_0,..x_n]$ we obtain a family of partial derivatives $\{ \del_{h_i} \}_{i=0}^n$ for which $\del_{h_i}(h_j) = \delta_{i,j}$ holds. The construction goes as follows: Let $M = (a_{i,j})  \in k^{(n+1)\times(n+1)}$ be the base change matrix and $M^{-1} = (\widetilde a_{i,j})$ be its inverse.
+For any basis $\{ h_i\}_{i=0}^n$ of the vector space of linear forms $\bigoplus_{i=0}^n kx_i \subset k[x_0,..x_n]$ we obtain a family of partial derivatives $\{ \del_{h_i} \}_{i=0}^n$ for which $\del_{h_i}(h_j) = \delta_{i,j}$ holds. The construction goes as follows: Let $M = (a_{i,j})  \in k^{(n+1)\times(n+1)}$ be the base change matrix and $M^{-1} = (\widetilde a_{i,j})$ be its inverse.
 This just means $h_i = \sum_{j=0}^n a_{i,j} x_j$ and hence $\del_{x_k}(h_i) = a_{i,k}$.
 From $\delta_{i,j} = \sum_{k=0}^n a_{i,k}\widetilde a_{k,j}
 = \sum_{k=0}^n \del_{x_k}(h_i) \widetilde a_{k,j}$ it is obvious that we need to define
@@ -122,6 +122,18 @@ g(X+X') =& g(X) + g^{(1)}(X;X') + g(X')
 In particular, for $X=X'$: $4g(x) = g(X+X) = g(X) + g^{(1)}(X;X) + g(X)$ so $2g(X) = g^{(1)}(X;X)$ or conversely $g^{(1)}(X;X') = g(X+X') - g(X) - g(X')$, so we may view $g^{(1)}(X;X')$ as symmetric bilinear form.
 \end{corollary}
 
+\begin{example}
+Let's say $f = x^3 + y^3 - xyz \in k[x,y,z]$ and we want to understand $f(x+d_x,y+d_y,z+d_z) \in k[x,y,z,t,d_x,d_y,d_z,d_t]$.
+This yields
+\begin{align*}
+f(x+d_x,y+d_y,z+d_z)
+  =& (x^3 + y^3 - xyz)
+\\+& (3x^3d_x + 3y^2d_y + yzd_x + xzd_y + xyd_z)
+\\+& (3d_x^3x + 3d_y^2y + d_yd_zx + d_xd_zy+d_xd_yz)
+\\+& (d_x^3 + d_y^3 - d_xd_yd_z)
+\end{align*}
+\end{example}
+
 
 \subsubsection{the tangent space}
 
@@ -170,36 +182,11 @@ Singular points are worth studying because they behave well under automorphisms 
 Let $\phi : \proj^n_k \to \proj^n_k$ be a projective transformation.
 Then $\phi(T_P(\V(f))) = T_{\phi(P)}(\phi(\V(f)))$.
 \end{proposition}
-\begin{proof}
-Morphisms of projective spaces are defined via polynomials, so write  $\phi = (\phi_0,..\phi_n)$ and $\phi^{-1} = (\phi^{-1}_0,..\phi^{-1}_n)$.
-We have the equalities $\phi(T_P(\V(f))) = \phi(\V(f^{(1)}(P))) = \V(f^{(1)}(P).\phi^{-1})$ and $T_{\phi(P)}(\phi(\V(f))) = T_{\phi(P)}(\V(f.\phi^{-1})) = \V((f.\phi^{-1})^{(1)}(\phi(P)))$, therefore it's enough to show
-\begin{equation}
-f^{(1)}(P).\phi^{-1} = (f.\phi^{-1})^{(1)}(\phi(P))
-\end{equation}
 
-The calculation goes as follows
-\begin{align}
-(f.\phi^{-1})^{(1)}(\phi(P))
-  \defeq& \sum_{i=0}^n \del_{x_i}(f.\phi^{-1})(\phi(P))x_i
-\\\overset{\text{chain rule}}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f).\phi^{-1} \cdot \underset{\in k}{\underbrace{\del_{x_i}(\phi_j^{-1})}}\right)(\phi(P))x_i
-\\\overset{\text{evaluate at }\phi(P)}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f)(P) \cdot \del_{x_i}(\phi_j^{-1}))\right)x_i
-\\\overset{\text{interchange summation}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \sum_{i=0}^n \del_{x_i}(\phi_j^{-1}))x_i
-\\\overset{\text{Euler's formula}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \phi_j^{-1}
-\\\defeq& f^{(1)}(P).\phi^{-1}
-\end{align}
-\end{proof}
+This is actually a corollary of a more general fact about \emph{linear embeddings}.
 
-\begin{corollary}
-Let $\phi : \proj^n_k \to \proj^n_k$ be a projective transformation and $S = \V(f)$ a hypersurface.
-Then a point $P \in S$ is singular iff $\phi(P) \in \phi(S)$ is.
-\end{corollary}
-\begin{proof}
-The hypersurface $S$ is singular at $P$ iff $T_P(S) = \proj^n_k$ iff $T_{\phi(P)}(\phi(S)) = \phi(T_P(S)) = \proj^n_k$ iff $\phi(S)$ is singular at $\phi(P)$.
-\end{proof}
-
-We may pretty much use the same proof for proposition \ref{propositionTangentTransform} in order to prove the following, more general relation between tangent planes
-\begin{corollary} \label{corollaryTangentPullback}
-Let $V\subset \proj^N_k$ be a subvariety, $\proj^n_k$ a subvariety of $\proj^N_k$ via $\iota$ and $\iota^{-1}(V) \subset \proj^n_k$. This situation is best described by a commutative diagram:
+\begin{proposition} \label{corollaryTangentPullback}
+Let $V\subset \proj^N_k$ be a subvariety, $\iota = (\iota_0,..\iota_N): \proj^n_k \hookr \proj^N_k$ a linear embedding and $\iota^{-1}(V) \subset \proj^n_k$. This situation is best described by a commutative diagram:
 \begin{equation}
 \begin{xy}
 (0,20)*+{\proj^n_k}="pn";
@@ -213,15 +200,43 @@ Let $V\subset \proj^N_k$ be a subvariety, $\proj^n_k$ a subvariety of $\proj^N_k
 \end{xy}
 \end{equation}
 Then $T_{\iota^{-1}(P)}(\iota^{-1}(V)) = \iota^{-1}(T_P(V)) $ holds for $P$ in the image of $\iota$.
+\end{proposition}
+\begin{proof}
+Because intersections are well-behaved under preimages, we assume $V$ to be a hypersurface $\V(f)$.
+We have the equalities $\iota^{-1}(T_P(\V(f))) = \iota^{-1}(\V(f^{(1)}(P))) = \V(f^{(1)}(P).\iota)$ and $T_{\iota^{-1}(P)}(\iota^{-1}(\V(f))) = T_{\iota^{-1}(P)}(\V(f.\iota)) = \V((f.\iota)^{(1)}(\iota^{-1}(P)))$, therefore it's enough to show
+\begin{equation}
+(f.\iota)^{(1)}(\iota^{-1}(P))
+=
+f^{(1)}(P).\iota
+\end{equation}
+
+The calculation goes as follows
+\begin{align}
+(f.\iota)^{(1)}(\iota^{-1}(P))
+  \defeq& \sum_{i=0}^n \del_{x_i}(f.\iota)(\iota^{-1}(P))x_i
+\\\overset{\text{chain rule}}=& \sum_{i=0}^n \left(\sum_{j=0}^n ((\del_{x_j}f).\iota) \cdot \underset{\in k}{\underbrace{\del_{x_i}(\iota_j)}}\right)(\iota^{-1}(P))x_i
+\\\overset{\text{evaluate at }\iota^{-1}(P)}=& \sum_{i=0}^n \left(\sum_{j=0}^n (\del_{x_j}f)(P) \cdot \del_{x_i}(\iota_j)\right)x_i
+\\\overset{\text{interchange summation}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \sum_{i=0}^n \del_{x_i}(\iota_j))x_i
+\\\overset{\text{Euler's formula}}=& \sum_{j=0}^n (\del_{x_j}f)(P) \iota_j
+\\\defeq& f^{(1)}(P).\iota
+\end{align}
+\end{proof}
+
+\begin{corollary}
+Let $\phi : \proj^n_k \to \proj^n_k$ be a projective transformation and $S = \V(f)$ a hypersurface.
+Then a point $P \in S$ is singular iff $\phi(P) \in \phi(S)$ is.
 \end{corollary}
+\begin{proof}
+The hypersurface $S$ is singular at $P$ iff $T_P(S) = \proj^n_k$ iff $T_{\phi(P)}(\phi(S)) = \phi(T_P(S)) = \proj^n_k$ iff $\phi(S)$ is singular at $\phi(P)$.
+\end{proof}
 
 With this observation at hand, we can easily make sense of the following lemma:
 
 \begin{lemma} \label{lemmaIntersectionWithTangent}
 Let $S = \V(I) \subset \proj^N_k$ be a projective variety, $P\in S$.
-Clearly, as intersection of hyperplanes the tangent space at $P$ is a linear subspace of $\proj^N_k$ and hence the image of some inclusion $\iota : \proj^n_k \hookr \proj^N_k$ defined in terms of linear forms.
+Clearly, as intersection of hyperplanes the tangent space at $P$ is a linear subspace of $\proj^N_k$ and hence the image of some linear embedding $\iota : \proj^n_k \hookr \proj^N_k$.
 $\iota^{-1}(S)$ has a singularity at $\iota^{-1}(P)$.
 \end{lemma}
 \begin{proof}
-By corollary \ref{corollaryTangentPullback} the tangent space of $\iota^{-1}(S)$ at $\iota^{-1}(P)$ is $\iota^{-1}(T_P(S)) = \iota^{-1}(\var{im}(\iota)) = \proj^n_k$, thus $P$ is a singular point.
+By corollary \ref{corollaryTangentPullback} the tangent space of $\iota^{-1}(S)$ at $\iota^{-1}(P)$ is $\iota^{-1}(T_P(S)) = \iota^{-1}(\var{im}(\iota)) = \proj^n_k$, thus $\iota^{-1}(P)$ is a singular point.
 \end{proof}

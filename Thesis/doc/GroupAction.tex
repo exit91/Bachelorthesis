@@ -7,7 +7,7 @@ f(x_0,..x_n) = (f_0(x_0,..x_n),..f_n(x_0,..x_n))
 \end{equation}
 (A proof of this fact is given in \cite[example 7.1.1]{hartshorne1977algebraic} and involves the functoriality of the Picard group, which we will not cover in this thesis.)
 Such automorphisms correspond precisely to invertible $(n+1)\times(n+1)$-matrices modulo non-zero scalar multiples, consisting of the coefficients of the $f_i$.
-We call an element of the automorphism group a \emph{projective transformation}.
+We call an element of the automorphism group a \emph{projective transformation} or \emph{change of coordinates}.
 
 We will study geometric objects, i.e. projective subsets of some $\proj^n_k$, up to projective automorphism.
 That means that we have to establish some properties which are invariant under projective transformation, but also we need to have `enough' projective transformations to work with in a meaningful way.
@@ -86,8 +86,14 @@ The plane is determined by three points, $P, P_1,P_2$.
 A projective transformation sends them to $[0:0:1:0], [0:1:0:0],[1:0:0:0]$ and along with it the plane $H$ to $\V(x_3)$.
 \end{proof}
 
+A certain family of morphism will be important for us
+\begin{definition}
+Let $n \leq N \in \natural$ be natural numbers.
+A \emph{linear embedding} is an injective morphism $\iota : \proj^n_k \hookr \proj^N_k$ defined in terms of linear forms, that is, $\iota = (\iota_0,..\iota_N)$ is injective and the $\iota_i \in k[x_0,..x_n]$ are linear forms.
+\end{definition}
+
 \begin{proposition} \label{propositionLiftingAutomorphisms}
-Suppose $\iota : \proj^n_k \hookr \proj^N_k$ ($n \leq N$) is an inclusion of projective varieties defined in terms of linear forms and suppose $\phi$ is a projective transformation on $\iota$.
+Suppose $\iota : \proj^n_k \hookr \proj^N_k$ is a linear embedding and suppose $\phi$ is a projective transformation on $\iota$.
 Then there exists a lift to a projective transformation $\overline\phi$ on $\proj^N_k$, such that the diagram
 \begin{equation}
 \begin{xy}
