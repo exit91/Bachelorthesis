@@ -160,7 +160,7 @@ Solving for the linear forms means solving a homogeneous system of linear equati
 \end{proof}
 
 The following lemma is due to Miles Reid and will be useful to prove the main theorem.
-\begin{lemma}
+\begin{lemma} \label{lemmaDisjointLines}
 Let $L_1,L_2,L_3,L_4$ be disjoint lines in $\proj^3_k$.
 A \emph{transversal} of these lines is a line intersecting all four.
 One of the following holds
@@ -168,6 +168,10 @@ One of the following holds
 \item The $L_i$ line on a irreducible quadric surface $Q$ and there are infinitely many common transversals.
 \item No quadric surface contains all the $L_i$. Then there are either one or two common transversals.
 \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Consider the two cases
 \paragraph{Case 1:} Assume there is a quadric containing all lines, necessarily irreducible as seen in the previous lemma.
 Then $\mathcal F(L_1)$ is an infinite family of common transversals.
 \paragraph{Case 2:} Now assume that there is no quadric containing all four lines.
@@ -178,4 +182,12 @@ A common traversal of all four $L_1,L_2,L_3,L_4$ must therefore lie on $Q$.
 By the same proposition \ref{propositionDegreeOfSurface} the line $L_4$ intersects $Q$ in one or two points.
 Through each intersection point go 2 lines, but one of them generates the family containing $L_1,L_2,L_3$, so only the other line is a common transversal.
 This shows that we have one or two common transversals.
-\end{lemma}
+\end{proof}
+
+\begin{corollary} \label{corollaryCubicContainsQuadric}
+A cubic surface $S$ in $\proj^3_k$ containing four disjoint lines which lie on a quadric surface $Q$ is the union of $Q$ and some hyperplane.
+\end{corollary}
+\begin{proof}
+Every common transversal $T$ of those four lines must lie in $S$, otherwise $T$ intersects $S$ in four points, contradicting proposition \ref{propositionDegreeOfSurface}.
+But then the union of all the common transversals is $Q$, so $Q \subset S$ and by Hilbert's Nullstellensatz the claim follows.
+\end{proof}

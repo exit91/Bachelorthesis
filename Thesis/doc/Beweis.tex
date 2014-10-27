@@ -235,7 +235,7 @@ as desired.
 Being a quintic form, $\Delta$ has at most five zeroes on $\proj^1_k$, so the number of planes through $L$ which intersect the surface $S$ in three lines is bounded by five.
 We will show that there are precisely five distinct such planes, but before that let's have a look on how the nonsingularity of $S$ affects the possible configuration of lines.
 
-\begin{lemma}
+\begin{lemma}  \label{lemmaCoplanarLinesOnCubic}
 At most three distinct lines on $S$ go through one point $P$.
 All lines through $P$ lie on $T_P(S)$.
 \end{lemma}
@@ -247,18 +247,16 @@ Hilbert's Nullstellensatz then shows the assertion.
 \end{proof}
 
 \begin{lemma}
-\begin{todo}\item introduce the doubled line \end{todo}
-Let $P \in S$. The intersection $T_P(S) \cap S$ does not contain doubled lines.
+Let $P \in S$. The intersection $T_P(S) \cap S$ does not contain double lines.
+(A double line is the union of a line $\V(I)$ with ideal $I$ with itself, so $\V(I^2)$).
 \end{lemma}
 \begin{proof}
 
 Let's write $u := f^{(1)}(P)$, such that $T_P(S) = \V(u)$.
 This is due to nonsingularity. Suppose $\widetilde f$ is the restriction of $f$ to $T_P(S)$ with $f = \widetilde f + f^{(1)}(P)q$, $q$ a cubic form.
-For the intersection to contain a doubled line means that $\widetilde f = h^2g$ where $h$ and $g$ are linear forms.
-% TODO
-This gives $f = h^2g + uq$, but then $f$ has a singularity at a point where $h,g$ and $q$ vanish.
-As in example \ref{exampleAlternativePartialDerivatives} we may check nonsingularity by 
-% TODO
+For the intersection to contain a doubled line means that $\widetilde f = h^2g$ where $h$ and $g$ are linear forms and $u$ divides neither $h$ nor $g$.
+This gives $f = h^2g + uq$, but then $f$ has a singularity at a point where $h,g$ and $q$ vanish (this can be checked by using example \ref{exampleAlternativePartialDerivatives} or a change of coordinates).
+In other words $f$ is singular at the zeroes of $q$ restricted to the line or plane $\V(h,g)$ and such zeroes must exist by the homogeneous fundamental theorem of algebra (lemma \ref{lemmaFundamentalTheorem}).
 \end{proof}
 
 By a projective transformation we can assume $f^{(1)}(P) = u = z$ (corollary \ref{corollaryTransformPlaneWithPointOnIt}).
@@ -268,7 +266,7 @@ Lifting the projective transformation to $\proj^3_k$ (proposition \ref{propositi
 The plane $\V(z) = \V(1z- 0t)$ corresponds to $\Delta$ having a zero at $[0:1]$ by lemma \ref{lemmaDelta}.
 Thus, to show that it is not a multiple zero, we need to show that $z^2$ does not divide $\Delta$.
 
-\paragraph{Case 1, $f = xyt + zq$.} 
+\paragraph{Case 1: $f = xyt + zq$.} 
 Clearly almost all coefficients $A,B,..$ are divisible by $z$, except $B$ which has a contribution from the term $xyt$, i.e. $B = zr + t$ for some $r\in k$.
 Hence, modulo $z^2$, we have
 \begin{equation}
@@ -289,7 +287,7 @@ Let's have a look at the partial derivatives of $f$.
 We see due to the nonsingularity at $[0:0:0:1]$ that $F$ has a non-vanishing $zt^2$ term and so is not divisible by $z^2$.
 In particular $-t^2F$ is not divisible by $z^2$ showing our claim.
 
-\paragraph{Case 2, $f = x(x-t)t + zq$.}
+\paragraph{Case 2: $f = x(x-t)t + zq$.}
 This case is completely analogous.
 This time around the coefficients $A$ and $D$ get a contribution from the term $x(x-t)t = x^2t - xt^2$ while the others $B,C,F,E$ are divisible by $z$.
 So far we have $D = -t^2 + zr$ where $r$ is a linear form.
@@ -312,29 +310,84 @@ This yields $C = cz$ for some $c\in k, c \neq 0$.
 as desired. Let's summarise our result.
 
 \begin{corollary} \label{corollaryFivePlanes}
-For each line $L$ on the surface $S$, there are exactly five distinct planes through $L$ intersecting $S$ in three lines. 
+For each line $L$ on the surface $S$, there are exactly five distinct planes through $L$ intersecting $S$ in three lines each.
 \end{corollary}
 
-Let's fix notation, before we move on.
+Let's fix notation before we move on.
 \begin{definition}
 For a line $L$ on $S$, let $\Pi^i(L) \, (i=1,..5)$ denote the planes given in the corollary \ref{corollaryFivePlanes}. These planes are called tritangent planes in the literature.
-Each of these planes intersects with $S$ in three lines, one of which is $L$. We call the other lines $\Lambda^i(L), \Lambda'^i(L)$.
+Each of these planes intersects with $S$ in three lines, one of which is $L$. We call the other lines $\Lambda^i(L), V^i(L)$.
+We have a relation between lines: If two lines $L,L'$ on $S$ intersect, then we write $L \boxtimes L'$.
+If they don't,  we write $L\square L'$. The relation is symmetric.
+If some set of lines lie on a plane, then we call them \emph{coplanar}.
 \end{definition}
 
-Now let $L,M$ be skew lines on $S$, that is, $L\cap M = \emptyset$.
-These exist: For some line $L' \subset S$ we can choose $L := \Lambda^1(L)$ and $M := \Lambda^2(L)$.
-They cannot possibly intersect, otherwise $L,M$ and $L'$ would lie on a plane, and $\Lambda'^1(L'),L,L'$ would lie on the same plane.
-But this would mean that $S$ intersects with some plane in four distinct lines, which means that $f$ restricted to that plane has degree at least 4, contradicting proposition \ref{propositionRestriction}.
+\begin{lemma}
+Let $L,L',L''$ be lines on $S$. Then $L\boxtimes L', L' \boxtimes L'', L\boxtimes L''$ iff $L,L',L''$ are coplanar.
+\end{lemma}
+\begin{proof}
+Assume the lines intersect mutually.
+If the lines have no common intersection, then this is clear. On the other hand, if they do have a common intersection $P$, then the lines lie on the tangent plane of $S$ at $P$ by lemma \ref{lemmaCoplanarLinesOnCubic}.
+The other direction is clear, as any two lines intersect in a plane.
+\end{proof}
+\begin{lemma}  \label{lemmaCoplanTrans}
+Let $A,B,L,L'$ be distinct lines on $S$. If $L,L',A$ are coplanar and $L,L',B$ are coplanar, so are $L,L',B,A$.
+\end{lemma}
+\begin{proof}
+We need to show that $A \boxtimes B$, but this follows form the fact that $A$ and $B$ lie on the plane spanned by $L,L'$.
+\end{proof}
 
-% TODO ---> 
-The next observation is that $M$ intersects either $\Lambda^i(L)$ or $\Lambda^i(L)$ for each $i=1,..5$.
-This is because $M$ intersects the hyperplane $\Pi^i(L)$ (by corollary \ref{corollarySimpleIntersect}), $M \subset S - L$ and $S \cap \Pi^i(L) = \Lambda^i(L) \cup \Lambda'^i(L) \cup L$.
-Assume without loss of generality that $\Lambda^i(L) = \Lambda^i(M)$.
-We claim that $\Lambda'^i(L) \cap \Lambda'^j(M) = \emptyset$.
-Same argument as before: $L, \Lambda'^i(L)$
-% TODO <---
+Now let $L,M$ be disjoint lines on $S$.
+These exist: For some line $L' \subset S$ we can choose $L := \Lambda^1(L')$ and $M := \Lambda^2(L')$, so $L \boxtimes L', M \boxtimes L'$.
+Suppose $L\boxtimes M$, then $L,M,L'$ are coplanar, but so are $L,L',V^1(L')$ and $M,L',V^2(L')$, hence $L,V^1(L'),M,V^2(L'),L'$ are coplanar by lemma \ref{lemmaCoplanTrans} and so $S$ intersects with some plane in 5 lines -- contradiction!
+We conclude
+\begin{equation*}
+L\square M
+\end{equation*}
 
+The next observation is that either $M\boxtimes \Lambda^i(L)$ or $M\boxtimes V^i(L)$ for each $i=1,..5$.
+This is because $M$ intersects the hyperplane $\Pi^i(L)$ (by corollary \ref{corollarySimpleIntersect}), $M \subset S - L$ and $S \cap \Pi^i(L) = \Lambda^i(L) \cup V^i(L) \cup L$. Therefore this lemma holds:
+\begin{lemma} \label{lemmaBinaryIntersection}
+If $N\square L$ are lines on $S$, then either $N \boxtimes \Lambda^i(L)$ or $N \boxtimes V^i(L)$.
+If $N\boxtimes L$, then $N$ can furthermore meet $\Lambda^i(L)\cap V^i(L)$.
+\end{lemma}
 
+Assume without loss of generality that $\Lambda^i(L) = \Lambda^i(M) =: L_i$. With this notation we have
+\begin{lemma}
+$V^i(L) \boxtimes V^j(M)$ iff $i \neq j$.
+\end{lemma}
+\begin{proof}
+We just apply the lemma \ref{lemmaBinaryIntersection}.
+Let $i \in\{ 1,..5\}$.
+Suppose $V^i(L) \boxtimes V^i(M)$, then $V^i(L),V^i(M),L_i$ are coplanar and $M,V^i(M),L_i$ are coplanar, thus by lemma \ref{lemmaCoplanTrans} all of $M,V^i(M),L_i,V^i(L)$ are coplanar, contradicting lemma \ref{lemmaCoplanarLinesOnCubic}.
+Now let $j \neq i$.
+Assume $V^i(L) \boxtimes L_j$. Then $L,M,L_j$ being coplanar and $L,L_j,V^i(L)$ being coplanar implies that $L,M,V^i(L),L_j$ are being coplanar -- contradiction.
+Therefore $V^i(L) \boxtimes V^j(M)$, due to lemma \ref{lemmaBinaryIntersection}.
+\end{proof}
 
+So far we found 17 lines $L,M,\Lambda^i(L),V^i(L),V^i(M)$.
+The other ten are obtained via the following lemma.
 
+\begin{lemma}
+There is a bijection between the 3-element subsets of $\{\Lambda^1(L),..\Lambda^5(L)\}$ and the remaining lines on $S$ not among the 17 already accounted for.
+\end{lemma}
 
+This implies that precisely $\binom{5}{3} = 10$ more lines exist.
+
+\begin{proof}
+Let $N$ be a line on $S$ other than the 17 from before.
+Note that by lemma \ref{corollaryCubicContainsQuadric} the surface $S$ cannot contain four disjoint lines lying on a quadric.
+We show that $N$ intersects precisely three of $\Lambda^i(L)$ by showing that the other cases are not possible.
+\paragraph{Case 1: \textnormal{$N$ intersects $\geq 4$ of the $\Lambda^i(L)$}}
+In that case the four disjoint lines have transversals $L,M,N$.
+This is only possible if the four lines lie on a quadric surface (corollary \ref{corollaryCubicContainsQuadric}), contradiction.
+\paragraph{Case 2: \textnormal{$N$ intersects $\leq 2$ of the $\Lambda^i(L)$}}
+The line $N$ meets $\geq 3$ of the $V^i(L)$ and $\geq 3$ of the $V^i(M)$ by lemma \ref{lemmaBinaryIntersection}.
+Without loss we can assume $N$ to either meet 
+\begin{itemize}
+\item $V^1(L) ,V^2(L) ,V^3(L) ,V^4(L) ,V^5(L)$.
+\item $\Lambda^1(L),V^2(L),V^3(L) ,V^4(L) ,V^5(L)$.
+\item $\Lambda^1(L),\Lambda^2(L), V^3(L) ,V^4(L) ,V^5(L)$.
+\end{itemize}
+
+\end{proof}
