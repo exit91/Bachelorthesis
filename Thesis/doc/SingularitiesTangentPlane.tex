@@ -79,7 +79,7 @@ One can easily verify this for $f$ being a power of one variable, then for $f$ b
 
 The following formula will come in handy for some calculations.
 It will allow us to understand terms of the form $f(P+Q)$ for a homogeneous polynomial $f$ and points $P,Q$ better.
-The idea is kind of related to Taylor's formula, which allows one to understand terms of the form $f(x + \delta x)$.
+The idea is kind of related to Taylor's formula, which allows one to understand terms of the form $f(x + \delta)$.
 \begin{proposition}[poor student's Taylor expansion] \label{propositionTaylor}
 Let $f \in k[x_0,..x_n]$ be a homogeneous polynomial of degree $d$.
 There exists a unique decomposition of $f(X+X') := f(x_0+x'_0,..x_n+x'_n) \in k[x_0,..x_n,x'_0,..x'_n], \quad X := (x_0,..x_n), X' := (x'_0,..x'_n)$ into the sum
@@ -229,8 +229,6 @@ Then a point $P \in S$ is singular iff $\phi(P) \in \phi(S)$ is.
 \begin{proof}
 The hypersurface $S$ is singular at $P$ iff $T_P(S) = \proj^n_k$ iff $T_{\phi(P)}(\phi(S)) = \phi(T_P(S)) = \proj^n_k$ iff $\phi(S)$ is singular at $\phi(P)$.
 \end{proof}
-
-With this observation at hand, we can easily make sense of the following lemma:
 
 \begin{lemma} \label{lemmaIntersectionWithTangent}
 Let $S = \V(I) \subset \proj^N_k$ be a projective variety, $P\in S$.

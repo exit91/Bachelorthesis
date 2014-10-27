@@ -1,6 +1,7 @@
 \subsection{The restriction of equations}
 
-One useful operation one may perform is to take the intersection of a hypersurface $S = \V(f) \subset \proj^n_k$ with a hyperplane $\Pi = \V(h)$. Now one expects from geometric intuition that the $d$-form $f$ `restricts' to a $d$-form on $\Pi$ where we think of $\Pi$ as $\proj^{n-1}_k$, unless $S$ contains $\Pi$ in which case one would expect the equation to `restrict' to the zero polynomial.
+One useful operation one may perform is to take the intersection of a hypersurface $S = \V(f) \subset \proj^n_k$ with a hyperplane $\Pi = \V(h)$.
+Now one expects from geometric intuition that the $d$-form $f$ `restricts' to a $d$-form on $\Pi$ where we think of $\Pi$ as $\proj^{n-1}_k$, unless $S$ contains $\Pi$ in which case one would expect the equation to `restrict' to the zero polynomial.
 The goal of this section is to make this intuition precise, by defining a homomorphism $\var{res} : k[x_0,..x_n] \to k[x_0,..x_{n-1}]$ and an isomorphism $\proj^{n-1} \overset\sim\to \Pi$.
 
 First we may assume without loss of generality that
@@ -63,6 +64,11 @@ In particular, if $h$ does not divide $f$, then $\widetilde{\var{res}}(f)$ is no
 Viewing a variety as a system of polynomial equations, what we have done by restricting to a hyperplane is to `eliminate' the variable $x_n$ from the equations.
 Henceforth we will talk of eliminating a variable to specify which variable serves the role, which $x_n$ took in this section.
 \end{remark}
+
+\begin{definition}
+We call $\widetilde{\var{res}(f)}$ the `restriction of the equation of the hypersurface $\V(f)$' (even though, technically, $f$ is not an equation, but $f=0$ is)
+ or the equation $f$ with the variable $x_n$ eliminated.
+\end{definition}
 
 %%We can formulate the result in a slightly higher level of generality. So first we replace algebraic subsets of $\proj^n_k$ by ideals $J \subset k[x_0,..x_n]$.
 %%Furthermore, algebraic subsets of $J = \V(h)$ correspond to ideals $I \subset k[x_0,..x_n]/J$.

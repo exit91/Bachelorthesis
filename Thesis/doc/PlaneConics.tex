@@ -48,7 +48,7 @@ d & e & 2f
 
 Incidentally this statement holds true for characteristic 2 as well, even though we need to approach the proof a little differently.
 At this point I remind the reader that addition and subtraction are the same in characteristic 2, in the sense that negation operation is just the identity, which will simplify the calculations a little.
-The corollary then translates to $g$ having a singular point if and only if $bde + +ae^2 + cd^2 +fb^2 = 0$.
+The corollary then translates to $g$ having a singular point if and only if $bde +ae^2 + cd^2 +fb^2 = 0$.
 The set of singular points is by definition the intersection of $V = \V(\del_{x_0}g,\del_{x_1}g,\del_{x_2}g)$ and $\V(g)$, so let's calculate the points in the first variety: Assuming that not all coefficients $b,d,e$ vanish, the only point on $V$ is $[e:d:b]$, as can be seen by Gaussian elimination where we distinguish the cases of $0,1$ or $2$ of the coefficients $b,d,e$ vanishing.
 This point $[e:d:b]$ lies on $\V(g)$ iff $0 = g(e,d,b) = ae^2 + bde + cd^2 + dbe + ebd + fb^2 = bde + ae^2 + cd^2 + fb^2$ as desired.
 If all of $b,d,e$ vanish, then $V$ is the whole space and every point of $\V(g)$ is singular ($\V(g) = \V((\sqrt{a}x_0 + \sqrt{c}x_1 + \sqrt{f}x_2)^2)$ being a doubled line) and also $bde + ae^2 + cd^2 + fb^2 = 0$. We have proven:
@@ -156,7 +156,7 @@ On the existence of the quadric surface:
 We are given three disjoint lines with ideals $(h_1,h_2), (h_3,h_4), (h_5,h_6)$, the $h_i$ being linear forms, and want to find a quadratic form $q \in k[x_0,..x_3]$, such that $(h_1,h_2) \cap (h_3,h_4) \cap (h_5,h_6) \supset (q)$ (meaning that the union of the lines contains $\V(q)$).
 It suffices to find linear forms $\lambda,\lambda',\mu,\mu',\nu,\nu'$ such that
 $\lambda h_1 + \lambda' h_2 = \mu h_3 + \mu' h_4 = \nu h_5 + \nu' h_6 =: q$.
-Solving for the linear forms means solving a homogeneous system of linear equations in $6*4= 24$ variables and $3\binom{4}{2} = 18$ equations, which ensures the existence of $q \neq 0$.
+Solving for the linear forms means solving a homogeneous system of linear equations in $6\cdot 4= 24$ variables and $3\binom{4}{2} = 18$ equations, which ensures the existence of $q \neq 0$.
 \end{proof}
 
 The following lemma is due to Miles Reid and will be useful to prove the main theorem.

@@ -66,16 +66,25 @@ Because lines are intersections of $n-1$ hyperplanes in $\proj^n_k$, we also ded
 \end{corollary}
 
 So far we have defined a line to be an intersection of hyperplanes, but of course we also want to understand a line as the unique intersection of such hyperplanes containing two distinct points.
-We can obtain these results resorting to pure linear algebra, but to cut this short, we will use some more advanced concepts in the following discussion.
+Let $P = [p_0:..p_n],Q=[q_0:..q_n] \in \proj^n_k$ be points and consider the vector space $S_1(P,Q)$ of all linear forms vanishing on $P,Q$.
+The vector space of all linear forms has dimension $n+1$ and the condition to vanish on $P$ and $Q$ imposes two linear constraints.
+The fact that $P\neq Q$ implies that $\dim(S_1(P,Q)) = (n+1) - 2 = n-1$.
+Hence $\V(S_1(P,Q)$ gives us the unique line vanishing on $P$ and $Q$.
+Any linear form $h$ vanishing on $P$ and $Q$ must vanish on $\lambda P + \mu Q$ by linearity, i.e. $h(\lambda P + \mu Q) = \lambda h(P) + \mu h(Q) = 0$.
+As sets, $\V(S_1(P,Q)) = \mkset{\lambda P + \mu Q}{[\lambda:\mu] \in \proj^1_k} = \var{im}(\phi)$, the image of $\phi : \proj^1_k \to \proj^n_k, [\lambda:\mu] \mapsto [\lambda p_0+ \mu q_0:..\lambda p_n + \mu q_n]$.
+This can be seen either by linear algebra, or from the fact that the image of $\phi$ is a closed set \cite[theorem 1.10]{shafarevich1994basic} of dimension $> 0$ contained in $\V(S_1(P,Q)$ an irreducible projective variety of dimension $1$.
+By \cite[theorem 1.19]{shafarevich1994basic}, $\phi(X) = \V(S_1(P,Q))$.
 
-Let's fix a projective space $\proj^n_k$ ($n\geq 1$) and let $P=[p_0:..p_n]$ and $Q=[q_0:..q_n]$ be distinct points in $\proj^n_k$.
-For two projective varieties $X$,$Y$ any morphism $X \to Y$ has a closed image (\cite[theorem 1.10]{shafarevich1994basic}).
-Clearly, the set $\{ \lambda P + \mu Q \}$ is the image of $\phi : X=\proj^1_k \to Y=\proj^n_k, [\lambda:\mu] \mapsto [\lambda p_0 + \mu q_0,..]$ hence it is closed.
-Furthermore $\phi(X)$ cannot have dimension\footnote{for a definition of dimension refer to \cite[chapter 6]{shafarevich1994basic}} more than $\dim(\proj^1_k) = 1$.
-One can see that $\phi(X)$ does not have dimension 0, having infinitely many points, do the dimension indeed is one.
-To show that it is indeed a linear subspace, consider the vector space $S_1(P,Q)$ of all linear forms vanishing on $P$ and $Q$.
-It has dimension $(n+1) - 2 = n-1$ and every $h \in S_1(P,Q)$ vanishes on all of $\phi(X)$ as $h(\lambda P + \mu Q) = \lambda h(P) + \mu h(Q) = 0$.
-So $\phi(X)$ is contained in the line $\V(S_1(P,Q))$.
+%%We can obtain these results resorting to pure linear algebra, but to cut this short, we will use some more advanced concepts in the following discussion.
+
+%%Let's fix a projective space $\proj^n_k$ ($n\geq 1$) and let $P=[p_0:..p_n]$ and $Q=[q_0:..q_n]$ be distinct points in $\proj^n_k$.
+%%For two projective varieties $X$,$Y$ any morphism $X \to Y$ has a closed image (\cite[theorem 1.10]{shafarevich1994basic}).
+%%Clearly, the set $\{ \lambda P + \mu Q \}$ is the image of $\phi : X=\proj^1_k \to Y=\proj^n_k, [\lambda:\mu] \mapsto [\lambda p_0 + \mu q_0,..]$ hence it is closed.
+%%Furthermore $\phi(X)$ cannot have dimension\footnote{for a definition of dimension refer to \cite[chapter 6]{shafarevich1994basic}} more than $\dim(\proj^1_k) = 1$.
+%%One can see that $\phi(X)$ does not have dimension 0, having infinitely many points, do the dimension indeed is one.
+%%To show that it is indeed a linear subspace, consider the vector space $S_1(P,Q)$ of all linear forms vanishing on $P$ and $Q$.
+%%It has dimension $(n+1) - 2 = n-1$ and every $h \in S_1(P,Q)$ vanishes on all of $\phi(X)$ as $h(\lambda P + \mu Q) = \lambda h(P) + \mu h(Q) = 0$.
+%%So $\phi(X)$ is contained in the line $\V(S_1(P,Q))$ of dimension 1, so by \cite[theorem 1.19]{shafarevich1994basic} $\phi(X) = \V(S_1(P,Q))$.
 
 An easy corollary is
 \begin{lemma} \label{lemmaLineOnSurface}
@@ -83,8 +92,6 @@ A hypersurface $\V(f)$ containing two points $P$ and $Q$ also contains the line 
 \end{lemma}
 
 If one wishes to, one can show by a completely analogous argument, that a plane is determined by three points $P,Q,R$ on it, such that they don't all lie on a line.
-In that case the set of points of the plane is given by $\mkset{\lambda P + \mu Q + \nu R}{[\lambda:\mu:\nu] \in \proj^2_k}$ which is the image of a map $\proj^2_k \to \proj^n_k$ $(n\geq 2)$, hence it's dimension is $\leq 2$.
-On the other hand, it contains the plane $\V(S_1(P,Q,R))$ (the intersection of all the hyperplanes through $P,Q,R$), so $\V(S_1(P,Q,R)) = \mkset{\lambda P + \mu Q + \nu R}{[\lambda:\mu:\nu] \in \proj^2_k}$ gives a plane.
 
 \begin{remark}
 Why are we working over an algebraically closed field?

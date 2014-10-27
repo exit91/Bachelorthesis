@@ -5,7 +5,7 @@ let $\V(F)$ be an \emph{irreducible} singular cubic curve.
 The first observation is that there exist only one singular point $P = [s_0:s_1:s_2]$ on the curve.
 Assume for the contrary that $P \neq P'$ are singular points, then the restriction of $F$ to the line $L = \overline{P,P'}$ is non-zero (the reason being $L \not\subset \V(F)$) and has 2 zeroes of multiplicity at least 2 (to prove this invoke corollary \ref{corollaryTangentPullback}), but $F$ had degree 3 -- a contradiction.
 We may assume that $[0:0:1]$ is a singular point by an appropriate transformation:
-By permuting the coordinates we may assume $s_2 \neq 0$ and then the projective transformation $F(x+s_0z,y+s_1z,s_2z)$ has its singularity at $[0:0:1]$.
+By permuting the coordinates we may assume $s_2 \neq 0$ and then the projectively transformationed variety $\V(F(x+s_0z,y+s_1z,s_2z))$ has its singularity at $[0:0:1]$.
 
 One way to examine the singularity is to consider lines through it\footnote{a rather analytical approach, isn't it?}.
 Consider the polynomial $f(ut, vt) \in k[u,v,t]$ where $f := F(x,y,1)$ is the dehomogenisation.
@@ -19,7 +19,7 @@ Let's do a case analysis on $g$.
 In this case we deduce $F \in k[x,y]$ and by lemma \ref{lemmaFundamentalTheorem} the equation $F=0$ defines the union of 3 (not necessarily distinct) lines.
 We excluded such a case, so $g \neq 0$.
 
-\paragraph{Case 1: $g=h_1h_2$ and $h_1,h_2$ not $k$-linearly dependent.}
+\paragraph{Case 1: \textnormal{$g=h_1h_2$ and $h_1,h_2$ not $k$-linearly dependent.}}
 We call the singularity a \emph{node}.
 The image is as follows: There are two distinct lines approximating the curve really well (figure \ref{figureNode}).
 \begin{figure}
@@ -110,8 +110,11 @@ If the characteristic of the ground field is not 2, then every nodal cubic is of
 F = x^3 + y^3 - xyz
 \end{equation}
 after an appropriate change of coordinates.
-This particular curve is also known as `Descarte's folium'.
 \end{proposition}
+
+\begin{remark}
+This particular curve is also known as `Descarte's folium'.
+\end{remark}
 
 \begin{proof}
 We start from the normal form of proposition \ref{propositionNormalformNodal} and perform a change of coordinates
