@@ -59,7 +59,7 @@ Let $k$ be a field of any characteristic and $g = ax_0^2 + bx_0x_1 + cx_1^2 + dx
 \end{corollary}
 
 
-Returning to our initial question we want to establish the fact that the conic given by the quadratic form $g$ is irreducible if and only if it is non-singular.
+Returning to our initial question we want to establish the fact that the conic given by the quadratic form $g$ is irreducible if and only if it is nonsingular.
 For that assume reducibility, that is $g = h_1h_2$ for 1-forms $h_1$ and $h_2$.
 We can apply the following lemma
 \begin{lemma} \label{lemmaSingularIntersect}
@@ -97,7 +97,7 @@ The equation of the Hessian curve in case of the conic considered in this sectio
 
 
 It is now time to profit from the previous meditations about singularities.
-Let $Q \subset \proj^3_k$ be a non-singular quadric surface.
+Let $Q \subset \proj^3_k$ be a nonsingular quadric surface.
 We will see that it does not make sense to count the lines on this surface, but let's find some first.
 Surely $Q$ will not contain any plane, as this would mean (appealing to the Nullstellensatz) that $Q$ is the union of two planes.
 Furthermore these planes intersect at least in a line, so by lemma \ref{lemmaSingularIntersect} the quadric surface would be singular.
@@ -139,12 +139,9 @@ Over an algebraically closed field, a line has infinitely many points, so one ca
 \end{remark}
 
 \begin{remark}
-\begin{todo}
-\item keep or drop this ?
-\end{todo}
-The reader, who is familiar with the Segre map $\sigma : \proj^1_k \times \proj^1_k \to \proj^3_k, ([x:y],[z:t]) \mapsto [xz:xt:yz:yt]$ (\cite[example 2.11]{harris1992algebraic}) may ask how the `rulings' on the non-singular quadric relates to the (so called) `ruled surface' which is the image of $\sigma$.
-In fact we can give a Segre-like map for parametrisations $\phi$ of $L_1$ and $\psi$ of $L_2$.
-Every point of $P' \in Q$ is then the some unique intersection $L_1(\phi([x:y])) \cap L_2(\psi([y:z]))$, giving a bijective map $Q \to \proj^1_k \times \proj^1_k, P' \mapsto ([x:y],[z:t])$.
+The nonsingular quadric surface $\V(x_0x_3 - x_1x_2)$ is the image of the \emph{Segre map} $\sigma : \begin{cases} \proj^1_k \times \proj^1_k \to& \proj^3_k,  \\ ([x:y],[z:t]) \mapsto& [xz:xt:yz:yt] \end{cases}$.
+In this case one can see the ruling easily: The images of
+$\sigma(P;\textemdash) : \proj^1_k \to \proj^3_k$ give one family of lines, where $P$ ranges over $\proj^1_k$.
 \end{remark}
 
 
