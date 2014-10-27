@@ -1,11 +1,11 @@
-\section{Other proofs}
+\subsection{Other proofs}
 
 In his textbook `Basic algebraic geometry' Shafarevich\footnote{Shafarevich's student Dolgachev gives the same proof in less detail in \cite[theorem 9.1.13]{dolgachev2012classical} as well} proves the existence of a line on a general cubic surface by relating both kinds of geometric objects in the following way:
 We can consider lines as points in some projective space $\mathcal L$ (a so called Grassmannian) and likewise we can consider cubic surfaces as points in a projective space $\mathcal S$: Just take the coefficients of the defining polynomial as homogeneous coordinates.
 One can then show that there exists a polynomial relation between coefficients of a line and a surface, determining whether the line lies on the surface.
 This means that one can define define a projective variety $\Gamma \subset \mathcal L \times \mathcal S$, such that $(L,S) \in \Gamma$ iff the line corresponding to $L$ lies in the surface corresponding to $S$.
 Now, a surface corresponding to $S$ contains a line iff the fibre $\psi^{-1}(S)$ of the projection map $\psi : \mathcal L \times \mathcal S \to \mathcal S$ is non-empty (or equivalently iff $\psi(\Gamma) = \mathcal S$).
-The non-emptyness of the fibre then is shown by the `theorem on the dimension of fibres', which is some sort of analogue to the dimension theorem of linear algebra.
+The non-emptiness of the fibre then is shown by the `theorem on the dimension of fibres', which is some sort of analogue to the dimension theorem of linear algebra.
 
 Dolgachev gives a symmetric proof for counting the 27 lines, based on \ref{corollaryFivePlanes} in \cite[theorem 9.1.13]{dolgachev2012classical}.
 We can sketch his argument like this: having found three lines $L_0,L_1,L_2 = L,\Lambda^1(L),\Lambda'^1(L)$, he considers the planes $\Pi^j(L_i)$ (further remark: these planes are called tritangent planes in the literature) which give for each $L_i$ four additional tritangent planes, each containing two new lines.

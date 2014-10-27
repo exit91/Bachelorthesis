@@ -1,8 +1,8 @@
 \section{The twenty-seven lines}
 
-After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem (for $\var{char}(k) \neq 2$).
+After having proved all the basic geometric facts, we will turn our attention to finally prove the main theorem. Throughout this section we assume $k$ to be an algebraically closed field of characteristic neither 2 nor 3.
 \begin{theorem}
-Let $k$ be an algebraically closed field, $\var{char } k \neq 2$ and let $S = \V(f) \subset \proj^3_k$ be a nonsingular cubic surface, $f\in k[x,y,z,t]$.
+Let $S = \V(f) \subset \proj^3_k$ be a nonsingular cubic surface, $f\in k[x,y,z,t]$.
 Then $S$ contains precisely 27 lines.
 \end{theorem}
 We will follow the proof given by Miles Reid (\cite[§7]{reid1988undergraduate}).
@@ -19,7 +19,6 @@ To simplify things, move tangent plane at $P_0$ to the plane $\V(t)$ and simulta
 That this transforms the surface in a compatible manner with the tangent plane has been proven in proposition \ref{propositionTangentTransform}.
 Eliminating the variable $t = 0$, $f(x,y,z,0)$ defines a cubic curve.
 By Lemma \ref{lemmaIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^2z - y^3)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
-This however is only true if the characteristic of $k$ is not $3$, so we have to hope that the nodal case occurs somewhere.
 We can lift this automorphism of the hyperplane $\V(t)$ to an automorphism of the whole space via proposition \ref{propositionLiftingAutomorphisms}.
 
 \subsubsection{The cuspidal case}
@@ -110,23 +109,76 @@ We will see that the determinant does not vanish, so this gives the leading term
 Indeed, by manual evaluation (a tedious process of multiplying/dividing rows or columns of the matrix by powers of $\alpha$) of the determinant, we are able to obtain $\tau^6\alpha^{27} $ as leading term.
 We've proven:
 \begin{proposition}
-Suppose $k$ has characteristic neither 2 nor 3.
 If $T_{P_0}(S) \cap S$ is a cuspidal cubic curve, then there exists a polynomial $R \in k[\alpha]$ of degree 27, such that there exists a line on $S$ through $P(\alpha_0) = (1,\alpha_0,\alpha_0^3,0)$ iff $\alpha_0 \in k$ is a root of $R$.
 \end{proposition}
 
 \subsubsection{The nodal case}
-\begin{todo}
-\item need to set up everything again blabla
-\end{todo}
 By leveraging the power of the modern analytical engine -- by which I mean a computer algebra system like Sage \cite{sagemath2014} -- we can perform all these calculations easily, so let's not bother ourselves with lengthy calculations anymore.
 The Sage script in listing \ref{listingCuspidal} computes the resultant with the same result as we have done manually so far.
-A second Sage script (listing \ref{listingNodal}) gives us the following results for the nodal case:
-We obtain a resultant $R' \in k(\alpha)$, such that $R := \alpha^{12}R' \in k[\alpha]$ is a polynomial in $\alpha$ with leading term $\tau'^6\alpha^{27}$ and constant term $\tau'^6$, $\tau'$ being a unit (in fact, $\tau$ is the coefficient of the $z^2$ term of the quadratic form $g$ in $f = x^3 + y^3 - xyz + tg'$, which just like $\tau$ is non-zero due to the nonsingularity of the cubic surface).
-This verifies:
+Let me walk you through the code -- the procedure is analogous to the cuspidal case:
+
+The first lines just declare variables $x,y,z,t$ as well as $x',y',..$ (written in code as \verb|dx,dy,..| and $\alpha$ (represented by \verb|a|). Furthermore we need coefficients for the quadratic form $g$, the coefficients being of the form \verb|gxx,gxy,gyy,..|.
+Then we define the polynomials
+\begin{lstlisting}[frame=single,language=python]
+g = sum([cg(u,v)*u*v for u in [x,y,z,t] for v in [x,y,z,t] ])
+f = x**3 + y**3 - x*y*z + t*g
+f1 = sum([f.diff(v)*dv for (v,dv) in zip([x,y,z,t],[dx,dy,dz,dt])])
+p = (a,a**2,1+a**3,0)
+q = (0,y,z,t)
+\end{lstlisting}
+
+Thereafter we define functions \verb|eval1(f,P)| and \verb|eval2(f,P,P')| which perform variable substitution, i.e. $\var{eval1}(f,P) := f(P)$ and $\var{eval2}(f,P,P') := f(P,P')$.
+Equipped with these functions we can calculate $A,B,C$ like in the cuspidal case:
+
+\begin{lstlisting}[frame=single,language=python]
+A = eval2(f1,p,q)
+B = eval2(f1,q,p)
+C = eval1(f,q)
+\end{lstlisting}
+
+When we evaluate \verb|A| in the interactive console, we obtain
+\begin{equation}
+A = \alpha^3 z + r
+\end{equation}
+where $r$ is some term in $\alpha, y,t$.
+So $A = 0$ iff $z = \alpha^{-3}A + z$ and we can eliminate $z$:
+
+\begin{lstlisting}[frame=single,language=python]
+Z = a**(-3)*A + z
+B_ = B(z = Z)
+C_ = C(z = Z)
+\end{lstlisting}
+
+Here \verb|B_| and \verb|C_| correspond to the polynomials $B',C'$.
+We calculate the coefficients of these, and determine the Sylvester determinant.
+
+
+\begin{lstlisting}[frame=single,language=python]
+b0 = (1/2) * B_.diff(y,y).expand()
+b1 = B_.diff(y,t).expand()
+b2 = (1/2) * B_.diff(t,t).expand()
+
+c0 = (1/6)*C_.diff(y,y,y)
+c1 = (1/2)*C_.diff(y,y,t).expand()
+c2 = (1/2)*C_.diff(y,t,t)
+c3 = (1/6)*C_.diff(t,t,t)
+
+d = det(Matrix(
+[[b0,b1,b2,0,0], 
+ [0,b0,b1,b2,0], 
+ [0,0,b0,b1,b2], 
+ [c0,c1,c2,c3,0], 
+ [0,c0,c1,c2,c3]]))
+\end{lstlisting}
+
+It turns out that \verb|d| is a polynomial in $k[\alpha,\alpha^{-1}]$ with a term of highest degree $15$ and lowest degree $12$.
+Multiplying \verb|d| with $\alpha^{12}$ yields a polynomial $R\in k[\alpha]$ of degree 27 and leading coefficient $\tau^6$ where $\tau$ is (again) the coefficient of the $z^2$ term in $q$ and (again) non-zero due to nonsingularity.
+The constant term is given by $\tau^2$ as well, so $R(\alpha) \neq 0$ for $\alpha = 0$. This means that $R$ vanishes iff \verb|d| vanishes.
+We have verified:
 \begin{proposition}
-Suppose $k$ has characteristic not 2.
 If $T_{P_0}(S) \cap S$ is a nodal cubic curve, then there exists a polynomial $R \in k[\alpha]$ of degree 27 not vanishing in 0, such that there exists a line on $S$ through $P(\alpha_0) = (\alpha_0,\alpha_0^2,1+\alpha_0^3,0)$ iff $\alpha_0 \in k$ is a root of $R$.
 \end{proposition}
+The complete code listing can be found in the appendix.
 
 \subsection{Finding the other lines}
 
@@ -168,7 +220,7 @@ q =
 \end{equation}
 
 In Corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
-By writing this condition out, one obtains $\lambda^{-5} \Delta(\lambda,\mu) = 0$ and multiplying by $\lambda^5$ we finally get as necessary and suffient condition for $q$ to factor into linear forms
+By writing this condition out, one obtains $\lambda^{-5} \Delta(\lambda,\mu) = 0$ and multiplying by $\lambda^5$ we finally get as necessary and sufficient condition for $q$ to factor into linear forms
 \begin{equation}
 \Delta(\lambda,\mu) = 0
 \end{equation}
