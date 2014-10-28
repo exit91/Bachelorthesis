@@ -259,9 +259,9 @@ This gives $f = h^2g + uq$, but then $f$ has a singularity at a point where $h,g
 In other words $f$ is singular at the zeroes of $q$ restricted to the line or plane $\V(h,g)$ and such zeroes must exist by the homogeneous fundamental theorem of algebra (lemma \ref{lemmaFundamentalTheorem}).
 \end{proof}
 
-By a projective transformation we can assume $f^{(1)}(P) = u = z$ (corollary \ref{corollaryTransformPlaneWithPointOnIt}).
+By a projective transformation we can assume $f^{(1)}(P) = u = z$ (corollary \ref{corollaryTransformPlaneWithPointOnIt}), so $f = \widetilde f + zq$.
 We have seen in corollary \ref{corollaryDistinctLines} how three distinct lines can intersect on a plane and by proposition \ref{propositionDegreeOfSurface} we immediately see that the corollary covers all possibilities.
-Lifting the projective transformation to $\proj^3_k$ (proposition \ref{propositionLiftingAutomorphisms}) we can assume $h^2g$ to be of $xyt$ or $x(x-t)t$.
+Lifting the projective transformation to $\proj^3_k$ (proposition \ref{propositionLiftingAutomorphisms}) we can assume $\widetilde f$ to be $xyt$ or $x(x-t)t$.
 
 The plane $\V(z) = \V(1z- 0t)$ corresponds to $\Delta$ having a zero at $[0:1]$ by lemma \ref{lemmaDelta}.
 Thus, to show that it is not a multiple zero, we need to show that $z^2$ does not divide $\Delta$.
@@ -302,7 +302,7 @@ Consider again the partial derivatives:
 \del_t f =& x^2 - 2tx + z\del_t q & (0)
 \end{matrix}
 \end{equation}
-Again by nonsingularity $C$ has a non-vanishing $z$ term and because we already knew that $z$ divides $C$, it cannot have a non-vanishing $t$ term.
+Again by nonsingularity $C$ has a non-vanishing $z$ term and because we already knew that $z$ divides $C$, it cannot have a $t$ term.
 This yields $C = cz$ for some $c\in k, c \neq 0$.
 \begin{equation}
 \Delta \equiv CD^2 = cz(-t^2+zr)^2 \equiv -czt^2  \not\equiv 0 \mod z^2
@@ -311,6 +311,7 @@ as desired. Let's summarise our result.
 
 \begin{corollary} \label{corollaryFivePlanes}
 For each line $L$ on the surface $S$, there are exactly five distinct planes through $L$ intersecting $S$ in three lines each.
+This implies that every line on $S$ intersects with exactly ten other lines on $S$.
 \end{corollary}
 
 Let's fix notation before we move on.
@@ -330,16 +331,30 @@ Assume the lines intersect mutually.
 If the lines have no common intersection, then this is clear. On the other hand, if they do have a common intersection $P$, then the lines lie on the tangent plane of $S$ at $P$ by lemma \ref{lemmaCoplanarLinesOnCubic}.
 The other direction is clear, as any two lines intersect in a plane.
 \end{proof}
+
 \begin{lemma}  \label{lemmaCoplanTrans}
-Let $A,B,L,L'$ be distinct lines on $S$. If $L,L',A$ are coplanar and $L,L',B$ are coplanar, so are $L,L',B,A$.
+Let $A,B,L,L'$ be distinct lines. If $L,L',A$ are coplanar and $L,L',B$ are coplanar, so are $L,L',B,A$.
 \end{lemma}
 \begin{proof}
 We need to show that $A \boxtimes B$, but this follows form the fact that $A$ and $B$ lie on the plane spanned by $L,L'$.
 \end{proof}
 
+One can interpret this lemma as follows.
+For lines $A,B,L,L',..$ on $S$ we can draw the graph with the lines as nodes and a connecting edge between two nodes if the lines intersect.
+Figure \ref{graph} gives an example of how such a graph may look like.
+The lemma then says that the nodes of two adjacent triangles are coplanar.
+\begin{figure}
+\center
+\includegraphics[width=0.3\textwidth]{img/intersectiongraph.pdf}
+\label{graph}
+\caption{depiction of a contradicting diamond }
+\end{figure}
+On the other hand the existence of such adjacent triangles contradicts lemma \ref{lemmaCoplanarLinesOnCubic}.
+We will use this argument several times, so let's give it a name. We call a configuration like in figure \ref{graph} a \emph{contradicting diamond}.
+
 Now let $L,M$ be disjoint lines on $S$.
 These exist: For some line $L' \subset S$ we can choose $L := \Lambda^1(L')$ and $M := \Lambda^2(L')$, so $L \boxtimes L', M \boxtimes L'$.
-Suppose $L\boxtimes M$, then $L,M,L'$ are coplanar, but so are $L,L',V^1(L')$ and $M,L',V^2(L')$, hence $L,V^1(L'),M,V^2(L'),L'$ are coplanar by lemma \ref{lemmaCoplanTrans} and so $S$ intersects with some plane in 5 lines -- contradiction!
+Suppose $L\boxtimes M$, then $L,M,L'$ are coplanar, but so are $L,L',V^1(L')$ which gives us the contradicting diamond $L,L',V^1(L'),M$.
 We conclude
 \begin{equation*}
 L\square M
@@ -353,15 +368,16 @@ If $N\boxtimes L$, then $N$ can furthermore meet $\Lambda^i(L)\cap V^i(L)$.
 \end{lemma}
 
 Assume without loss of generality that $\Lambda^i(L) = \Lambda^i(M) =: L_i$. With this notation we have
-\begin{lemma}
+\begin{lemma} \label{lemmaCrosswiseIntersection}
 $V^i(L) \boxtimes V^j(M)$ iff $i \neq j$.
 \end{lemma}
 \begin{proof}
 We just apply the lemma \ref{lemmaBinaryIntersection}.
 Let $i \in\{ 1,..5\}$.
-Suppose $V^i(L) \boxtimes V^i(M)$, then $V^i(L),V^i(M),L_i$ are coplanar and $M,V^i(M),L_i$ are coplanar, thus by lemma \ref{lemmaCoplanTrans} all of $M,V^i(M),L_i,V^i(L)$ are coplanar, contradicting lemma \ref{lemmaCoplanarLinesOnCubic}.
+Suppose $V^i(L) \boxtimes V^i(M)$, then $V^i(L),V^i(M),L_i$ are coplanar and $M,V^i(M),L_i$ are coplanar, earning us a contradicting diamond.
 Now let $j \neq i$.
-Assume $V^i(L) \boxtimes L_j$. Then $L,M,L_j$ being coplanar and $L,L_j,V^i(L)$ being coplanar implies that $L,M,V^i(L),L_j$ are being coplanar -- contradiction.
+Assume $V^i(L) \boxtimes L_j$.
+Then $L,M,L_j$ being coplanar and $L,L_j,V^i(L)$ being coplanar implies that $L,L_j,M,V^i(L)$ is a contradicting diamond.
 Therefore $V^i(L) \boxtimes V^j(M)$, due to lemma \ref{lemmaBinaryIntersection}.
 \end{proof}
 
@@ -369,25 +385,40 @@ So far we found 17 lines $L,M,\Lambda^i(L),V^i(L),V^i(M)$.
 The other ten are obtained via the following lemma.
 
 \begin{lemma}
-There is a bijection between the 3-element subsets of $\{\Lambda^1(L),..\Lambda^5(L)\}$ and the remaining lines on $S$ not among the 17 already accounted for.
+There is a bijection between the 3-element subsets of $\{\Lambda^1(L),..\Lambda^5(L)\}$ and the remaining lines on $S$ which are not among the 17 already accounted for.
 \end{lemma}
 
-This implies that precisely $\binom{5}{3} = 10$ more lines exist.
+This implies that precisely $\binom{5}{3} = 10$ more lines exist, for a total of 27.
 
 \begin{proof}
 Let $N$ be a line on $S$ other than the 17 from before.
-Note that by lemma \ref{corollaryCubicContainsQuadric} the surface $S$ cannot contain four disjoint lines lying on a quadric.
 We show that $N$ intersects precisely three of $\Lambda^i(L)$ by showing that the other cases are not possible.
-\paragraph{Case 1: \textnormal{$N$ intersects $\geq 4$ of the $\Lambda^i(L)$}}
+\paragraph{Case 1: \textnormal{$N$ intersects $\geq 4$ of the $L_i$.}}
 In that case the four disjoint lines have transversals $L,M,N$.
-This is only possible if the four lines lie on a quadric surface (corollary \ref{corollaryCubicContainsQuadric}), contradiction.
-\paragraph{Case 2: \textnormal{$N$ intersects $\leq 2$ of the $\Lambda^i(L)$}}
-The line $N$ meets $\geq 3$ of the $V^i(L)$ and $\geq 3$ of the $V^i(M)$ by lemma \ref{lemmaBinaryIntersection}.
-Without loss we can assume $N$ to either meet 
+This is only possible if the four lines lie on a quadric surface (by corollary \ref{corollaryCubicContainsQuadric}), contradiction.
+\paragraph{Case 2: \textnormal{$N$ intersects $\leq 2$ of the $L_i$.}}
+Without loss we can assume $N$ to meet either one of these sets of five disjoint lines:
 \begin{itemize}
 \item $V^1(L) ,V^2(L) ,V^3(L) ,V^4(L) ,V^5(L)$.
-\item $\Lambda^1(L),V^2(L),V^3(L) ,V^4(L) ,V^5(L)$.
-\item $\Lambda^1(L),\Lambda^2(L), V^3(L) ,V^4(L) ,V^5(L)$.
+\item $L_1,V^2(L),V^3(L) ,V^4(L) ,V^5(L)$.
+\item $L_1, L_2, V^3(L) ,V^4(L) ,V^5(L)$.
 \end{itemize}
+So we assume one of these sets to have $N$ as common transversal, as well as $V^1(M) $ and $L$ by default.
+This leads to a contradiction just like in the first case.
 
+This shows that the following function is well-defined:
+\begin{align*}
+\kappa : \left\lbrace\text{remaining lines}\right\rbrace \to &\left\lbrace \text{3-element subsets of }\{L_1,..L_5\}\right\rbrace \\
+N \mapsto &\mkset{ L_i}{N\boxtimes L_i}
+\end{align*}
+
+We show injectivity: Suppose the lines $N$ and $N'$ meet the same lines $L_i$. Then $N$ meets some $V^j(M)$ and some $V^k(L)$ ($j \neq k$), same for $N'$.
+By lemma \ref{lemmaCrosswiseIntersection}, $V^j(M) \boxtimes V^k(L)$.
+If $N\neq N'$ we obtain a contradicting diamond $N,N',V^j(M),V^k(L)$, so $N=N'$, proving injectivity.
+
+Let's fix one $L_i$.
+We know that $L_i$ meets ten lines by corollary \ref{corollaryFivePlanes}.
+Four of these have been counted: $M,V^i(M),L,V^i(L)$.
+As we have just seen, the missing six meet two out of the four lines $\{ L_j \}_{j\neq i}$, so there are $\binom{4}{2}$ possibilities to choose such two.
+By injectivity of $\kappa$ all these possibilities must be exhausted, hence $\kappa$ is also surjective and we're done with the proof.
 \end{proof}

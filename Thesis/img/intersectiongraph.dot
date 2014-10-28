@@ -1,0 +1,9 @@
+graph IntersectionGraph {
+A -- L;
+LL[label="L'"];
+A -- LL;
+L -- LL;
+L -- B;
+LL -- B;
+{rank=same; "L" "LL"}
+}
