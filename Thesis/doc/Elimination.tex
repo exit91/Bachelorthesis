@@ -21,11 +21,11 @@ and furthermore we extend it (via the canonical inclusion $k[x_0,..x_{n-1}] \sub
 \widetilde{\var{res}} : k[x_0,.. x_n] \overset{\var{res}}\to k[x_0,.. x_{n-1}] \hookr k[x_0,.. x_n]
 \end{equation}
 
-The isomorphism $\vartheta : \proj^{n-1}_k \to \Pi$ we define as
+We define the isomorphism $\vartheta : \proj^{n-1}_k \to \Pi$ via
 \begin{equation}
 \vartheta : [x_0:..x_{n-1}] \mapsto [x_0:..x_{n-1}:-\frac 1\alpha \widetilde h(x_0,..x_{n-1})]
 \end{equation}
-One can easily see by evaluation that $h$ vanishes on the image of $\vartheta$, so $\vartheta$ maps into $\Pi$. To confirm, that we indeed defined an isomorphism we construct an inverse.
+One can easily see by evaluation that $h$ vanishes on the image of $\vartheta$, so $\vartheta$ maps into $\Pi$. To confirm that we indeed defined an isomorphism, we construct an inverse.
 A left-inverse of course has to look like this:
 \begin{equation}
 \vartheta^{-1} : [x_0:..x_n] \mapsto [x_0:..x_{n-1}]
@@ -76,7 +76,7 @@ We call $\widetilde{\var{res}(f)}$ the `restriction of the equation of the hyper
 \begin{corollary} \label{corollaryRadical}
 Let $h_1,.. h_m \in k[x_0,..x_n]$ be $m$ $k$-linearly independent linear forms.
 Then there exists an isomorphism $k[x_0,..x_n]/(h_1,..h_m) \simeq k[x_0,..x_{n-m}]$.
-Furthermore the ideal $(h_1,..h_m)\subset k[x_0,..x_n]$ is radical.
+Furthermore the ideal $(h_1,..h_m)\subset k[x_0,..x_n]$ is prime.
 \end{corollary}
 \begin{proof}
 We prove the first assertion.
@@ -92,7 +92,7 @@ Because $\var{res}$ is an epimorphism, we get isomorphisms
 \frac{k[x_0,..x_{n-1}]}{\var{res}((h_m))}
 \simeq \frac{\var{res}^{-1}(k[x_0,..x_{n-1}])}{\var{res}^{-1}(\var{res}((h_m))}
 = \frac{k[x_0,..x_n]}{I+(h_m)}
-= \frac{k[x_0,..x_n]}{(h_1,..h_m)}
+= \frac{k[x_0,..x_n]}{(h_1,..h_m)}.
 \end{equation}
 
 Because the linear forms are $k$-linear independent, none of the forms $h_0,..h_{m-1}$ lie in the kernel $I$ of the restriction homomorphism.
@@ -102,7 +102,7 @@ Any non-trivial linear combination $0 = \sum_{i=0}^{m-1} \alpha_i \var{res}(h_i)
 Hence we can apply the induction hypothesis on $\var{res}(I) = (\var{res}(h_0),..\var{res}(h_{m-1})) \subset k[x_0,..x_{n-1}]$, which concludes our proof.
 
 
-The second claim is an easy corollary, as $k[x_0,..x_n]/(h_0,..h_m) \simeq k[x_0,..x_{n-m}]$ is reduced which is equivalent to the ideal $(h_0,..h_m)$ being radical.
+The second claim is an easy corollary, as $k[x_0,..x_n]/(h_0,..h_m) \simeq k[x_0,..x_{n-m}]$ is an integral domain which is equivalent to the ideal $(h_0,..h_m)$ being prime.
 
 \end{proof}
 
@@ -126,7 +126,7 @@ Applying the fundamental theorem of algebra $g(u/v,1) = \alpha\prod_{i=1}^d(u/v 
 $g = v^d g(u/v,1) = \alpha\prod_{i=1}^d(u - \alpha_iv)$.
 \end{proof}
 
-\begin{proof}[Proof of proposition \ref{propositionDegreeOfSurface}]
+\begin{proof}[Proof of Proposition \ref{propositionDegreeOfSurface}]
 Restricting $f$ to $L$ we obtain a $d$-form or 0.
 In the former case, lemma \ref{lemmaFundamentalTheorem} tells us that the restriction has at most $d$ zeroes and at least one, meaning that the line has at most $d$ and at least one point of intersection.
 The latter case implies that $f$ vanishes on $L$, so $L \subset \V(f)$.

@@ -1,5 +1,5 @@
 set terminal pdf
-set output 'nodal.pdf'
+set output 'cuspidal.pdf'
 
 set parametric
 set dummy t

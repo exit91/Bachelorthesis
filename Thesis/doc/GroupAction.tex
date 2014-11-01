@@ -1,12 +1,12 @@
-\subsection{The group action of $PGL_n$ on $\proj^n_k$}
+\subsection{The group action of $\var{PGL}_n$ on $\proj^n_k$}
 
-The projective space $\proj^n_k$ is naturally endowed with a group action, the group being the group of automorphisms on $\proj^n_k$.
+The projective space $\proj^n_k$ is naturally endowed with a group action, the group being the group $\var{PGL}_n$ of automorphisms on $\proj^n_k$.
 We can give this group explicitly as the automorphisms $f$ given by linear forms $f_i \in k[x_0,..x_n]$.
 \begin{equation}
 f(x_0,..x_n) = (f_0(x_0,..x_n),..f_n(x_0,..x_n))
 \end{equation}
-(A proof of this fact is given in \cite[example 7.1.1]{hartshorne1977algebraic} and involves the functoriality of the Picard group, which we will not cover in this thesis.)
-Such automorphisms correspond precisely to invertible $(n+1)\times(n+1)$-matrices $M$ consisting of the coefficients of the linear forms $f_i$, modulo non-zero scalar multiples:
+(A proof of this fact is given in \cite[example 7.1.1]{hartshorne1977algebraic}.)
+Such automorphisms correspond precisely to invertible $(n+1)\times(n+1)$-matrices $M$ consisting of the coefficients of the linear forms $f_i$, modulo non-zero scalar multiples, i.e. $\var{PGL}_n = \var{GL}_{n+1}/\var{GL}_1$:
 We call an element of the automorphism group a \emph{projective transformation} or \emph{change of coordinates}.
 
 We will study geometric objects, i.e. projective subsets of some $\proj^n_k$, up to projective automorphism.
@@ -14,10 +14,10 @@ That means that we have to establish some properties which are invariant under p
 The following theorem makes this precise.
 
 \begin{theorem} \label{theoremGroupAction}
-$PGL_n$ operates transitively on the set $C \subset (\proj^n_k)^{n+2}$ of $(n+2)$-tuples of points, for which no $n+1$ lie on a hyperplane.
+$\var{PGL}_n$ operates transitively on the set $C \subset (\proj^n_k)^{n+2}$ of $(n+2)$-tuples of points, for which no $n+1$ lie on a hyperplane.
 \end{theorem}
 \begin{proof}
-Let's fix some notation first. Let $\{ e_i \}_0^n$ be standard basis of $k^{n+1}$, $e_0 = (1,0,..)^T, e_1 = (0,1,0,..)^T$ etc.
+Let's fix some notation first. Let $\{ e_i \}_0^n$ be the standard basis of $k^{n+1}$, $e_0 = (1,0,..)^T, e_1 = (0,1,0,..)^T$ etc.
 Additionally define $e_{n+1} := \sum_{i=0}^n e_i$.
 We can consider such vectors as points of $\proj^n_k$ and write them in brackets, e.g. $[e_0] = [1:0:..0]$.
 It suffices to show the following claim: The $(n+2)$-tuple $([e_0],..[e_n],[e_{n+1}])$ lies in every orbit.
@@ -35,7 +35,7 @@ N_{\underline\lambda}
 \textemdash & \lambda_n P_n^T & \textemdash \\
 \end{pmatrix}
 \end{equation}
-has full rank and is hence invertible with some inverse $M_{\underline\lambda}$
+has full rank and is hence invertible with some inverse $M_{\underline\lambda}$.
 Note that for any choice of $\underline\lambda$ the matrix $M_{\underline\lambda}^T$ maps $\lambda_iP_i$ to $e_i$ for $i \leq  n$.
 We wish to find a choice of $\underline\lambda$, such that $P_{n+1}$ is mapped to $e_{n+1}$:
 \begin{align}
@@ -53,7 +53,7 @@ A projective transformation maps linear spaces to linear spaces.
 \end{lemma}
 \begin{proof}
 It suffices to show that hyperplanes are mapped to hyperplanes.
-Let $h \in k[x_0,..x_n]$ be a linear form and $\phi$ a projective transformation on $\proj^n_k$.
+Let $h \in k[x_0,..x_n]$ be a linear form and $\phi$ a projective transformation of $\proj^n_k$.
 \begin{equation}
 P \in \phi(\V(h)) \Leftrightarrow \phi^{-1}(P) \in \V(h) \Leftrightarrow (h.\phi^{-1})(P) = 0 \Leftrightarrow P \in \V(h.\phi^{-1})
 \end{equation}
@@ -67,9 +67,9 @@ The line $L_2$ intersects the union $L_0 \cup L_1$ in either 1 or 2 points.
 Depending on this distinction, the lines can be projectively transformed to $\V(x_0),\V(x_1),\V(x_0-x_1)$ or $\V(x_0),\V(x_1),\V(x_2)$.
 \end{corollary}
 \begin{proof}
-By the previous lemma, a lines are being mapped to lines (one can see this either by considering how the hyperplanes which intersect in the line transform or just by a dimension argument).
-Consider now the first case, $L_0,L_1,L_2$ intersecting all in one point $O$.
-Let $P_i$ each be a point on $L_i$ different from $O$.
+By the previous lemma, lines are mapped to lines (one can see this either by considering how the hyperplanes which intersect in the line transform or just by a dimension argument).
+Consider now the first case, where $L_0,L_1,L_2$ intersect all in one point $O$.
+Let $P_i$ be a point on $L_i$ different from $O$.
 Using theorem \ref{theoremGroupAction} there is a projective transformation mapping $O, P_0,P_1,P_2$ to $[0:0:1],[1:0:1],[0:1:1],[1:1:1]$.
 This maps $L_0 = \overline{O,P_0}, L_1 = \overline{O,P_1}, L_2 = \overline{O,P_2}$ to $\V(x_1),\V(x_0),\V(x_0 - x_1)$.
 
@@ -93,8 +93,8 @@ A \emph{linear embedding} is an injective morphism $\iota : \proj^n_k \hookr \pr
 \end{definition}
 
 \begin{proposition} \label{propositionLiftingAutomorphisms}
-Suppose $\iota : \proj^n_k \hookr \proj^N_k$ is a linear embedding and suppose $\phi$ is a projective transformation on $\iota$.
-Then there exists a lift to a projective transformation $\overline\phi$ on $\proj^N_k$, such that the diagram
+Suppose $\iota : \proj^n_k \hookr \proj^N_k$ is a linear embedding and suppose $\phi$ is a projective transformation of $\proj^n_k$.
+Then there exists an extension to a projective transformation $\overline\phi$ on $\proj^N_k$, such that the diagram
 \begin{equation}
 \begin{xy}
 (0,20)*+{\proj^n_k}="n";
@@ -112,15 +112,15 @@ commutes.
 \begin{proof}
 For $n=N$ define $\overline\phi = \iota.\phi.\iota^{-1}$.
 If $n < N$ it suffices to prove this result for $N = n+1$.
-Let's say $\iota$ is given by $\iota = (h_0,..h_n,0)$, the $h_i$ being linear forms, and because $\iota$ is injective, the $h_i$ span the vector space of all linear forms in $k[x_0,..x_n]$.
+Without loss of generality, $\iota$ is given by $\iota = (h_0,..h_n,0)$, the $h_i$ being linear forms, and because $\iota$ is injective, the $h_i$ span the vector space of all linear forms in $k[x_0,..x_n]$.
 It follows, that there exists $g_0,..g_n$ linear forms, defining a projective transformation $\iota'$ such that $\iota' = (g_0,..g_n,x_{n+1})$ (hence $(\iota')^{-1} = (h_0,..h_n,x_{n+1})$) and $\iota'.\iota = (x_0,..x_n,0)$.
 We now can define $\overline{\phi'} = (\phi,x_{n+1})$ and finally $\overline\phi = (\iota')^{-1}.\overline{\phi'}.\iota'$.
 By construction $\iota.\phi = \overline\phi . \iota$ holds.
 \end{proof}
 
 
-Finishing this section I want to list some properties which are stable under projective transformation.
-Some of the assertions have been shown, some notions would need some explanation to be found in any down-to-earth textbook on algebraic geometry (\cite{shafarevich1994basic, harris1992algebraic, brieskorn2012plane}, etc.)
+We finish this section by listing some properties which are stable under projective transformation.
+Some of the assertions have been shown, and some notions would need some explanation which can be found in down-to-earth textbooks on algebraic geometry like \cite{shafarevich1994basic, harris1992algebraic, brieskorn2012plane}, etc.
 \begin{itemize}
 \item degree of a hypersurface
 \item linear subspaces, see lemma \ref{lemmaTransformOfLinearSpaces}
@@ -128,7 +128,7 @@ Some of the assertions have been shown, some notions would need some explanation
 \item Krull dimension
 \item incidence (whether two or more varieties intersect)
 \item tangent planes and singularities are well-behaved under projective transformation, see proposition \ref{propositionTangentTransform}
-\item the hessian hypersurface is well-behaved, i.e. for $S$ a hypersurface and $H$ its hessian hypersurface one can show $\phi(S \cap H) = \phi(S) \cap \phi(H)$.
+\item the Hessian hypersurface is well-behaved, i.e. for $S$ a hypersurface and $H$ its hessian hypersurface one can show $\phi(S \cap H) = \phi(S) \cap \phi(H)$.
 \item any morphism of projective varieties maps closed sets to closed sets \cite[theorem 1.10]{shafarevich1994basic}
 \end{itemize}
 

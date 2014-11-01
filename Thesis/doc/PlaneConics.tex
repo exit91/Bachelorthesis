@@ -43,6 +43,7 @@ b & 2c & e \\
 d & e & 2f
 \end{pmatrix}
 = 4acf + bde - ae^2 - cd^2 - fb^2
+= 0
 \end{equation}
 \end{corollary}
 
@@ -68,9 +69,9 @@ Let $\V(I),\V(J)$ be two varieties. Then the union of $\V(IJ)$ is singular at th
 \begin{proof}
 Let $f\in I, g\in J$, $P\in \V(I,J)$. We get $(fg)^{(1)}(P) = f(P)g^{(1)}(P) + g(P)f^{(1)}(P) = 0$, hence the tangent space at $P$ is the whole space.
 \end{proof}
-It says that the intersection of the two lines $\V(h_1)$ and $\V(h_2)$ (and we've seen that lines in $\proj^2_k$ do indeed intersect) is a singular point of our conic.
+In particular the intersection of the two lines $\V(h_1)$ and $\V(h_2)$ (and we've seen that lines in $\proj^2_k$ do indeed intersect) is a singular point of our conic.
 
-The converse can be seen as follows. Let $P=[p_0:p_1:p_2]$ be a singularity and $P'=[p'_0:p'_1:p'_2]$ is any other point on the conic (for instance any intersection point of $\V(g) \cap \V(x_i)$, $i$ such that $p_i \neq 0$).
+The converse can be seen as follows. Let $P=[p_0:p_1:p_2]$ be a singularity and $P'=[p'_0:p'_1:p'_2]$ any other point on the conic (for instance any intersection point of $\V(g) \cap \V(x_i)$, $i$ such that $p_i \neq 0$).
 For $g$ to be singular at $P$ means in particular that $g^{(1)}(P,P') = \sum_{i=0}^2 \del_{x_i}g(P)p'_i = 0$ using proposition \ref{propositionTaylor}.
 By corollary \ref{corollaryTaylorForQuadricAndCubic}, we can expand $g(\lambda P + \mu P') = \lambda^2 g(P) + \lambda\mu g^{(1)}(P;P') + \mu^2 g(P')= 0$.
 Hence $g$ vanishes on the line $\overline{P,P'}$ and Hilbert's Nullstellensatz implies that the conic is a union of two lines.
@@ -96,14 +97,14 @@ The equation of the Hessian curve in case of the conic considered in this sectio
 \subsubsection{The two rulings of a nonsingular quadric surface}
 
 
-It is now time to profit from the previous meditations about singularities.
+It is now time to profit from the previous results about singularities.
 Let $Q \subset \proj^3_k$ be a nonsingular quadric surface.
 We will see that it does not make sense to count the lines on this surface, but let's find some first.
 Surely $Q$ will not contain any plane, as this would mean (appealing to the Nullstellensatz) that $Q$ is the union of two planes.
 Furthermore these planes intersect at least in a line, so by lemma \ref{lemmaSingularIntersect} the quadric surface would be singular.
 As a first step, choose a point $P \in Q$.
 Because $Q$ does not contain planes, the tangent space intersects $Q$ in a conic curve.
-This curve is singular at $P$ by lemma \ref{lemmaIntersectionWithTangent}, therefore it is the union of two lines $L_1,L_2$.
+This curve is singular at $P$ by corollary \ref{corollaryIntersectionWithTangent}, therefore it is the union of two lines $L_1,L_2$.
 
 Each $L_i$ gives a family of lines as follows: For a point $P'$ on $L_i$, we may intersect again $Q$ with $T_{P'}Q$.
 Here too we obtain the union of two lines, one of which being $L_i$, the other line we call $L_i(P')$.
@@ -117,8 +118,8 @@ Conversely note, that we have chosen $P$ arbitrarily, so any point of $Q$ is the
 It, however, cannot occur that both lines belong to the same family, say parametrised by $L_1$. In that case, $M_1,M_2,L_1$ would lie on the same tangent plane, but $Q$ intersects a tangent plane in just two lines!
 We can conclude therefore:
 \begin{proposition}
-There are two families $\mathcal F(L_1), \mathcal F(L_2)$ of lines on $Q$ and each line on $Q$ belongs to just one family.
-The lines in each family are disjoint and as set the union of any one family covers all of $Q$.
+There are two families $\mathcal F(L_1), \mathcal F(L_2)$ of lines on $Q$ and each line on $Q$ belongs to precisely one family.
+The lines in each family are disjoint and as a set, the union of any one family covers all of $Q$.
 \end{proposition}
 A little bit more can be said.
 Consider a line $L' \in \mathcal F(L_1)$.
@@ -159,13 +160,13 @@ $\lambda h_1 + \lambda' h_2 = \mu h_3 + \mu' h_4 = \nu h_5 + \nu' h_6 =: q$.
 Solving for the linear forms means solving a homogeneous system of linear equations in $6\cdot 4= 24$ variables and $3\binom{4}{2} = 18$ equations, which ensures the existence of $q \neq 0$.
 \end{proof}
 
-The following lemma is due to Miles Reid and will be useful to prove the main theorem.
+The following lemma will be useful to prove the main theorem.
 \begin{lemma} \label{lemmaDisjointLines}
 Let $L_1,L_2,L_3,L_4$ be disjoint lines in $\proj^3_k$.
 A \emph{transversal} of these lines is a line intersecting all four.
 One of the following holds
 \begin{enumerate}
-\item The $L_i$ line on a irreducible quadric surface $Q$ and then there are infinitely many common transversals.
+\item The $L_i$ lie on a irreducible quadric surface $Q$ and then there are infinitely many common transversals.
 \item No quadric surface contains all the $L_i$. Then there are either one or two common transversals.
 \end{enumerate}
 \end{lemma}
@@ -175,9 +176,9 @@ Consider the two cases
 \paragraph{Case 1:} Assume there is a quadric containing all lines, necessarily irreducible as seen in the previous lemma.
 Then $\mathcal F(L_1)$ is an infinite family of common transversals.
 \paragraph{Case 2:} Now assume that there is no quadric containing all four lines.
-However by lemma \label{lemmaThreeLines} there exists a quadric surface $Q$ containing the first three lines $L_1,L_2,L_3$.
-What can we say about the common transversal of these three?
-As $L_1,L_2,L_3$ lie in $Q$, the transversal intersects $Q$ in three distinct points, so by proposition \ref{propositionDegreeOfSurface} it lies on $Q$ already.
+However by lemma \ref{lemmaThreeLines} there exists a quadric surface $Q$ containing the first three lines $L_1,L_2,L_3$.
+What can we say about a common transversal of these three?
+As $L_1,L_2,L_3$ lie in $Q$, such a transversal intersects $Q$ in three distinct points, so by proposition \ref{propositionDegreeOfSurface} it lies on $Q$ already.
 A common traversal of all four $L_1,L_2,L_3,L_4$ must therefore lie on $Q$.
 By the same proposition \ref{propositionDegreeOfSurface} the line $L_4$ intersects $Q$ in one or two points.
 Through each intersection point go 2 lines, but one of them generates the family containing $L_1,L_2,L_3$, so only the other line is a common transversal.

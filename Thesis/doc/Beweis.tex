@@ -10,16 +10,16 @@ We will follow the proof given by Miles Reid (\cite[§7]{reid1988undergraduate})
 \subsection{Existence of a line}
 
 We take an arbitrary point $P_0 \in S$ and consider its tangent plane $T_{P_0}(S) = \V(f^{(1)}(P_0))$.
-Of course, no plane lies in $S$ completely, as this would imply the existence of singular points by Lemma \ref{lemmaSingularIntersect}.
+Of course, no plane lies in $S$ completely, as this would imply the existence of singular points by lemma \ref{lemmaSingularIntersect}.
 By restricting the equation of $S$ to the tangent plane we obtain a 3-form $f' = f - f^{(1)}(P_0)g$, $g$ being some quadratic form.
 If we're lucky $f'$ is reducible and hence a product of a linear and a quadratic form meaning that the intersection $T_{P_0}(S) \cap \V(f^{(1)}(R)) \simeq \V(f') \subset \proj^2_k$ is a union of a line and a conic (possibly a degenerate one).
 So in this case $S$ contains a line.
 Let's proceed assuming that we are unlucky and say $\V(f') \subset \proj^2_k$ is an irreducible cubic curve.
-To simplify things, move tangent plane at $P_0$ to the plane $\V(t)$ and simultaneously move the point $P_0$ to $[0:0:1:0]$ by Corollary \ref{corollaryTransformPlaneWithPointOnIt}.
+To simplify things, use a projective transformation to move the tangent plane at $P_0$ to the plane $\V(t)$ and simultaneously move the point $P_0$ to $[0:0:1:0]$ by corollary \ref{corollaryTransformPlaneWithPointOnIt}.
 That this transforms the surface in a compatible manner with the tangent plane has been proven in proposition \ref{propositionTangentTransform}.
 Eliminating the variable $t = 0$, $f(x,y,z,0)$ defines a cubic curve.
-By Lemma \ref{lemmaIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^2z - y^3)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
-We can lift this automorphism of the hyperplane $\V(t)$ to an automorphism of the whole space via proposition \ref{propositionLiftingAutomorphisms}.
+By corollary \ref{corollaryIntersectionWithTangent} it is singular at $[0:0:1:0]$ and we know it is projectively equivalent to either $\V(x^2z - y^3)$ or $\V(x^3 + y^3 - xyz)$ by propositions \ref{propositionClassificationOfSingularCubics}, \ref{propositionNormalformCuspidal} and \ref{propositionNormalformNodal2}.
+We can extend this automorphism of the hyperplane $\V(t)$ to an automorphism of the whole space via proposition \ref{propositionLiftingAutomorphisms}.
 How do we move on from here?
 It is well-known that singular cubic curves can be parametrised (\cite[chapter 1.1.2]{shafarevich1994basic}) and we can use this to our advantage.
 
@@ -41,7 +41,7 @@ and let $Q = (0,y,z,t)$ represent a indeterminate point on the hyperplane $\V(x)
 Surely $P$ and $Q$ cannot coincide for any choice of $\alpha,y,z,t$.
 We wish to show that for some $\alpha,y,z,t$ the line $\overline{P,Q}$ is contained in the cubic surface.
 As we have seen in the section on linear subsets, it suffices to show $f(\lambda P + \mu Q) = 0 \in k[\lambda,\mu]$.
-Combining this with the poor student's Taylor expansion (Corollary \ref{corollaryTaylorForQuadricAndCubic}) we obtain
+Combining this with the poor student's Taylor expansion (corollary \ref{corollaryTaylorForQuadricAndCubic}) we obtain
 $f(\lambda P + \mu Q)
 = \underset{=\lambda^3 f(P) = 0}{\underbrace{f(\lambda P)}}
 + f^{(1)}(\lambda P;\mu Q)
@@ -68,8 +68,8 @@ C' = -y^3 + tg(0,y,3\alpha^2y-\tau a^{(6)}t,t) =& c_0y^3 + c_1y^2t + c_2 yt^2 + 
 \end{align}
 for some coefficients $b_0,..b_2,c_0,..c_3 \in k(\alpha)$ to be determined.
 
-The condition for the forms $B'$ and $C'$ to have a (non-trivial) common zero is now a polynomial relation of their coefficients $b_i,c_i$, meaning that there exists a polynomial $R$, called the resultant polynomial, in the coefficients of $B',C'$ which vanishes iff $B',C'$ have a common zero.
-This polynomial can be given by the determinant of a so-called Sylvester matrix
+The condition for the forms $B'$ and $C'$ to have a (non-trivial) common zero is now a polynomial relation of their coefficients $b_i,c_i$, meaning that there exists a polynomial $R$, called the \emph{resultant polynomial}, in the coefficients of $B',C'$ which vanishes iff $B',C'$ have a common zero.
+We claim: This polynomial can be given by the determinant of a so-called Sylvester matrix
 \begin{equation}
 R =
 \det\begin{pmatrix}
@@ -81,11 +81,11 @@ c_0 & c_1 & c_2 & c_3 & 0 \\
 \end{pmatrix}
 \end{equation}
 You can find a proof in \cite[theorem 4.2.3]{brieskorn2012plane}, although it is not hard to find an elementary proof for this particular case.
-\begin{proof}
+\begin{proof}[Proof of the claim]
 The matrix represents a linear automorphism on the vector space of 4-forms mapping $x^4,x^3y,x^2y^2,xy^3,y^4$ to $x^2B',xyB',y^2B',xC',yC'$.
 Now if $B',C'$ have a common zero $(x_0,y_0) \neq (0,0)$ so do $x^2B',xyB',y^2B',xC',yC'$ but of course the monomials $x^4,x^3y,x^2y^2,xy^3,y^4$ don't vanish simultaneously on $(x_0,y_0)$. This shows that the matrix is not invertible.
 Conversely if the matrix is singular, then there exist some quadratic form $q$ and a cubic form $c$, not both 0, such that $cB' + qC' = 0 \Leftrightarrow cB' = -qC'$ (we can assume that $q,c$ are both non-zero, otherwise one of $B',C'$ is zero already).
-But $k[x,y]$ is a unique factorisation domain and Lemma \ref{lemmaFundamentalTheorem} gives us for both sides of the equation the decomposition into \emph{linear factors}, so by the pigeon hole principle, $B'$ and $C'$ must have some factor in common.
+But $k[x,y]$ is a unique factorisation domain and lemma \ref{lemmaFundamentalTheorem} gives us for both sides of the equation the decomposition into \emph{linear factors}, so by the pigeon hole principle, $B'$ and $C'$ must have some factor in common.
 \end{proof}
 
 We continue with inspecting the coefficients themselves.
@@ -224,7 +224,7 @@ q =
 +\lambda^{-3} F(\lambda,\mu) z^2
 \end{equation}
 
-In Corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
+In corollary \ref{corollarySingularConic} we found out that a quadratic form like $q$ factors into two linear forms iff a certain polynomial in the coefficients of $q$ vanishes.
 By writing this condition out, one obtains $\lambda^{-5} \Delta(\lambda,\mu) = 0$ and multiplying by $\lambda^5$ we finally get as necessary and sufficient condition for $q$ to factor into linear forms
 \begin{equation}
 \Delta(\lambda,\mu) = 0
@@ -363,7 +363,7 @@ L\square M
 The next observation is that either $M\boxtimes \Lambda^i(L)$ or $M\boxtimes V^i(L)$ for each $i=1,..5$.
 This is because $M$ intersects the hyperplane $\Pi^i(L)$ (by corollary \ref{corollarySimpleIntersect}), $M \subset S - L$ and $S \cap \Pi^i(L) = \Lambda^i(L) \cup V^i(L) \cup L$. Therefore this lemma holds:
 \begin{lemma} \label{lemmaBinaryIntersection}
-If $N\square L$ are lines on $S$, then either $N \boxtimes \Lambda^i(L)$ or $N \boxtimes V^i(L)$.
+If $N, L$ are lines on $S$ and $N \square L$, then either $N \boxtimes \Lambda^i(L)$ or $N \boxtimes V^i(L)$.
 If $N\boxtimes L$, then $N$ can furthermore meet $\Lambda^i(L)\cap V^i(L)$.
 \end{lemma}
 

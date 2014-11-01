@@ -12,11 +12,11 @@ The sum of all fifth roots of unity vanishes, as $0 = (\xi^5 - 1) = (\xi - 1)(1 
 The sum of the third powers also vanishes: $0 = \sum_{i=0}^4 \xi^{3i \mod 5} \overset{\text{permute the}}{\underset{\text{summands}}=} \sum_{i=0}^4 \xi^i = 0$
 Certainly the line connecting the two points lies on the plane $\V(x+y+z+t+w)$, and to show that it also lies on the cubic hypersurface it remains to show for $f = x^3 + y^3 + z^3 + t^3 + w^3$ that $f^{(1)}(P,\overline P) = 0 = f^{(1)}(\overline P,P)$.
 \begin{align}
-f^{(1)}(P_1,P_2) =& 3 \sum_{i=0}^4 \xi^{2i}\xi^{-i} = 0 \\
-f^{(1)}(P_2,P_1) =& 3 \sum_{i=0}^4 \xi^{-2i}\xi^{i} = 0
+f^{(1)}(P,\overline{P}) =& 3 \sum_{i=0}^4 \xi^{2i}\xi^{-i} = 0 \\
+f^{(1)}(\overline{P},P) =& 3 \sum_{i=0}^4 \xi^{-2i}\xi^{i} = 0
 \end{align}
 Again we can calculate the cardinality of the orbit $G(L')$.
-An element $\sigma$ of the stabiliser $G_{L'}$ may only swap $P_1$ with $P_2$ or multiply the coordinates by some $\xi^i$ (because that doesn't change the point in projective space), hence $|G(L')| = \frac{|G|}{|G_{L'}|} = \frac{5!}{2\cdot 5} = 12$.
+An element $\sigma$ of the stabiliser $G_{L'}$ may only swap $P$ with $\overline{P}$ or multiply the coordinates by some $\xi^i$ (because that doesn't change the point in projective space), hence $|G(L')| = \frac{|G|}{|G_{L'}|} = \frac{5!}{2\cdot 5} = 12$.
 Certainly the orbits $G(L')$ and $G(L)$ are disjoint as they have different cardinality and consequently $|G(L') \cup G(L)| = 27$, so we found all of the lines.
 \end{example}
 
